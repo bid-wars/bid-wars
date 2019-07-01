@@ -5,7 +5,8 @@ const express = require('express'),
       massive = require('massive');
 
 // CONTROLLERS
-const auth_ctrl = require('./controllers/auth_controller');
+const auth_ctrl = require('./controllers/auth_controller'),
+      s3Controller = require('./controllers/s3Controller');
 
 // SERVER
 const app = express();
@@ -31,3 +32,6 @@ massive(CONNECTION_STRING).then((database) => {
 
 // AUTH ENDPOINTS
 app.post('/auth/login', auth_ctrl.login) // Logs in a user
+
+// S3 Endpoint
+app.get('/sign-s3', s3Controller.awsCall)

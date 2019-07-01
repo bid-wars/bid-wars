@@ -82,7 +82,7 @@ import {GridLoader} from 'react-spinners'
 
 
     render() {
-
+        console.log(this.state.image)
         return (
             <div>
                 <div className='RegisterForm'>
@@ -96,7 +96,10 @@ import {GridLoader} from 'react-spinners'
                         <input {...getInputProps()} />
                         {this.state.isUploading ? 
                         <GridLoader
-                        color={'#34D1BF'} /> :
+                        color={'#34D1BF'} /> : this.state.image ? 
+                        <div>
+                            <img src={this.state.image} />
+                        </div> :
                         <div className='iconDiv'>
                         <i class="far fa-image fa-7x"
                         style={{color: '#34d1bf'}}/>
