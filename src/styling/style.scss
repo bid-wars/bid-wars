@@ -1,0 +1,31 @@
+$snow: #F9F9F9;
+$blue: #3454D1;
+$green: #34d1bf;
+$platinum: #e8e8e8;
+$red: #ff4040;
+
+.LogInForm{
+    width: 40vw;
+    height: 40vh;
+    background: $snow;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+        form{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+                span{
+                    display: flex;
+                    align-items: center;
+                    input{
+                        height: 2vh;
+                        margin-left: 1em;
+                        border: none;
+                        background: $snow;
+                        border-bottom: rgb(64, 64, 65) solid 1px;
+                    }
+                }    
+        }
+}
