@@ -2,29 +2,133 @@ $snow: #F9F9F9;
 $blue: #3454D1;
 $green: #34d1bf;
 $platinum: #e8e8e8;
+$darkColor: rgb(77, 77, 77);
 $red: #ff4040;
+$font: 'Roboto', sans-serif;
+$fontColorDark: rgb(77, 77, 77);
+$fontColorLight: #e8e8e8;
+$shadow:  6px 6px 6px -6px $darkColor;
 
 .LogInForm{
+    border: $darkColor solid 1px;
+    border-radius: 5px;
+    box-shadow: $shadow;
     width: 40vw;
     height: 40vh;
     background: $snow;
     display: flex;
     justify-content: center;
     align-items: center;
+
         form{
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
+                button{
+                    background: $blue;
+                    color: $platinum;
+                    font-family: $font;
+                    border: none;
+                    padding: .5em 2em;
+                    box-shadow: $shadow;
+                }
                 span{
+                    width: 100%;
                     display: flex;
                     align-items: center;
+                    justify-content: space-between;
+                    h4{
+                        color:rgb(77, 77, 77);
+                        font-family: $font;
+                    }
                     input{
                         height: 2vh;
                         margin-left: 1em;
                         border: none;
                         background: $snow;
-                        border-bottom: rgb(64, 64, 65) solid 1px;
+                        border-bottom: rgb(77, 77, 77) solid 1px;
+                        text-align: center;
+                        
+                    }
+                    input:focus{
+                        outline: 0;
+                        text-align: center;
+                    }
+                }    
+        }
+}
+.RegisterForm{
+    border: $darkColor solid 1px;
+    border-radius: 5px;
+    box-shadow: $shadow;
+    width: 60vw;
+    height: 95vh;
+    background: $snow;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    .iconDiv{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        p{
+            margin: 0;
+        }
+    }
+    h1{
+        color:rgb(77, 77, 77);
+        font-family: $font;  
+    }
+
+        form{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            
+                button{
+                    margin-top: 1em;                    background: $blue;
+                    color: $platinum;
+                    font-family: $font;
+                    border: none;
+                    padding: .5em 2em;
+                    box-shadow: $shadow;
+                }
+                i{
+                    color: #3454D1;
+                }
+                h2{
+                    font-family: $font;
+                    color: $darkColor;
+                    margin-right: 30vw;
+                }
+                span{
+                    width: 45%;
+                    height: 5vh;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    h4{
+                        color:rgb(77, 77, 77);
+                        font-family: $font;
+                    }
+
+                    input{
+                        height: 2vh;
+                        margin-left: 1em;
+                        border: none;
+                        background: $snow;
+                        border-bottom: rgb(77, 77, 77) solid 1px;
+                        text-align: center;
+                        
+                    }
+                    input:focus{
+                        outline: 0;
+                        text-align: center;
                     }
                 }    
         }

@@ -1,4 +1,8 @@
 .LogInForm {
+  border: #4d4d4d solid 1px;
+  border-radius: 5px;
+  -webkit-box-shadow: 6px 6px 6px -6px #4d4d4d;
+          box-shadow: 6px 6px 6px -6px #4d4d4d;
   width: 40vw;
   height: 40vh;
   background: #F9F9F9;
@@ -29,13 +33,32 @@
           align-items: center;
 }
 
+.LogInForm form button {
+  background: #3454D1;
+  color: #e8e8e8;
+  font-family: "Roboto", sans-serif;
+  border: none;
+  padding: .5em 2em;
+  -webkit-box-shadow: 6px 6px 6px -6px #4d4d4d;
+          box-shadow: 6px 6px 6px -6px #4d4d4d;
+}
+
 .LogInForm form span {
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.LogInForm form span h4 {
+  color: #4d4d4d;
+  font-family: "Roboto", sans-serif;
 }
 
 .LogInForm form span input {
@@ -43,6 +66,131 @@
   margin-left: 1em;
   border: none;
   background: #F9F9F9;
-  border-bottom: #404041 solid 1px;
+  border-bottom: #4d4d4d solid 1px;
+  text-align: center;
+}
+
+.LogInForm form span input:focus {
+  outline: 0;
+  text-align: center;
+}
+
+.RegisterForm {
+  border: #4d4d4d solid 1px;
+  border-radius: 5px;
+  -webkit-box-shadow: 6px 6px 6px -6px #4d4d4d;
+          box-shadow: 6px 6px 6px -6px #4d4d4d;
+  width: 60vw;
+  height: 95vh;
+  background: #F9F9F9;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.RegisterForm .iconDiv {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.RegisterForm .iconDiv p {
+  margin: 0;
+}
+
+.RegisterForm h1 {
+  color: #4d4d4d;
+  font-family: "Roboto", sans-serif;
+}
+
+.RegisterForm form {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.RegisterForm form button {
+  margin-top: 1em;
+  background: #3454D1;
+  color: #e8e8e8;
+  font-family: "Roboto", sans-serif;
+  border: none;
+  padding: .5em 2em;
+  -webkit-box-shadow: 6px 6px 6px -6px #4d4d4d;
+          box-shadow: 6px 6px 6px -6px #4d4d4d;
+}
+
+.RegisterForm form i {
+  color: #3454D1;
+}
+
+.RegisterForm form h2 {
+  font-family: "Roboto", sans-serif;
+  color: #4d4d4d;
+  margin-right: 30vw;
+}
+
+.RegisterForm form span {
+  width: 45%;
+  height: 5vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.RegisterForm form span h4 {
+  color: #4d4d4d;
+  font-family: "Roboto", sans-serif;
+}
+
+.RegisterForm form span input {
+  height: 2vh;
+  margin-left: 1em;
+  border: none;
+  background: #F9F9F9;
+  border-bottom: #4d4d4d solid 1px;
+  text-align: center;
+}
+
+.RegisterForm form span input:focus {
+  outline: 0;
+  text-align: center;
 }
 /*# sourceMappingURL=style.css.map */

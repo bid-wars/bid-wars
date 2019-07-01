@@ -3,41 +3,51 @@ import axios from 'axios'
 
 class LogInForm extends Component {
     state ={
-        userName: '',
+        email: '',
         password: ''
     }
     handleChange = (e) =>{
         this.setState({
-            [e.target.value]: e.target.value
+            [e.target.name]: e.target.value
         })
     }
     handleSubmit = (e) =>{
         e.preventDefault()
+
         axios.post('/auth/login',{
-           username: this.state.userName,
+            email: this.state.email,
            password: this.state.password
         })
+     
+        this.setState({
+            email: '',
+            password: ''
+        })
+        
     }
 
 
 
     render() {
-        console.log(this.state)
+
         return (
             <div className='LogInForm'>
-                <form>
+                <form onSubmit={this.handleSubmit}>
                     <span>
-                        <h4>Username:</h4>
-                        <input type="text"
-                        name='username'
+                        <h4>Email:</h4>
+                        <input type="email"
+                        name='email'
+                        value={this.state.email}
                         onChange={this.handleChange}/>
                     </span>
                     <span>
                         <h4>Password:</h4>
-                        <input type="password" name="password"
+                        <input type="password" 
+                        name='password'
+                        value={this.state.password}
                         onChange={this.handleChange}/>
                     </span>
-                    <button>Log in</button>
+                    <button>Login</button>
                 </form>
 
                 

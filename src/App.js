@@ -1,12 +1,13 @@
 import React from 'react';
-import LogInForm from './Components/LogInForm'
+import Register from './Components/Register'
+import Login from './Components/LogInForm'
 
 
 function App() {
 
   return (
     <div >
-     <LogInForm/>
+
     </div>
   );
 }
