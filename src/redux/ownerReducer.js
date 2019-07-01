@@ -47,9 +47,9 @@ function ownerReducer(state = initialState, action){
                 user_id,
                 bids,
                 schedule}
-        
+        default: return state
     }
-    return state
+    
 }
 
 export default ownerReducer
