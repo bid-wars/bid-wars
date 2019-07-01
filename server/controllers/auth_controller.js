@@ -14,5 +14,24 @@ module.exports = {
         } else {
             return res.status(401).send("Incorrect username or password");
         }
+    },
+    register: async (req, res) => {
+        const {email, password} = req.body;
+        const db = req.app.get('db');
+        const {session} = req;
+        const userFound = await db.auth.check_user_email({email});
+        if (userFound[0]) return res.status(409).send('User already exists');
+        const salt = bcrypt.genSaltSync(10);
+        const hash = bcrypt.hashSync(password, salt);
+        const createdUser = await db.auth.register_user({
+            email,
+            password: hash
+        });
+        session.user = createdUser[0];
+        res.status(200).send(session.user);
+    },
+    logout: (req, res) => {
+        req.session.destroy();
+        res.sendStatus(200);
     }
 }
