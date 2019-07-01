@@ -30,4 +30,6 @@ massive(CONNECTION_STRING).then((database) => {
 })
 
 // AUTH ENDPOINTS
-app.post('/auth/login', auth_ctrl.login) // Logs in a user
+app.post('/auth/login', auth_ctrl.login); // Logs in a user
+app.post('/auth/register', auth_ctrl.register); // Registers a user
+app.get('/auth/logout', auth_ctrl.logout); // Logs out a user
