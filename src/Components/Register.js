@@ -3,6 +3,8 @@ import axios from 'axios'
 import Dropzone from 'react-dropzone'
 import randomstring from 'randomstring'
 import {GridLoader} from 'react-spinners'
+import { AsYouType } from 'libphonenumber-js'
+import image from '../image/image.svg'
 
  class Register extends Component {
     state = {
@@ -14,24 +16,48 @@ import {GridLoader} from 'react-spinners'
         phone2: '',
         isUploading: false,
         image: '',
+        role: 'user'
     }
     handleChange = (e) =>{
+        
         this.setState({
-            [e.target.name]: e.target.value
+            [e.target.name]: e.target.value,
         })
     }
+    handleChangePhone1 = (e) => {
+        const phone1 = new AsYouType('US').input(e.target.value)
+        this.setState({
+            phone1: phone1
+        })
+    }
+    handleChangePhone2 = (e) => {
+        const phone2 = new AsYouType('US').input(e.target.value)
+        this.setState({
+            phone2: phone2
+        })
+    }
+    handleSelect = (e) => {
+        this.setState({
+            role: e.target.value
+        })
+    }
+
     handleSubmit = (e) =>{
         e.preventDefault()
+        
 
-        axios.post('/auth/register',{
-            first_name: this.state.first_name,
-            last_name: this.state.last_name,
-            company_name: this.state.company_name,
-            website: this.state.website,
-            phone1: this.state.phone1,
-            phone2: this.state.phone2,
-            email:  this.state.email
-        })
+        // axios.post('/auth/register',{
+        //     first_name: this.state.first_name,
+        //     last_name: this.state.last_name,
+        //     company_name: this.state.company_name,
+        //     website: this.state.website,
+        //     phone1: this.state.phone1,
+        //     phone2: this.state.phone2,
+        //     email:  this.state.email,
+        //     image: this.state.image,
+        //     role: this.state.role
+
+        // })
      
         this.setState({
             first_name: '',
@@ -40,7 +66,9 @@ import {GridLoader} from 'react-spinners'
             website: '',
             phone1: '',
             phone2: '',
-            email:  ''
+            email:  '',
+            image: '',
+            password: ''
         })
         
     }
@@ -82,11 +110,18 @@ import {GridLoader} from 'react-spinners'
 
 
     render() {
-        console.log(this.state.image)
+        console.log(this.state.phone1, this.state.phone2)
         return (
             <div>
                 <div className='RegisterForm'>
                     <h1>Let's get you set up</h1>
+                    <select name="role" onChange={this.handleSelect}>
+                            <option value="user" name='user' selected >User</option>  
+                            <option value="owner" name='owner'>Owner</option>
+                            
+
+                        </select>
+                    {this.state.role === 'owner' ? 
                 <Dropzone
                 onDropAccepted={this.getSignedRequest}
                 accept="image/*"
@@ -101,14 +136,16 @@ import {GridLoader} from 'react-spinners'
                             <img src={this.state.image} />
                         </div> :
                         <div className='iconDiv'>
-                        <i class="far fa-image fa-7x"
+                          <i class="far fa-image fa-7x"
                         style={{color: '#34d1bf'}}/>
                         <p>Add Company Logo</p>
                         </div> }
                     </div>
                 )}
-                 </Dropzone> 
+                 </Dropzone> : null}
                     <form onSubmit={this.handleSubmit}>
+
+                        
 
                         <h2>Your Information</h2>
                         <span>
@@ -125,6 +162,8 @@ import {GridLoader} from 'react-spinners'
                             value={this.state.last_name}
                             onChange={this.handleChange}/>
                         </span>
+                        {this.state.role === 'owner' ?
+                        <>
                         <span>
                             <h4>Company Name:</h4>
                             <input type="text"
@@ -138,21 +177,22 @@ import {GridLoader} from 'react-spinners'
                             name='website'
                             value={this.state.website}
                             onChange={this.handleChange}/>
-                        </span>
+                        </span> </>: null }
                         <span>
-                            <h4>Phone 1:</h4>
-                            <input type="number"
+                            <h4>Phone:</h4>
+                            <input type="tel"
                             name='phone1'
                             value={this.state.phone1}
-                            onChange={this.handleChange}/>
+                            onChange={this.handleChangePhone1}/>
                         </span>
+                        {this.state.role === 'owner' ? <>
                         <span>
                             <h4>Phone 2:</h4>
-                            <input type="number"
+                            <input type="tel"
                             name='phone2'
                             value={this.state.phone2}
-                            onChange={this.handleChange}/>
-                        </span>
+                            onChange={this.handleChangePhone2}/>
+                        </span> </> : null }
                         <h2>Login info</h2>
                         <span>
                             <h4>Email:</h4>

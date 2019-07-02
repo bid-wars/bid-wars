@@ -114,8 +114,8 @@
           flex-direction: column;
 }
 
-.RegisterForm .iconDiv p {
-  margin: 0;
+.RegisterForm .iconDiv img {
+  color: #34d1bf;
 }
 
 .RegisterForm h1 {
@@ -192,5 +192,81 @@
 .RegisterForm form span input:focus {
   outline: 0;
   text-align: center;
+}
+
+.dashboard header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: #24242c;
+  height: 10vh;
+  width: 100%;
+  color: #e8e8e8;
+}
+
+.dashboard header .logo {
+  margin-left: 2vw;
+}
+
+.dashboard header .settings {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-right: 2vw;
+}
+
+.dashboard header .settings h4 {
+  margin-left: 2vw;
+}
+
+.dashboard main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.dashboard main nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 90vh;
+  width: 15vw;
+  background: #24242c;
+  color: #e8e8e8;
+}
+
+.dashboard main nav .bottombuttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 /*# sourceMappingURL=style.css.map */

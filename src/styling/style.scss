@@ -8,6 +8,9 @@ $font: 'Roboto', sans-serif;
 $fontColorDark: rgb(77, 77, 77);
 $fontColorLight: #e8e8e8;
 $shadow:  6px 6px 6px -6px $darkColor;
+$darkBackgroundColor: rgb(36, 36, 44);
+
+
 
 .LogInForm{
     border: $darkColor solid 1px;
@@ -74,8 +77,8 @@ $shadow:  6px 6px 6px -6px $darkColor;
         justify-content: center;
         align-items: center;
         flex-direction: column;
-        p{
-            margin: 0;
+        img{
+            color: #34d1bf;
         }
     }
     h1{
@@ -132,4 +135,49 @@ $shadow:  6px 6px 6px -6px $darkColor;
                     }
                 }    
         }
+}
+.dashboard{
+    header{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: rgb(36, 36, 44);
+        height: 10vh;
+        width: 100%;
+        color: $fontColorLight;
+        .logo{
+            margin-left: 2vw;
+        }
+        .settings{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-right: 2vw;
+            h4{
+                margin-left: 2vw; 
+            }
+        }
+    }
+    main{
+        display: flex;
+        justify-content: flex-start;
+        nav{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 90vh;
+            width: 15vw;
+            background: $darkBackgroundColor;
+            color: $fontColorLight;
+            .bottombuttons{
+                display: flex;
+                flex-direction: column;
+
+            }
+            
+        }
+        
+    }
+
 }
