@@ -94,7 +94,8 @@ $darkBackgroundColor: rgb(36, 36, 44);
             align-items: center;
             
                 button{
-                    margin-top: 1em;                    background: $blue;
+                    margin-top: 1em;                    
+                    background: $blue;
                     color: $platinum;
                     font-family: $font;
                     border: none;
@@ -137,6 +138,7 @@ $darkBackgroundColor: rgb(36, 36, 44);
         }
 }
 .dashboard{
+
     header{
         display: flex;
         justify-content: space-between;
@@ -161,19 +163,60 @@ $darkBackgroundColor: rgb(36, 36, 44);
     main{
         display: flex;
         justify-content: flex-start;
+        .routedisplay{
+            width: 85vw;
+            height: 90vh;
+            background: $platinum;
+        }
         nav{
             display: flex;
             flex-direction: column;
             justify-content: center;
-            align-items: center;
+            align-items: flex-end;
             height: 90vh;
             width: 15vw;
             background: $darkBackgroundColor;
             color: $fontColorLight;
+
             .bottombuttons{
                 display: flex;
                 flex-direction: column;
+                justify-content: space-between;
+                height: 10vh;
+                button{
+                    background: $blue;
+                    color: $platinum;
+                    font-family: $font;
+                    border: none;
+                    padding: .5em 1.5em;
+        
+                    margin-right: 2vw;
+                }
 
+            }
+            ul{
+                width: 100%;
+                margin: 5vh 1vw;
+                li, Link{
+                    font-family: $font;
+                    color: $fontColorLight;
+                    text-decoration: none;
+                    width: 84%;
+                    margin: 2vh 0 2vh 1vw;
+                    padding: 1em 1em ;
+                    transition: all .5s ease-in-out;
+                    cursor: pointer;
+                    
+                }
+                Link:visited{
+                    text-decoration: none;
+                }
+                .selected{
+                    background: $green;
+                    color: $darkBackgroundColor;
+                    font-weight: bold;
+                    transition: all .5s ease-in-out;
+                }
             }
             
         }
