@@ -240,6 +240,12 @@
           justify-content: flex-start;
 }
 
+.dashboard main .routedisplay {
+  width: 85vw;
+  height: 90vh;
+  background: #e8e8e8;
+}
+
 .dashboard main nav {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -251,9 +257,9 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
   height: 90vh;
   width: 15vw;
   background: #24242c;
@@ -268,5 +274,47 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 10vh;
+}
+
+.dashboard main nav .bottombuttons button {
+  background: #3454D1;
+  color: #e8e8e8;
+  font-family: "Roboto", sans-serif;
+  border: none;
+  padding: .5em 1.5em;
+  margin-right: 2vw;
+}
+
+.dashboard main nav ul {
+  width: 100%;
+  margin: 5vh 1vw;
+}
+
+.dashboard main nav ul li, .dashboard main nav ul Link {
+  font-family: "Roboto", sans-serif;
+  color: #e8e8e8;
+  text-decoration: none;
+  width: 84%;
+  margin: 2vh 0 2vh 1vw;
+  padding: 1em 1em;
+  -webkit-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
+  cursor: pointer;
+}
+
+.dashboard main nav ul Link:visited {
+  text-decoration: none;
+}
+
+.dashboard main nav ul .selected {
+  background: #34d1bf;
+  color: #24242c;
+  font-weight: bold;
+  -webkit-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
 }
 /*# sourceMappingURL=style.css.map */
