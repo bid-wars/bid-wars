@@ -16,7 +16,7 @@ module.exports = {
         }
     },
     register: async (req, res) => {
-        const {email, password} = req.body;
+        const {email, password, firstname, lastname, companyName, website, phone, logo, role} = req.body;
         const db = req.app.get('db');
         const {session} = req;
         const userFound = await db.auth.check_user_email({email});
@@ -25,9 +25,25 @@ module.exports = {
         const hash = bcrypt.hashSync(password, salt);
         const createdUser = await db.auth.register_user({
             email,
-            password: hash
+            password: hash,
+            firstname,
+            lastname,
+            role
         });
-        session.user = createdUser[0];
+        const createdPhone = await db.auth.register_phone({
+            phone,
+            id: createdUser[0].id
+        });
+        const createdCompany = await db.auth.register_company({
+            companyName,
+            logo,
+            website
+        });
+        session.user = {
+            ...createdUser[0],
+            ...createdPhone[0],
+            ...createdCompany[0]
+        };
         res.status(200).send(session.user);
     },
     logout: (req, res) => {
