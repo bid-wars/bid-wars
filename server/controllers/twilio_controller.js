@@ -1,10 +1,11 @@
-const client = require('twilio')(ACCOUNTSID, AUTHTOKEN);
 const {
     ACCOUNTSID,
     AUTHTOKEN,
     MYNUMBER,
     FROMNUMBER
 } = process.env;
+
+const client = require('twilio')(ACCOUNTSID, AUTHTOKEN);
 
 module.exports = {
     send: (req, res) => {
@@ -15,11 +16,12 @@ module.exports = {
                 from: FROMNUMBER,
                 to: MYNUMBER
             })
-            .then((res) => {
-                res.send(JSON.stringify({ success: true }));
+            .then((message) => {
+                res.status(200).send(JSON.stringify({ success: true }));
             })
             .catch((err) => {
-                res.send(JSON.stringify({ success: false }));
+                console.log(err);
+                res.status(500).send(JSON.stringify({ success: false }));
             })
     }
 }

@@ -1,6 +1,8 @@
 const express = require('express'),
       session = require('express-session');
 
+const {SESSION_SECRET} = process.env;
+
 const provider = (app) => {
     app.use(express.json());
     app.use(session({
