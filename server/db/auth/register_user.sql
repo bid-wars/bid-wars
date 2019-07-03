@@ -1,5 +1,5 @@
 INSERT INTO users
-(email, password, role)
+(email, password, firstname, lastname, role)
 VALUES
-(${email}, ${password}, ${role})
+(${email}, ${password}, ${firstname}, ${lastname}, ${role})
 RETURNING *;
