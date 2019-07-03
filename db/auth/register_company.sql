@@ -1,4 +1,5 @@
 INSERT INTO companies
 (name, logo, website)
 VALUES
-(${companyName}, ${logo}, ${website});
+(${companyName}, ${logo}, ${website})
+RETURNING *;
