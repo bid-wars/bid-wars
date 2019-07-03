@@ -79,7 +79,7 @@ import {faImage} from '@fortawesome/free-solid-svg-icons'
         
         const fileName = `${randomstring.generate()}-${file.name.replace(/\s/g, '-')}`
        
-        axios.get('/sign-s3', {
+        axios.get('/s3/sign', {
             params: {
             'file-name': fileName,
             'file-type': file.type

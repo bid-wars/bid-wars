@@ -163,6 +163,8 @@ $darkBackgroundColor: rgb(36, 36, 44);
             h1{
                text-transform: capitalize; 
                font-size: 2em;
+               font-family: $font;
+               color: $fontColorLight;
             }
         }
         .logo{
@@ -174,6 +176,7 @@ $darkBackgroundColor: rgb(36, 36, 44);
                 margin-left: 1vw;
                 font-family: $font;
                 font-size: 1.5em;
+                
             }
         }
         .settings{
@@ -201,6 +204,7 @@ $darkBackgroundColor: rgb(36, 36, 44);
         .routedisplay{
             width: 85vw;
             height: 90vh;
+            
             background: $platinum;
         }
         nav{
@@ -236,7 +240,7 @@ $darkBackgroundColor: rgb(36, 36, 44);
                     font-family: $font;
                     color: $fontColorLight;
                     text-decoration: none;
-                    width: 84%;
+                    width: 100%;
                     margin: 2vh 0 2vh 1vw;
                     padding: 1em 1em ;
                     transition: all .5s ease-in-out;
@@ -256,4 +260,89 @@ $darkBackgroundColor: rgb(36, 36, 44);
         
     }
 
+}
+.mainDash{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    .top{
+        width: 100%;
+        height: 15vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .customername{
+            font-family: $font;
+            color: $fontColorDark;
+            margin: 10vh;
+            font-size: 2em;
+            font-weight: bolder;
+        }
+
+    }
+
+    .bottom{
+        width: 85vw;
+        height: 75vh;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .leftdiv{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            width: 42.5vw;
+            height: 100%;
+            margin-left: 5vw;
+            .schedule{
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: center;
+                height: 37.5vh;
+                width: 100%;
+                .scheduleBox{
+                    height: 100%;
+                    width: 100%;
+                    background: gray;
+                }
+            }
+            .bidchart{
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: center;
+                height: 37.5vh;
+                width: 100%;
+                .bidchartBox{
+                    height: 100%;
+                    width: 100%;
+                    background: gray;
+                }
+            }
+        }
+        .rightdiv{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            width: 42.5vw;
+            height: 100%;
+            margin-left: 5vw;
+            .unacceptedBox{
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: center;
+                height: 37.5vh;
+                width: 100%;
+                .bidsBox{
+                    height: 100%;
+                    width: 100%;
+                    background: gray;
+                }
+        }
+    }
 }
