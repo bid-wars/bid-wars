@@ -4,7 +4,8 @@ import Dropzone from 'react-dropzone'
 import randomstring from 'randomstring'
 import {GridLoader} from 'react-spinners'
 import { AsYouType } from 'libphonenumber-js'
-import image from '../image/image.svg'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {faImage} from '@fortawesome/free-solid-svg-icons'
 
  class Register extends Component {
     state = {
@@ -131,13 +132,16 @@ import image from '../image/image.svg'
                         <input {...getInputProps()} />
                         {this.state.isUploading ? 
                         <GridLoader
+                        size={35}
                         color={'#34D1BF'} /> : this.state.image ? 
-                        <div>
+                        <div className='logoUploaded'>
                             <img src={this.state.image} />
                         </div> :
                         <div className='iconDiv'>
-                          <i class="far fa-image fa-7x"
-                        style={{color: '#34d1bf'}}/>
+                          <FontAwesomeIcon 
+                          icon={faImage}
+                          size='7x'
+                        color='#34d1bf'/>
                         <p>Add Company Logo</p>
                         </div> }
                     </div>
