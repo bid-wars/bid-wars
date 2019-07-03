@@ -8,7 +8,7 @@ const s3_ctrl = require('../controllers/s3Controller');
 const s3Router = express.Router();
 
 // ROUTES
-s3Router.post('/sign', s3_ctrl.awsCall); // Makes S3 / AWS CALL
+s3Router.get('/sign', s3_ctrl.awsCall); // Makes S3 / AWS CALL
 
 // EXPORT ROUTER
 module.exports = {

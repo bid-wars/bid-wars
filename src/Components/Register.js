@@ -6,18 +6,21 @@ import {GridLoader} from 'react-spinners'
 import { AsYouType } from 'libphonenumber-js'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faImage} from '@fortawesome/free-solid-svg-icons'
+import {connect} from 'react-redux'
+import {addUserInfo} from '../redux/ownerReducer'
 
  class Register extends Component {
     state = {
-        first_name: '',
-        last_name: '',
-        company_name: '',
+        firstname: '',
+        lastname: '',
+        companyName: '',
         website: '',
-        phone1: '',
-        phone2: '',
+        phone: '',
         isUploading: false,
-        image: '',
-        role: 'user'
+        logo: '',
+        role: 'user',
+        email: '',
+        password: '',
     }
     handleChange = (e) =>{
         
@@ -25,18 +28,13 @@ import {faImage} from '@fortawesome/free-solid-svg-icons'
             [e.target.name]: e.target.value,
         })
     }
-    handleChangePhone1 = (e) => {
+    handleChangePhone = (e) => {
         const phone1 = new AsYouType('US').input(e.target.value)
         this.setState({
-            phone1: phone1
+            phone: phone1
         })
     }
-    handleChangePhone2 = (e) => {
-        const phone2 = new AsYouType('US').input(e.target.value)
-        this.setState({
-            phone2: phone2
-        })
-    }
+
     handleSelect = (e) => {
         this.setState({
             role: e.target.value
@@ -45,30 +43,37 @@ import {faImage} from '@fortawesome/free-solid-svg-icons'
 
     handleSubmit = (e) =>{
         e.preventDefault()
-        
-
+      
+        addUserInfo({
+            firstname: this.state.firstname,
+            lastname: this.state.lastname,
+            companyName: this.state.companyName,
+            website: this.state.website,
+            phone: this.state.phone,
+            email:  this.state.email,
+            logo: this.state.logo,
+            role: this.state.role
+        })
         // axios.post('/auth/register',{
-        //     first_name: this.state.first_name,
-        //     last_name: this.state.last_name,
-        //     company_name: this.state.company_name,
+        //     firstname: this.state.first_name,
+        //     lastname: this.state.last_name,
+        //     companyName: this.state.company_name,
         //     website: this.state.website,
-        //     phone1: this.state.phone1,
-        //     phone2: this.state.phone2,
+        //     phone: this.state.phone,
         //     email:  this.state.email,
-        //     image: this.state.image,
+        //     logo: this.state.logo,
         //     role: this.state.role
 
         // })
      
         this.setState({
-            first_name: '',
-            last_name: '',
-            company_name: '',
+            firstname: '',
+            lastname: '',
+            companyName: '',
             website: '',
-            phone1: '',
-            phone2: '',
+            phone: '',
             email:  '',
-            image: '',
+            logo: '',
             password: ''
         })
         
@@ -102,7 +107,7 @@ import {faImage} from '@fortawesome/free-solid-svg-icons'
             axios.put(signedRequest, file, header)
             .then((res) => {
                 this.setState({
-                    image: url,
+                    logo: url,
                     isUploading: false
                 })
                 
@@ -111,7 +116,7 @@ import {faImage} from '@fortawesome/free-solid-svg-icons'
 
 
     render() {
-        console.log(this.state.phone1, this.state.phone2)
+        console.log(this.state.password)
         return (
             <div>
                 <div className='RegisterForm'>
@@ -133,16 +138,16 @@ import {faImage} from '@fortawesome/free-solid-svg-icons'
                         {this.state.isUploading ? 
                         <GridLoader
                         size={35}
-                        color={'#34D1BF'} /> : this.state.image ? 
+                        color={'#34D1BF'} /> : this.state.logo ? 
                         <div className='logoUploaded'>
-                            <img src={this.state.image} />
+                            <img src={this.state.logo} />
                         </div> :
                         <div className='iconDiv'>
                           <FontAwesomeIcon 
                           icon={faImage}
                           size='7x'
                         color='#34d1bf'/>
-                        <p>Add Company Logo</p>
+                        <p>Click here to add company logo</p>
                         </div> }
                     </div>
                 )}
@@ -155,15 +160,15 @@ import {faImage} from '@fortawesome/free-solid-svg-icons'
                         <span>
                             <h4>First Name:</h4>
                             <input type="text"
-                            name='first_name'
-                            value={this.state.first_name}
+                            name='firstname'
+                            value={this.state.firstname}
                             onChange={this.handleChange}/>
                         </span>
                         <span>
                             <h4>Last Name:</h4>
                             <input type="text"
-                            name='last_name'
-                            value={this.state.last_name}
+                            name='lastname'
+                            value={this.state.lastname}
                             onChange={this.handleChange}/>
                         </span>
                         {this.state.role === 'owner' ?
@@ -171,8 +176,8 @@ import {faImage} from '@fortawesome/free-solid-svg-icons'
                         <span>
                             <h4>Company Name:</h4>
                             <input type="text"
-                            name='company_name'
-                            value={this.state.company_name}
+                            name='companyName'
+                            value={this.state.companyName}
                             onChange={this.handleChange}/>
                         </span>
                         <span>
@@ -185,18 +190,11 @@ import {faImage} from '@fortawesome/free-solid-svg-icons'
                         <span>
                             <h4>Phone:</h4>
                             <input type="tel"
-                            name='phone1'
-                            value={this.state.phone1}
-                            onChange={this.handleChangePhone1}/>
+                            name='phone'
+                            value={this.state.phone}
+                            onChange={this.handleChangePhone}/>
                         </span>
-                        {this.state.role === 'owner' ? <>
-                        <span>
-                            <h4>Phone 2:</h4>
-                            <input type="tel"
-                            name='phone2'
-                            value={this.state.phone2}
-                            onChange={this.handleChangePhone2}/>
-                        </span> </> : null }
+
                         <h2>Login info</h2>
                         <span>
                             <h4>Email:</h4>
@@ -219,4 +217,7 @@ import {faImage} from '@fortawesome/free-solid-svg-icons'
         )
     }
 }
-export default Register
+function mapStateToProps(state){
+    return state.ownerReducer
+}
+export default connect(mapStateToProps, {addUserInfo})(Register)

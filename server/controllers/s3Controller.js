@@ -5,6 +5,7 @@ const {S3_BUCKET,
  
 module.exports = {
     awsCall: (req, res) => {
+      console.log('here')
 
         aws.config = {
             region: 'us-west-1',
