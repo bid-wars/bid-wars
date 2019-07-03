@@ -1,31 +1,21 @@
 // SERVER PACKAGES
 require('dotenv').config();
 const express = require('express'),
-      session = require('express-session'),
-      massive = require('massive'),
-      socket = require('socket.io');
+      massive = require('massive');
 const {addRoutes} = require('./routers/routers');
 const {socketConnection} = require('./sockets/setup.socket');
-const {CONNECTION_STRING, SERVER_PORT, SESSION_SECRET} = process.env;
+const {CONNECTION_STRING, SERVER_PORT} = process.env;
 
-// SERVER
+// EXPRESS SETUP
 const app = express();
 
-app.use(express.json());
-app.use(session({
-    secret: SESSION_SECRET,
-    saveUninitialized: false,
-    resave: false,
-    cookie: {
-        maxAge: 1000 * 60 * 60,
-    }
-}))
-
+// DATABASE CONNECTION
 massive(CONNECTION_STRING).then((database) => {
     app.set('db', database);
     console.log('Database connected!');
 })
 
+// SEVER SETUP
 const server = app.listen(SERVER_PORT, () => {
     console.log(`Server listening on ${SERVER_PORT}!`);
 });
