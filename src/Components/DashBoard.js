@@ -42,6 +42,8 @@ import {faUserCog, faClipboardList} from '@fortawesome/free-solid-svg-icons'
                         <FontAwesomeIcon
                         icon={faClipboardList}
                         size='3x'
+                        color='#34d1bf'
+                        
                         />
                         <h1>Jobber</h1>
                     </div>
