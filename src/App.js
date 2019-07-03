@@ -1,15 +1,14 @@
 import React from 'react';
-import Register from './Components/Register'
-import Login from './Components/LogInForm'
-import DashBoard from './Components/DashBoard'
+import Home from './Components/Home'
 import {HashRouter} from 'react-router-dom'
+import routes from './routes'
 
 
 function App() {
 
   return (
     <HashRouter >
-      <DashBoard/>
+      {routes}
     </HashRouter>
   );
 }

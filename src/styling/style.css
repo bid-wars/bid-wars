@@ -98,6 +98,15 @@
           flex-direction: column;
 }
 
+.RegisterForm select {
+  margin-bottom: 3vh;
+}
+
+.RegisterForm .logoUploaded img {
+  max-width: 10vw;
+  max-height: 10vh;
+}
+
 .RegisterForm .iconDiv {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -112,15 +121,14 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-}
-
-.RegisterForm .iconDiv img {
-  color: #34d1bf;
+  cursor: pointer;
 }
 
 .RegisterForm h1 {
   color: #4d4d4d;
   font-family: "Roboto", sans-serif;
+  font-size: 2.2em;
+  margin: 5vh;
 }
 
 .RegisterForm form {
@@ -210,8 +218,28 @@
   color: #e8e8e8;
 }
 
+.dashboard header .title h1 {
+  text-transform: capitalize;
+  font-size: 2em;
+}
+
 .dashboard header .logo {
   margin-left: 2vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.dashboard header .logo h1 {
+  margin-left: 1vw;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.5em;
 }
 
 .dashboard header .settings {
@@ -225,10 +253,18 @@
       -ms-flex-align: center;
           align-items: center;
   margin-right: 2vw;
+  text-decoration: none;
 }
 
-.dashboard header .settings h4 {
-  margin-left: 2vw;
+.dashboard header .settings .link {
+  margin: 0 2vw;
+  text-decoration: none;
+}
+
+.dashboard header .settings .link h4 {
+  text-decoration: none;
+  font-family: "Roboto", sans-serif;
+  color: #e8e8e8;
 }
 
 .dashboard main {
@@ -294,7 +330,7 @@
   margin: 5vh 1vw;
 }
 
-.dashboard main nav ul li, .dashboard main nav ul Link {
+.dashboard main nav ul li {
   font-family: "Roboto", sans-serif;
   color: #e8e8e8;
   text-decoration: none;
@@ -304,10 +340,6 @@
   -webkit-transition: all .5s ease-in-out;
   transition: all .5s ease-in-out;
   cursor: pointer;
-}
-
-.dashboard main nav ul Link:visited {
-  text-decoration: none;
 }
 
 .dashboard main nav ul .selected {
