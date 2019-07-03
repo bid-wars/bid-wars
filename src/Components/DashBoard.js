@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import DashBoardRouter from './dashBoardRouter'
 import {Link} from 'react-router-dom'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {faUserCog, faClipboardList} from '@fortawesome/free-solid-svg-icons'
 
  class DashBoard extends Component {
     state ={
@@ -10,10 +12,11 @@ import {Link} from 'react-router-dom'
         reports: 'notactive',
         schedule: 'notactive',
         employees: 'notactive',
-        nurture: 'notactive',
-        
+        nurture: 'notactive'
+       
     }
     handleActive = (e) =>{
+ 
         let current = this.state.active
         if(e === current){
             return
@@ -36,53 +39,65 @@ import {Link} from 'react-router-dom'
             <div className='dashboard'>
                 <header>
                     <div className='logo'>
-                        <h2>Jobber</h2>
+                        <FontAwesomeIcon
+                        icon={faClipboardList}
+                        size='3x'
+                        />
+                        <h1>Jobber</h1>
                     </div>
-                    <div className='dashboard'>
-                        <h1>Dashboard</h1>
+                    <div className='title'>
+                        <h1>{this.state.active}</h1>
                     </div>
                     <div className='settings'>
                         <h4>company name</h4>
-                        <h4>settings</h4>
+                        <Link className='link'
+                        to='/dashboard/settings'>
+                            <FontAwesomeIcon 
+                            icon={faUserCog}
+                            color='#F9F9F9'
+                            onClick={() => this.handleActive('settings')} 
+                            />
+                        </Link>
                     </div>
                 </header>
                 <main>
                     <nav>
                         <ul>
-                            <Link to='/' style={{ textDecoration: 'none' }}>
+                            <Link to='/dashboard' style={{ textDecoration: 'none' }}>
                                 <li onClick={() => this.handleActive('dashboard')} 
                                 className={this.state.dashboard}>
                                 Dashboard</li>
                             </Link>
-                            <Link to='/bids' style={{ textDecoration: 'none' }}>
+                            <Link to='/dashboard/bids' style={{ textDecoration: 'none' }}>
                                 <li onClick={() => this.handleActive('bids')}
                                 className={this.state.bids}
                                 >Bids</li>
                             </Link>
-                            <Link to='/reports' style={{ textDecoration: 'none' }}>
+                            <Link to='/dashboard/reports' style={{ textDecoration: 'none' }}>
                                 <li onClick={() => this.handleActive('reports')}
                                 className={this.state.reports}
                                 >Reports</li>
                             </Link>
-                            <Link to='/schedule' style={{ textDecoration: 'none' }}>
+                            <Link to='/dashboard/schedule' style={{ textDecoration: 'none' }}>
                                 <li onClick={() => this.handleActive('schedule')}
                                 className={this.state.schedule}>    
                                 Schedule</li>
                             </Link>
-                            <Link to='/employees' style={{ textDecoration: 'none' }}>
+                            <Link to='/dashboard/employees' style={{ textDecoration: 'none' }}>
                                 <li onClick={() => this.handleActive('employees')}
                                 className={this.state.employees}
                                 >Manage Employees</li>
                             </Link>
-                            <Link to='/nurture' style={{ textDecoration: 'none' }}>
+                            <Link to='/dashboard/nurture' style={{ textDecoration: 'none' }}>
                                 <li onClick={() => this.handleActive('nurture')}
                                 className={this.state.nurture}
                                 >Nurture Bids</li>
                             </Link>
                         </ul>
                         <div className='bottombuttons'>
-                        <Link to='/newbid' style={{ textDecoration: 'none' }}>   
-                            <button>Create new bid</button>
+                        <Link to='/dashboard/newbid' style={{ textDecoration: 'none' }}>   
+                            <button onClick={() => this.handleActive('new bid')} 
+                            >Create new bid</button>
                         </Link>
                         <button className='logout'>Log out</button>
                         </div>

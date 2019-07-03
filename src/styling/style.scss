@@ -72,18 +72,30 @@ $darkBackgroundColor: rgb(36, 36, 44);
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    select{
+        margin-bottom: 3vh;
+    }
+    .logoUploaded{
+        img{
+        
+            max-width: 10vw;
+            max-height: 10vh;
+         
+        }
+    }
     .iconDiv{
+       
         display: flex;
         justify-content: center;
         align-items: center;
         flex-direction: column;
-        img{
-            color: #34d1bf;
-        }
+        cursor: pointer;
     }
     h1{
-        color:rgb(77, 77, 77);
-        font-family: $font;  
+        color: $fontColorDark;
+        font-family: $font;
+        font-size: 2.2em;
+        margin: 5vh;  
     }
 
         form{
@@ -147,17 +159,40 @@ $darkBackgroundColor: rgb(36, 36, 44);
         height: 10vh;
         width: 100%;
         color: $fontColorLight;
+        .title{
+            h1{
+               text-transform: capitalize; 
+               font-size: 2em;
+            }
+        }
         .logo{
             margin-left: 2vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            h1{
+                margin-left: 1vw;
+                font-family: $font;
+                font-size: 1.5em;
+            }
         }
         .settings{
             display: flex;
             justify-content: space-between;
             align-items: center;
             margin-right: 2vw;
-            h4{
-                margin-left: 2vw; 
+            text-decoration: none;
+            
+            .link{
+                margin: 0 2vw; 
+                text-decoration: none;
+                h4{
+                    text-decoration: none;
+                    font-family: $font;
+                    color: $fontColorLight;
+                }
             }
+
         }
     }
     main{
@@ -197,7 +232,7 @@ $darkBackgroundColor: rgb(36, 36, 44);
             ul{
                 width: 100%;
                 margin: 5vh 1vw;
-                li, Link{
+                li{
                     font-family: $font;
                     color: $fontColorLight;
                     text-decoration: none;
@@ -208,9 +243,7 @@ $darkBackgroundColor: rgb(36, 36, 44);
                     cursor: pointer;
                     
                 }
-                Link:visited{
-                    text-decoration: none;
-                }
+
                 .selected{
                     background: $green;
                     color: $darkBackgroundColor;
