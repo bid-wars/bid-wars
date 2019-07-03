@@ -30,6 +30,7 @@ module.exports = {
             lastname,
             role
         });
+        console.log(createdUser)
         const createdPhone = await db.auth.register_phone({
             phone,
             id: createdUser[0].id

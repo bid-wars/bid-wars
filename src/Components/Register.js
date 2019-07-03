@@ -44,7 +44,8 @@ import {addUserInfo} from '../redux/ownerReducer'
     handleSubmit = (e) =>{
         e.preventDefault()
       
-        addUserInfo({
+
+        axios.post('/auth/register',{
             firstname: this.state.firstname,
             lastname: this.state.lastname,
             companyName: this.state.companyName,
@@ -52,19 +53,10 @@ import {addUserInfo} from '../redux/ownerReducer'
             phone: this.state.phone,
             email:  this.state.email,
             logo: this.state.logo,
-            role: this.state.role
-        })
-        // axios.post('/auth/register',{
-        //     firstname: this.state.first_name,
-        //     lastname: this.state.last_name,
-        //     companyName: this.state.company_name,
-        //     website: this.state.website,
-        //     phone: this.state.phone,
-        //     email:  this.state.email,
-        //     logo: this.state.logo,
-        //     role: this.state.role
+            role: this.state.role,
+            password: this.state.password
 
-        // })
+        }).then(res => console.log(res.data))
      
         this.setState({
             firstname: '',
