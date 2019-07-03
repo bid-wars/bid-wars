@@ -1,4 +1,5 @@
 INSERT INTO phones
 (number, external_id)
 VALUES
-(${phone}, ${id});
+(${phone}, ${id})
+RETURNING *;
