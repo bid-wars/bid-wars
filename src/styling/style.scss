@@ -208,10 +208,9 @@ $darkBackgroundColor: rgb(36, 36, 44);
             height: 90vh;
             background: $platinum;
             .reportsTypePlaceholder{
-                h1 {
-                    color: red;
-                }
+                
                 .reportsType {
+                    margin: 1em 0;
                     display: flex;
                     flex-direction: row;
                     flex-wrap: nowrap;
@@ -222,6 +221,11 @@ $darkBackgroundColor: rgb(36, 36, 44);
                         margin-left: 1vw;
                         font-family: $font;
                         font-size: 1.5em;
+                    }
+                    select{
+                        margin-left: 1em;
+                        padding: .5em;
+                        font-size: 1em;
                     }
                 }
             }
@@ -365,17 +369,17 @@ $darkBackgroundColor: rgb(36, 36, 44);
         }
     }
 }
-.reportsType {
-    display: flex;
-	flex-direction: row;
-	flex-wrap: nowrap;
-	justify-content: flex-start;
-	align-items: baseline;
-	align-content: stretch;
-    h2 {
-        margin-left: 1vw;
-        font-family: $font;
-        font-size: 1.5em;
-    }
-}
+// .reportsType {
+//     display: flex;
+// 	flex-direction: row;
+// 	flex-wrap: nowrap;
+// 	justify-content: flex-start;
+// 	align-items: baseline;
+// 	align-content: stretch;
+//     h2 {
+//         margin-left: 1vw;
+//         font-family: $font;
+//         font-size: 1.5em;
+//     }
+// }
 
