@@ -1,3 +1,16 @@
+
+@import url(c:\Users\Mike\Desktop\DevMnt\Group project\bid-wars\node_modules\@syncfusion\ej2-base\styles\material.css);
+@import url(c:\Users\Mike\Desktop\DevMnt\Group project\bid-wars\node_modules\@syncfusion\ej2-buttons\styles\material.css);
+@import url(c:\Users\Mike\Desktop\DevMnt\Group project\bid-wars\node_modules\@syncfusion\ej2-calendars\styles\material.css);
+@import url(c:\Users\Mike\Desktop\DevMnt\Group project\bid-wars\node_modules\@syncfusion\ej2-dropdowns\styles\material.css);
+@import url(c:\Users\Mike\Desktop\DevMnt\Group project\bid-wars\node_modules\@syncfusion\ej2-inputs\styles\material.css);
+@import url(c:\Users\Mike\Desktop\DevMnt\Group project\bid-wars\node_modules\@syncfusion\ej2-lists\styles\material.css);
+@import url(c:\Users\Mike\Desktop\DevMnt\Group project\bid-wars\node_modules\@syncfusion\ej2-navigations\styles\material.css);
+@import url(c:\Users\Mike\Desktop\DevMnt\Group project\bid-wars\node_modules\@syncfusion\ej2-popups\styles\material.css);
+@import url(c:\Users\Mike\Desktop\DevMnt\Group project\bid-wars\node_modules\@syncfusion\ej2-buttons\styles\material.css);
+@import url(c:\Users\Mike\Desktop\DevMnt\Group project\bid-wars\node_modules\@syncfusion\ej2-react-schedule\styles\material.css);
+
+
 .LogInForm {
   border: #4d4d4d solid 1px;
   border-radius: 5px;
@@ -284,6 +297,7 @@
   background: #e8e8e8;
 }
 
+
 .dashboard main .routedisplay .reportsTypePlaceholder .reportsType {
   margin: 1em 0;
   display: -webkit-box;
@@ -311,11 +325,6 @@
   font-size: 1.5em;
 }
 
-.dashboard main .routedisplay .reportsTypePlaceholder .reportsType select {
-  margin-left: 1em;
-  padding: .5em;
-  font-size: 1em;
-}
 
 .dashboard main nav {
   display: -webkit-box;
@@ -476,7 +485,7 @@
 .mainDash .bottom .leftdiv .schedule .scheduleBox {
   height: 100%;
   width: 100%;
-  background: gray;
+  overflow: auto;
 }
 
 .mainDash .bottom .leftdiv .bidchart {
@@ -542,4 +551,5 @@
   width: 100%;
   background: gray;
 }
+
 /*# sourceMappingURL=style.css.map */
