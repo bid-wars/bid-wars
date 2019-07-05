@@ -1,63 +1,43 @@
 import React, { Component } from 'react'
+import {connect} from 'react-redux'
+import {updateNewDate, deleteDay, updateDate} from '../../redux/ownerReducer'
 import { ScheduleComponent, Day, Week, WorkWeek, Month, Inject, ViewsDirective, ViewDirective,  } from '@syncfusion/ej2-react-schedule';
-import { ButtonComponent } from '@syncfusion/ej2-react-buttons';
 
-export default class Schedule extends Component {
+
+ class Schedule extends Component {
     constructor(){
         super(...arguments)
           this.state = {
-            data: [
-              {
-              Id: 1,
-              Subject: 'Meeting - 1',
-              StartTime: new Date(2019, 6, 5, 10, 0),
-              EndTime: new Date(2019, 6, 5, 10, 0),
-              IsAllDay: false,
-              Status: 'Completed',
-              Priority: 'High',
-              Description: 'ring the door 10 times then spin',
-              Location: '5689 s 1280 w, some city'
-              },
-              {
-              Id: 2,
-              Subject: 'Fix the thing',
-              StartTime: new Date(2019, 6, 5, 12, 0),
-              EndTime: new Date(2019, 6, 5, 12, 0),
-              IsAllDay: false,
-              Status: 'Completed',
-              Priority: 'High'
-              }
-          ]
+            data: this.props.schedule
+        
           }
         }
-        onAddClick() {
-          let Data = [{
-                  Id: 1,
-                  Subject: 'Conference',
-                  StartTime: new Date(2019, 6, 6, 10, 0),
-                  EndTime: new Date(2019, 6, 6, 10, 0),
-                  IsAllDay: false
-              }, {
-                  Id: 2,
-                  Subject: 'Meeting',
-                  StartTime: new Date(2019, 6, 6, 11, 0),
-                  EndTime: new Date(2019, 6, 6, 11, 0),
-                  IsAllDay: false
-              }];
-          this.scheduleObj.addEvent(Data);
-          this.buttonObj.element.setAttribute('disabled', 'true');
+
+      onCreate = (args) => {
+
+       if(args.requestType === 'eventCreated'){
+         return this.props.updateNewDate(args.data)
+       }else if(args.requestType === 'eventRemoved'){
+         return this.props.deleteDay(args.data[0].Id)
+       }else if(args.requestType === 'eventChanged'){
+         return this.props.updateDate(args.data)      
+       }
+
       }
     render() {
+      console.log(this.props.schedule)
         return (
-            <div>
-                <ButtonComponent id='add' title='Add' ref={t => this.buttonObj = t} onClick={this.onAddClick.bind(this)}>Add</ButtonComponent>
+            <div className='schedule'>
+ 
           <ScheduleComponent
+           popupOpen={this.onPopUpOpen}
+           actionComplete={this.onCreate}
            ref={t => this.scheduleObj = t}
            currentView={'Week'} 
            endHour={'21:00'}
-           startHour={'6:00'}
+           startHour={'8:00'}
            timeScale={{ enable: true, interval: 60, slotCount: 2 }}
-          //  selectedDate= {new Date(2019, 7, 5, 6, 0 )} 
+
            eventSettings={ { 
              dataSource: this.state.data,
              fields: {
@@ -69,7 +49,7 @@ export default class Schedule extends Component {
           }
           } }
           >
-                            <ViewsDirective>
+                  <ViewsDirective>
                     <ViewDirective option='Day'/>
                     <ViewDirective option='Week'/>
                     <ViewDirective option='WorkWeek'/>
@@ -81,3 +61,8 @@ export default class Schedule extends Component {
         )
     }
 }
+function mapStateToProps(state){
+
+  return state
+}
+export default connect(mapStateToProps, {updateNewDate, deleteDay, updateDate})(Schedule)

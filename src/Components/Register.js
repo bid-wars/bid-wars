@@ -56,7 +56,7 @@ import {addUserInfo} from '../redux/ownerReducer'
             role: this.state.role,
             password: this.state.password
 
-        }).then(res => console.log(res.data))
+        }).then(res => this.props.addUserInfo(res.data))
      
         this.setState({
             firstname: '',
@@ -108,7 +108,7 @@ import {addUserInfo} from '../redux/ownerReducer'
 
 
     render() {
-        console.log(this.state.password)
+ 
         return (
             <div>
                 <div className='RegisterForm'>

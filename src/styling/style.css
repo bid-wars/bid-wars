@@ -1,16 +1,13 @@
-@import "../../node_modules/@syncfusion/ej2-base/styles/material.css";
-@import "../../node_modules/@syncfusion/ej2-buttons/styles/material.css";
-@import "../../node_modules/@syncfusion/ej2-calendars/styles/material.css";
-@import "../../node_modules/@syncfusion/ej2-dropdowns/styles/material.css";
-@import "../../node_modules/@syncfusion/ej2-inputs/styles/material.css";
-@import "../../node_modules/@syncfusion/ej2-lists/styles/material.css";
-@import "../../node_modules/@syncfusion/ej2-navigations/styles/material.css";
-@import "../../node_modules/@syncfusion/ej2-popups/styles/material.css";
-@import "../../node_modules/@syncfusion/ej2-buttons/styles/material.css";
-@import "../../node_modules/@syncfusion/ej2-react-schedule/styles/material.css";
-
-
-
+@import url(c:\Users\Mike\Desktop\DevMnt\Group project\bid-wars\node_modules\@syncfusion\ej2-base\styles\material.css);
+@import url(c:\Users\Mike\Desktop\DevMnt\Group project\bid-wars\node_modules\@syncfusion\ej2-buttons\styles\material.css);
+@import url(c:\Users\Mike\Desktop\DevMnt\Group project\bid-wars\node_modules\@syncfusion\ej2-calendars\styles\material.css);
+@import url(c:\Users\Mike\Desktop\DevMnt\Group project\bid-wars\node_modules\@syncfusion\ej2-dropdowns\styles\material.css);
+@import url(c:\Users\Mike\Desktop\DevMnt\Group project\bid-wars\node_modules\@syncfusion\ej2-inputs\styles\material.css);
+@import url(c:\Users\Mike\Desktop\DevMnt\Group project\bid-wars\node_modules\@syncfusion\ej2-lists\styles\material.css);
+@import url(c:\Users\Mike\Desktop\DevMnt\Group project\bid-wars\node_modules\@syncfusion\ej2-navigations\styles\material.css);
+@import url(c:\Users\Mike\Desktop\DevMnt\Group project\bid-wars\node_modules\@syncfusion\ej2-popups\styles\material.css);
+@import url(c:\Users\Mike\Desktop\DevMnt\Group project\bid-wars\node_modules\@syncfusion\ej2-buttons\styles\material.css);
+@import url(c:\Users\Mike\Desktop\DevMnt\Group project\bid-wars\node_modules\@syncfusion\ej2-react-schedule\styles\material.css);
 .LogInForm {
   border: #4d4d4d solid 1px;
   border-radius: 5px;
@@ -297,6 +294,36 @@
   background: #e8e8e8;
 }
 
+.dashboard main .routedisplay .reportsTypePlaceholder h1 {
+  color: red;
+}
+
+.dashboard main .routedisplay .reportsTypePlaceholder .reportsType {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+  -ms-flex-line-pack: stretch;
+      align-content: stretch;
+}
+
+.dashboard main .routedisplay .reportsTypePlaceholder .reportsType h2 {
+  margin-left: 1vw;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.5em;
+}
+
 .dashboard main nav {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -456,7 +483,7 @@
 .mainDash .bottom .leftdiv .schedule .scheduleBox {
   height: 100%;
   width: 100%;
-  background: gray;
+  overflow: auto;
 }
 
 .mainDash .bottom .leftdiv .bidchart {
@@ -497,5 +524,62 @@
   width: 42.5vw;
   height: 100%;
   margin-left: 5vw;
+}
+
+.mainDash .bottom .rightdiv .unacceptedBox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 37.5vh;
+  width: 100%;
+}
+
+.mainDash .bottom .rightdiv .unacceptedBox .bidsBox {
+  height: 100%;
+  width: 100%;
+  background: gray;
+}
+
+.reportsType {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+  -ms-flex-line-pack: stretch;
+      align-content: stretch;
+}
+
+.reportsType h2 {
+  margin-left: 1vw;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.5em;
+}
+
+.schedule {
+  height: 100%;
+  width: 100%;
+  overflow: scroll;
+  overflow-x: hidden;
 }
 /*# sourceMappingURL=style.css.map */

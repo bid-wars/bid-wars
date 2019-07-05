@@ -13,21 +13,44 @@ const initialState = {
 }
 
     const UPDATE_USER = 'UPDATE_USER'
+    const UPDATE_NEW_DATE = 'UPDATE_NEW_DATE'
+    const DELETE_DAY = 'DELETE_DAY'
+    const UPDATE_DATE = 'UPDATE_DATE'
+   
 
     export function addUserInfo(user){
-        console.log(user)
         return{
             type: UPDATE_USER,
             payload: user
         }
     }
+    export function updateNewDate(newDate){
+            return {
+                type: UPDATE_NEW_DATE,
+                payload: newDate
+            }
+        }
+    export function deleteDay(id){
+            return {
+                type: DELETE_DAY,
+                payload: id
+            }
+    }
+    export function updateDate(info){
+            return {
+                type: UPDATE_DATE,
+                payload: info
+            }
+    }
+    
 
-function ownerReducer(state = initialState, action){
+
+function reducer (state = initialState, action){
     switch(action.type){
         case UPDATE_USER:
-            const {first_name,
-            last_name,
-            company_name,
+            const {firstname,
+            lastname,
+            companyName,
             website,
             phone,
             email,
@@ -37,9 +60,9 @@ function ownerReducer(state = initialState, action){
             schedule,
             role    
             } = action.payload
-            return {first_name,
-                last_name,
-                company_name,
+            return {firstname,
+                lastname,
+                companyName,
                 website,
                 phone,
                 email,
@@ -48,9 +71,70 @@ function ownerReducer(state = initialState, action){
                 bids,
                 schedule,
                 role}
-        default: return state
+                
+        case UPDATE_NEW_DATE:
+          
+                let {
+                    Subject,
+                    Description,
+                    Location,
+                    StartTime,
+                    EndTime,
+                    Id
+                } = action.payload
+                return {
+                    ...state,
+                    schedule: [...state.schedule, {
+                        Subject,
+                        Description,
+                        Location,
+                        StartTime,
+                        EndTime,
+                        Id
+                    }]
+                }
+        case DELETE_DAY:
+         
+               let find = state.schedule.map((day, i) => {
+                   
+                   if(day.Id === action.payload){
+                        state.schedule.splice(i,1)
+                   }
+               })
+               return {...state}
+                
+            case UPDATE_DATE:
+                   
+                    let finding = state.schedule.map((day, i) => {
+                   
+                        if(day.Id === action.payload.Id){
+                             let {
+                                Subject,
+                                Description,
+                                Location,
+                                StartTime,
+                                EndTime,
+                                Id
+                            } = action.payload
+                         
+                            state.schedule[i] = {
+                                Subject,
+                                Description,
+                                Location,
+                                StartTime,
+                                EndTime,
+                                Id
+                            }
+                        }
+                    })
+                    return {...state}
+                
+                
+                
+        default:
+             return state
     }
     
 }
 
-export default ownerReducer
+export default reducer
