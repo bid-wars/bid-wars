@@ -2,15 +2,15 @@ module.exports = {
     open30: async (req, res) => {
         const db = req.app.get('db');
         const {id} = req.session.user;
-        if (!id[0]) return res.status(401).send('Unauthorized access, please log in');
+        if (!id) return res.status(401).send('Unauthorized access, please log in');
         const {date} = req.body;
         const now = new Date (date);
         const nowMS = now.getTime();
         const thirty = (1000*60*60*24*30);
-        const past = nowMS - thirty;
+        let past = nowMS - thirty;
         const bids = [];
         for (var i = 0; i < 30; i++) {
-            const bidCount = await db.bids.get_open30_bids({past});
+            const bidCount = await db.bids.get_open30_bids({id, past});
             past = past - thirty;
             bids.push(bidCount);
         }
