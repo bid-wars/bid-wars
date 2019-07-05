@@ -11,9 +11,8 @@ export default class Reports extends Component {
     render() {
         return (
             <div className='reportsTypePlaceholder'>
-                <h1>Hello world</h1>
                 <div className='reportsType'>
-                    <h2>Report Type: </h2>
+                    <h2>Report: </h2>
                     <select 
                         onChange={this.handleChartToDisplay}
                     >

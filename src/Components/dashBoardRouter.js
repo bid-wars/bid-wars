@@ -6,7 +6,7 @@ import Reports from './DashBoardComponents/Reports/Reports'
 import Schedule from './DashBoardComponents/Schedule'
 import Employees from './DashBoardComponents/Employees'
 import Nurture from './DashBoardComponents/Nurture'
-import NewBid from './DashBoardComponents/NewBid'
+import NewBid from './DashBoardComponents/NewBid/NewBid'
 import Settings from './DashBoardComponents/Settings';
 
 export default (
