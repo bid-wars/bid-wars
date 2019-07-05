@@ -1,35 +1,36 @@
 import React, {Component} from 'react'
 // import axios from 'axios'
 import {Line} from 'react-chartjs-2'
+import axios from 'axios'
 
 class BidsMadeVSClosed extends Component {
   constructor(){
     super()
     this.state = {
-      // bidHistory: []
+      open30: []
     }
   }
 
-  // componentDidMount(){
-  //   this.getMonthBidHistory();
-  // }
+  componentDidMount(){
+    this.getBidsMade();
+  }
 
-  // getMonthBidHistory(){
-  //   axios
-  //   .get(`/api/path/${this.props.id}`)
-  //   .then((res) => {
-  //     this.setState({
-  //       bidHistory: res.data
-  //     })
-  //   })
-  //   .catch((err) => 
-  //     {if(err) throw err}
-  //   )
-  // }
+  getBidsMade(){
+    let date = new Date();
+    axios
+    .post('/bids/open30', {date})
+    .then((res) => {
+      this.setState({
+        open30: res.data
+      })
+    })
+    .catch((err) => 
+      {if(err) throw err}
+    )
+  }
 
   render(){
-    console.log('hello world')
-    // const {bidHistory} = this.state
+    console.log('30 day history:', this.state.open30)
     return(
       <div className='size'>
         <div>
