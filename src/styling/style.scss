@@ -204,8 +204,25 @@ $darkBackgroundColor: rgb(36, 36, 44);
         .routedisplay{
             width: 85vw;
             height: 90vh;
-            
             background: $platinum;
+            .reportsTypePlaceholder{
+                h1 {
+                    color: red;
+                }
+                .reportsType {
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: nowrap;
+                    justify-content: flex-start;
+                    align-items: baseline;
+                    align-content: stretch;
+                    h2 {
+                        margin-left: 1vw;
+                        font-family: $font;
+                        font-size: 1.5em;
+                    }
+                }
+            }
         }
         nav{
             display: flex;
@@ -259,7 +276,6 @@ $darkBackgroundColor: rgb(36, 36, 44);
         }
         
     }
-
 }
 .mainDash{
     width: 100%;
@@ -343,6 +359,21 @@ $darkBackgroundColor: rgb(36, 36, 44);
                     width: 100%;
                     background: gray;
                 }
+            }
         }
     }
 }
+.reportsType {
+    display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: flex-start;
+	align-items: baseline;
+	align-content: stretch;
+    h2 {
+        margin-left: 1vw;
+        font-family: $font;
+        font-size: 1.5em;
+    }
+}
+
