@@ -6,6 +6,7 @@ const {S3_BUCKET,
 module.exports = {
     awsCall: (req, res) => {
 
+
         aws.config = {
             region: 'us-west-1',
             accessKeyId: AWS_ACCESS_KEY_ID,
