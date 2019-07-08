@@ -269,6 +269,6 @@ import {Link} from 'react-router-dom'
     }
 }
 function mapStateToProps(state){
-    return state.ownerReducer
+    return state
 }
 export default connect(mapStateToProps, {addUserInfo})(Register)

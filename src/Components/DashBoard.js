@@ -4,7 +4,7 @@ import {Link, withRouter} from 'react-router-dom'
 import {connect} from 'react-redux'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faUserCog, faPlusCircle} from '@fortawesome/free-solid-svg-icons'
-import logOut from '../redux/ownerReducer'
+import {logOut} from '../redux/ownerReducer'
 import axios from 'axios'
 
 
