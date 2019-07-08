@@ -8,6 +8,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faImage} from '@fortawesome/free-solid-svg-icons'
 import {connect} from 'react-redux'
 import {addUserInfo} from '../redux/ownerReducer'
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
+import TextField from 'material-ui/TextField'
+import {Link} from 'react-router-dom'
 
  class Register extends Component {
     state = {
@@ -18,7 +21,7 @@ import {addUserInfo} from '../redux/ownerReducer'
         phone: '',
         isUploading: false,
         logo: '',
-        role: 'user',
+        role: 'owner',
         email: '',
         password: '',
     }
@@ -108,17 +111,19 @@ import {addUserInfo} from '../redux/ownerReducer'
 
 
     render() {
- 
+    
         return (
-            <div>
+            <MuiThemeProvider>
+            <div className='RegisterPage'>
+            
                 <div className='RegisterForm'>
                     <h1>Let's get you set up</h1>
-                    <select name="role" onChange={this.handleSelect}>
+                    {/* <select name="role" onChange={this.handleSelect}>
                             <option value="user" name='user' selected >User</option>  
                             <option value="owner" name='owner'>Owner</option>
                             
 
-                        </select>
+                        </select> */}
                     {this.state.role === 'owner' ? 
                 <Dropzone
                 onDropAccepted={this.getSignedRequest}
@@ -137,7 +142,7 @@ import {addUserInfo} from '../redux/ownerReducer'
                         <div className='iconDiv'>
                           <FontAwesomeIcon 
                           icon={faImage}
-                          size='7x'
+                          size='6x'
                         color='#34d1bf'/>
                         <p>Click here to add company logo</p>
                         </div> }
@@ -146,66 +151,119 @@ import {addUserInfo} from '../redux/ownerReducer'
                  </Dropzone> : null}
                     <form onSubmit={this.handleSubmit}>
 
-                        
-
+                        <div className='mid'>
+                            <div className='left'>
                         <h2>Your Information</h2>
-                        <span>
-                            <h4>First Name:</h4>
-                            <input type="text"
+                            <TextField  
+                            type="text"
                             name='firstname'
+                          
+                            floatingLabelText='Firstname'
+                            floatingLabelFocusStyle={{color: '#4D4D4D',
+                            fontSize: '1.2em'   
+                            }}
+                            style={{color: '#4D4D4D',
+                            fontSize: '1.2em'    
+                            }}
                             value={this.state.firstname}
                             onChange={this.handleChange}/>
-                        </span>
-                        <span>
-                            <h4>Last Name:</h4>
-                            <input type="text"
+                            <TextField
+                            type="text"
                             name='lastname'
+                         
+                            floatingLabelText='Lastname'
+                            floatingLabelFocusStyle={{color: '#4D4D4D',
+                            fontSize: '1.2em'   
+                            }}
+                            style={{color: '#4D4D4D',
+                            fontSize: '1.2em'    
+                            }}
                             value={this.state.lastname}
                             onChange={this.handleChange}/>
-                        </span>
+                        
                         {this.state.role === 'owner' ?
                         <>
-                        <span>
-                            <h4>Company Name:</h4>
-                            <input type="text"
+                            <TextField 
+                            type="text"
                             name='companyName'
+                          
+                            floatingLabelText='Company Name'
+                            floatingLabelFocusStyle={{color: '#4D4D4D',
+                            fontSize: '1.2em'   
+                            }}
+                            style={{color: '#4D4D4D',
+                            fontSize: '1.2em'    
+                            }}
                             value={this.state.companyName}
                             onChange={this.handleChange}/>
-                        </span>
-                        <span>
-                            <h4>Company Website:</h4>
-                            <input type="text"
+                            <TextField 
+                            type="text"
                             name='website'
+                         
+                            floatingLabelText='Company Website'
+                            floatingLabelFocusStyle={{color: '#4D4D4D',
+                            fontSize: '1.2em'   
+                            }}
+                            style={{color: '#4D4D4D',
+                            fontSize: '1.2em'    
+                            }}
                             value={this.state.website}
                             onChange={this.handleChange}/>
-                        </span> </>: null }
-                        <span>
-                            <h4>Phone:</h4>
-                            <input type="tel"
+                         </>: null }
+                            <TextField 
+                            type="tel"
                             name='phone'
+                     
+                            floatingLabelText='Phone'
+                            floatingLabelFocusStyle={{color: '#4D4D4D',
+                            fontSize: '1.2em'   
+                            }}
+                            style={{color: '#4D4D4D',
+                            fontSize: '1.2em'    
+                            }}
                             value={this.state.phone}
                             onChange={this.handleChangePhone}/>
-                        </span>
-
+                     
+                     </div>    
+                     <div className='right'>
                         <h2>Login info</h2>
-                        <span>
-                            <h4>Email:</h4>
-                            <input type="email"
+                            <br/>
+                            <TextField 
+                            type="email"
                             name='email'
+                          
+                            floatingLabelText='Email'
+                            floatingLabelFocusStyle={{color: '#4D4D4D',
+                            fontSize: '1.2em'   
+                            }}
+                            style={{color: '#4D4D4D',
+                            fontSize: '1.2em'    
+                            }}
                             value={this.state.email}
                             onChange={this.handleChange}/>
-                        </span>
-                        <span>
-                            <h4>Password:</h4>
-                            <input type="password" 
+           
+                       
+                            <TextField 
+                            type="password" 
                             name='password'
+                    
+                            floatingLabelText='Password'
+                            floatingLabelFocusStyle={{color: '#4D4D4D',
+                            fontSize: '1.2em'   
+                            }}
+                            style={{color: '#4D4D4D',
+                            fontSize: '1.2em'    
+                            }}
                             value={this.state.password}
                             onChange={this.handleChange}/>
-                        </span>
-                        <button>Register</button>
+                     </div>
+                     </div>
+                        <Link className='link' to='/dashboard'>Register</Link>
+                        <Link className='link' to='/'>Back</Link>
                     </form>
                 </div>
             </div>
+            </MuiThemeProvider>
         )
     }
 }

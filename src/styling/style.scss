@@ -16,150 +16,169 @@ $platinum: #e8e8e8;
 $darkColor: rgb(77, 77, 77);
 $red: #ff4040;
 $font: 'Roboto', sans-serif;
+$otherFont: architects-daughter, sans-serif;
 $fontColorDark: rgb(77, 77, 77);
 $fontColorLight: #e8e8e8;
 $shadow:  6px 6px 6px -6px $darkColor;
 $darkBackgroundColor: rgb(36, 36, 44);
 
 
-
-.LogInForm{
-    border: $darkColor solid 1px;
-    border-radius: 5px;
-    box-shadow: $shadow;
-    width: 40vw;
-    height: 40vh;
-    background: $snow;
+.Loginpage{
     display: flex;
     justify-content: center;
     align-items: center;
-
-        form{
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-                button{
-                    background: $blue;
-                    color: $platinum;
-                    font-family: $font;
-                    border: none;
-                    padding: .5em 2em;
-                    box-shadow: $shadow;
-                }
-                span{
-                    width: 100%;
-                    display: flex;
-                    align-items: center;
-                    justify-content: space-between;
-                    h4{
-                        color:rgb(77, 77, 77);
+    height: 100vh;
+    width: 100vw;
+    background: url('https://images.unsplash.com/photo-1507898152394-7dd0e22fe102?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80');
+    background-size: cover;
+    .LogInForm{
+        border-radius: 5px;
+        box-shadow: $shadow;
+        width: 35vw;
+        height: 35vh;
+        background: rgb(255, 255, 255);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: 4vw;
+            form{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                    .link{
+                        background: $blue;
+                        color: $platinum;
                         font-family: $font;
-                    }
-                    input{
-                        height: 2vh;
-                        margin-left: 1em;
+                        font-size: 1.5em;
                         border: none;
-                        background: $snow;
-                        border-bottom: rgb(77, 77, 77) solid 1px;
-                        text-align: center;
-                        
-                    }
-                    input:focus{
-                        outline: 0;
-                        text-align: center;
-                    }
-                }    
-        }
+                        padding: .5em 2em;
+                        margin-top: 1em;
+                        box-shadow: $shadow;
+                        border-radius: 10px;
+                    }   
+            }
+    }
 }
-.RegisterForm{
-    border: $darkColor solid 1px;
-    border-radius: 5px;
-    box-shadow: $shadow;
-    width: 60vw;
-    height: 95vh;
-    background: $snow;
+.RegisterPage{
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-    select{
-        margin-bottom: 3vh;
-    }
-    .logoUploaded{
-        img{
-        
-            max-width: 10vw;
-            max-height: 10vh;
-         
-        }
-    }
-    .iconDiv{
-       
+    background: url('https://images.unsplash.com/photo-1517524285303-d6fc683dddf8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=675&q=80');
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+    .RegisterForm{
+
+        border-radius: 5px;
+        box-shadow: $shadow;
+        width: 60vw;
+        height: 95vh;
+        background: $snow;
         display: flex;
         justify-content: center;
         align-items: center;
         flex-direction: column;
-        cursor: pointer;
-    }
-    h1{
-        color: $fontColorDark;
-        font-family: $font;
-        font-size: 2.2em;
-        margin: 5vh;  
-    }
-
-        form{
-            width: 100%;
+        // select{
+        //     margin-bottom: 3vh;
+        // }
+        .logoUploaded{
+            img{
+                max-width: 10vw;
+                max-height: 10vh;
+            }
+        }
+        .iconDiv{
             display: flex;
-            flex-direction: column;
             justify-content: center;
             align-items: center;
-            
-                button{
-                    margin-top: 1em;                    
+            flex-direction: column;
+            cursor: pointer;
+        }
+        h1{
+            color: $fontColorDark;
+            font-family: $font;
+            font-size: 2.7em;
+            margin: 5vh;  
+            font-weight: bolder;
+        }
+    
+            form{
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                .mid{
+                    display: flex;
+                    justify-content: space-evenly;
+                    align-items: center;
+                    width: 100%;
+                    margin: 5vh 0;
+                    .left{
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                    }
+                    .right{
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                    }
+                }    
+                
+                
+                .link{
                     background: $blue;
                     color: $platinum;
                     font-family: $font;
+                    font-size: 1.5em;
                     border: none;
                     padding: .5em 2em;
+                    margin-top: 1em;
                     box-shadow: $shadow;
-                }
-                i{
-                    color: #3454D1;
-                }
-                h2{
-                    font-family: $font;
-                    color: $darkColor;
-                    margin-right: 30vw;
-                }
-                span{
-                    width: 45%;
-                    height: 5vh;
-                    display: flex;
-                    align-items: center;
-                    justify-content: space-between;
-                    h4{
-                        color:rgb(77, 77, 77);
+                    border-radius: 10px;
+                } 
+                    i{
+                        color: #3454D1;
+                    }
+                    h2{
                         font-family: $font;
+                        color: $darkColor;
+                        font-weight: 500;
+                        font-size: 1.8em;
                     }
-
-                    input{
-                        height: 2vh;
-                        margin-left: 1em;
-                        border: none;
-                        background: $snow;
-                        border-bottom: rgb(77, 77, 77) solid 1px;
-                        text-align: center;
-                        
-                    }
-                    input:focus{
-                        outline: 0;
-                        text-align: center;
-                    }
-                }    
-        }
+                    span{
+                        width: 45%;
+                        height: 5vh;
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        h4{
+                            color:rgb(77, 77, 77);
+                            font-family: $font;
+                        }
+    
+                        input{
+                            height: 2vh;
+                            margin-left: 1em;
+                            border: none;
+                            background: $snow;
+                            border-bottom: rgb(77, 77, 77) solid 1px;
+                            text-align: center;
+                            
+                        }
+                        input:focus{
+                            outline: 0;
+                            text-align: center;
+                        }
+                    }    
+            }
+    }
 }
+
 .dashboard{
 
     header{
@@ -183,11 +202,8 @@ $darkBackgroundColor: rgb(36, 36, 44);
             display: flex;
             justify-content: center;
             align-items: center;
-            h1{
-                margin-left: 1vw;
-                font-family: $font;
-                font-size: 1.5em;
-                
+            img{
+                height: 9vh;
             }
         }
         .settings{
@@ -212,6 +228,7 @@ $darkBackgroundColor: rgb(36, 36, 44);
     main{
         display: flex;
         justify-content: flex-start;
+        
         .routedisplay{
             width: 85vw;
             height: 90vh;
@@ -254,14 +271,28 @@ $darkBackgroundColor: rgb(36, 36, 44);
                 flex-direction: column;
                 justify-content: space-between;
                 height: 10vh;
+               
+                .newbid{
+                    background: $red;
+                    color: $platinum;
+                    font-family: $font;
+                    font-size: 1em;
+                    border: none;
+                    padding: .7em 2em;
+                    border-radius: 10px;
+                    margin-right: 4vw;
+                    cursor: pointer;
+                }
                 button{
                     background: $blue;
                     color: $platinum;
                     font-family: $font;
                     border: none;
-                    padding: .5em 1.5em;
-        
-                    margin-right: 2vw;
+                    padding: .7em 2em;
+                    border-radius: 10px;
+                    margin-right: 4vw;
+                    cursor: pointer;
+                    font-size: 1em;
                 }
 
             }
@@ -281,10 +312,11 @@ $darkBackgroundColor: rgb(36, 36, 44);
                 }
 
                 .selected{
-                    background: $green;
+                    background: linear-gradient(0.25turn, #72ffff, $green, $green);
                     color: $darkBackgroundColor;
                     font-weight: bold;
                     transition: all .5s ease-in-out;
+                    
                 }
             }
             
@@ -306,11 +338,20 @@ $darkBackgroundColor: rgb(36, 36, 44);
         justify-content: center;
         align-items: center;
         .customername{
+            display: flex;
+            justify-content: center;
+            align-items: center;
             font-family: $font;
-            color: $fontColorDark;
-            margin: 10vh;
+            color: $fontColorLight;
+            margin: 5vh;
             font-size: 2em;
+            width: 100%;
+            height: 10vh;
+            text-align: center;
             font-weight: bolder;
+            background: rgb(52, 83, 209);
+            box-shadow: $shadow;
+            border-radius: 5px;
         }
 
     }
@@ -319,7 +360,7 @@ $darkBackgroundColor: rgb(36, 36, 44);
         width: 85vw;
         height: 75vh;
         display: flex;
-        justify-content: space-between;
+        justify-content: flex-start;
         align-items: center;
         .leftdiv{
             display: flex;
@@ -333,12 +374,13 @@ $darkBackgroundColor: rgb(36, 36, 44);
                 flex-direction: column;
                 justify-content: flex-start;
                 align-items: center;
-                height: 37.5vh;
+                height: 35vh;
                 width: 100%;
+                overflow: hidden;
+                box-shadow: $shadow;
                 .scheduleBox{
                     height: 100%;
                     width: 100%;
-                    overflow: auto;
                 }
             }
             .bidchart{
@@ -346,12 +388,13 @@ $darkBackgroundColor: rgb(36, 36, 44);
                 flex-direction: column;
                 justify-content: flex-start;
                 align-items: center;
-                height: 37.5vh;
+                height: 35vh;
                 width: 100%;
+                box-shadow: $shadow;
                 .bidchartBox{
                     height: 100%;
                     width: 100%;
-                    background: gray;
+                   
                 }
             }
         }
@@ -361,22 +404,31 @@ $darkBackgroundColor: rgb(36, 36, 44);
             justify-content: space-evenly;
             width: 42.5vw;
             height: 100%;
-            margin-left: 5vw;
+            margin: 0 5vw;
+            
             .unacceptedBox{
                 display: flex;
                 flex-direction: column;
                 justify-content: flex-start;
                 align-items: center;
-                height: 37.5vh;
+                height: 90%;
                 width: 100%;
+                
                 .bidsBox{
                     height: 100%;
                     width: 100%;
-                    background: gray;
+                    background: rgb(255, 255, 255);
+                    box-shadow: $shadow;
                 }
             }
         }
     }
+}
+.schedule{
+    height: 100%;
+    width: 100%;
+    overflow: scroll;
+    overflow-x: hidden; 
 }
 
 // .reportsType {
@@ -392,7 +444,96 @@ $darkBackgroundColor: rgb(36, 36, 44);
 //         font-size: 1.5em;
 //     }
 // }
+.homePage{
+    background: url('https://images.unsplash.com/photo-1496902526517-c0f2cb8fdb6a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80');
+    box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.561);
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .topbanner{
+        width: 100%;
+        height: 10vh;
+        top: 0;
+        position: fixed;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: rgba(0, 0, 0, 0.658);
+        img{
+            height: 9vh;
+            margin: 0 2vw;
+        }
+        .links{
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            .link{
+                text-decoration: none;
+                color: $snow;
+                margin: 0 2vw;
+            }
+        }
 
+    }
+    .navholder{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        width: 55vw;
+        height: 60vh;
+      
+        
+        .topnav{
+            width: 100%;
+            height: 10vh;
+            background: $snow;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            box-shadow: $shadow;
+            .icon{
+                cursor: pointer;
+                transition: all 300ms ease-in-out;
+            }
+            .icon:hover{
+                transform: scale(1.1)
+            }
+            h1{
+                font-family: $font;
+                font-size: 2.5em;
+                color: rgb(255, 255, 255);
+                font-weight: 600;   
+            } 
+        }
+        .bottomnav{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            .left{
+                height: 100%;
+                width:50%;
+                background: rgb(219, 219, 219);
+                box-shadow: $shadow;
+                transition: all 300ms ease-in-out;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                text-align: center
+            }
+            .right{
+                height: 100%;
+                width:50%;
+               
+            }
+        }
+    }
+}
 
     
-}
+

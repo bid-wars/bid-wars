@@ -2,7 +2,8 @@ import React, { Component } from 'react'
 import DashBoardRouter from './dashBoardRouter'
 import {Link} from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {faUserCog, faClipboardList} from '@fortawesome/free-solid-svg-icons'
+import {faUserCog, faClipboardList, faPlusCircle} from '@fortawesome/free-solid-svg-icons'
+import logo from '../assets/logo.png'
 
  class DashBoard extends Component {
     state ={
@@ -39,13 +40,8 @@ import {faUserCog, faClipboardList} from '@fortawesome/free-solid-svg-icons'
             <div className='dashboard'>
                 <header>
                     <div className='logo'>
-                        <FontAwesomeIcon
-                        icon={faClipboardList}
-                        size='3x'
-                        color='#34d1bf'
-                        
-                        />
-                        <h1>Jobber</h1>
+                        <img src={logo} alt=""/>
+                       
                     </div>
                     <div className='title'>
                         <h1>{this.state.active}</h1>
@@ -98,8 +94,11 @@ import {faUserCog, faClipboardList} from '@fortawesome/free-solid-svg-icons'
                         </ul>
                         <div className='bottombuttons'>
                         <Link to='/dashboard/newbid' style={{ textDecoration: 'none' }}>   
-                            <button onClick={() => this.handleActive('new bid')} 
-                            >Create new bid</button>
+                            <button className='newbid' onClick={() => this.handleActive('new bid')} 
+                            ><FontAwesomeIcon
+                            icon={faPlusCircle}
+                            color='#e8e8e8'
+                            />NEW BID</button>
                         </Link>
                         <button className='logout'>Log out</button>
                         </div>

@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import {connect} from 'react-redux'
 import {updateNewDate, deleteDay, updateDate} from '../../redux/ownerReducer'
-import { ScheduleComponent, Day, Week, WorkWeek, Month, Inject, ViewsDirective, ViewDirective,  } from '@syncfusion/ej2-react-schedule';
+import { ScheduleComponent, Day, Week, Month, Inject, ViewsDirective, ViewDirective,  } from '@syncfusion/ej2-react-schedule';
 
 
  class Schedule extends Component {
@@ -30,9 +30,9 @@ import { ScheduleComponent, Day, Week, WorkWeek, Month, Inject, ViewsDirective, 
             <div className='schedule'>
  
           <ScheduleComponent
-           popupOpen={this.onPopUpOpen}
+          //  popupOpen={this.onPopUpOpen}
            actionComplete={this.onCreate}
-           ref={t => this.scheduleObj = t}
+          //  ref={t => this.scheduleObj = t}
            currentView={'Week'} 
            endHour={'21:00'}
            startHour={'8:00'}
@@ -52,10 +52,9 @@ import { ScheduleComponent, Day, Week, WorkWeek, Month, Inject, ViewsDirective, 
                   <ViewsDirective>
                     <ViewDirective option='Day'/>
                     <ViewDirective option='Week'/>
-                    <ViewDirective option='WorkWeek'/>
                     <ViewDirective option='Month'/>
                 </ViewsDirective>
-            <Inject services={[Day, Week, WorkWeek, Month]}/>
+            <Inject services={[Day, Week, Month]}/>
           </ScheduleComponent>
             </div>
         )
