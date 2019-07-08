@@ -1,7 +1,7 @@
 // API ROUTERS
 const {AuthRouter} = require('./auth_router');
 const {BidRouter} = require('./bid_router');
-const {TwilioRouter} = require('./twilio_router');
+// const {TwilioRouter} = require('./twilio_router');
 const {s3Router} = require('./s3_router');
 
 // ADD ROUTES TO SERVER

@@ -60,6 +60,7 @@ import {Link} from 'react-router-dom'
             password: this.state.password
 
         }).then(res => this.props.addUserInfo(res.data))
+        .then(res => this.props.history.push('/dashboard'))
      
         this.setState({
             firstname: '',
@@ -268,6 +269,6 @@ import {Link} from 'react-router-dom'
     }
 }
 function mapStateToProps(state){
-    return state.ownerReducer
+    return state
 }
 export default connect(mapStateToProps, {addUserInfo})(Register)

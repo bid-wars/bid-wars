@@ -1,9 +1,12 @@
 import React, { Component } from 'react'
 import DashBoardRouter from './dashBoardRouter'
-import {Link} from 'react-router-dom'
+import {Link, withRouter} from 'react-router-dom'
+import {connect} from 'react-redux'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {faUserCog, faClipboardList, faPlusCircle} from '@fortawesome/free-solid-svg-icons'
-import logo from '../assets/logo.png'
+import {faUserCog, faPlusCircle} from '@fortawesome/free-solid-svg-icons'
+import {logOut} from '../redux/ownerReducer'
+import axios from 'axios'
+
 
  class DashBoard extends Component {
     state ={
@@ -34,13 +37,17 @@ import logo from '../assets/logo.png'
         }
         
     }
+    logOut = () => {
+        this.props.logOut()
+        this.props.history.push('/')
+    }
     render() {
 
         return (
             <div className='dashboard'>
                 <header>
                     <div className='logo'>
-                        <img src={logo} alt=""/>
+                        <img src='https://bidtracker.s3-us-west-1.amazonaws.com/zsPOb9QgpJQtOSSAMgHPXvRhdbSRNemp-logo.png' alt=""/>
                        
                     </div>
                     <div className='title'>
@@ -100,7 +107,7 @@ import logo from '../assets/logo.png'
                             color='#e8e8e8'
                             />NEW BID</button>
                         </Link>
-                        <button className='logout'>Log out</button>
+                        <button className='logout' onClick={this.logOut}>Log out</button>
                         </div>
                     </nav>
                     <div className='routedisplay'>
@@ -111,4 +118,7 @@ import logo from '../assets/logo.png'
         )
     }
 }
-export default DashBoard
+function mapStateToProps(state){
+    return state
+}
+export default withRouter(connect(mapStateToProps, {logOut})(DashBoard))

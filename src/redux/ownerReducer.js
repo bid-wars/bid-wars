@@ -17,6 +17,7 @@ const initialState = {
     const UPDATE_NEW_DATE = 'UPDATE_NEW_DATE'
     const DELETE_DAY = 'DELETE_DAY'
     const UPDATE_DATE = 'UPDATE_DATE'
+    const LOGOUT = 'LOGOUT'
    
 
     export function addUserInfo(user){
@@ -43,6 +44,11 @@ const initialState = {
                 payload: info
             }
     }
+    export function logOut(){
+            return {
+                type: LOGOUT
+            }
+    }
     
 
 
@@ -61,6 +67,7 @@ function reducer (state = initialState, action){
             schedule,
             role    
             } = action.payload
+           
             return {firstname,
                 lastname,
                 companyName,
@@ -127,7 +134,8 @@ function reducer (state = initialState, action){
                         }
                     })
                     return {...state}
-                
+                case LOGOUT: 
+                   return {...initialState}
                 
                 
         default:

@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import {Link} from 'react-router-dom'
 import {faChartBar, faAddressBook, faFilePdf, faPaperPlane, faClipboardList} from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import logo from '../assets/logo.png'
+
 
 export default class Home extends Component {
     state = {
@@ -38,7 +38,7 @@ export default class Home extends Component {
             <div className='homePage'>
                 <div className='topbanner'>
                     
-                        <img src={logo} alt=""/>
+                        <img src='https://bidtracker.s3-us-west-1.amazonaws.com/zsPOb9QgpJQtOSSAMgHPXvRhdbSRNemp-logo.png' alt=""/>
                     <div className='links'>
                         <Link className='link' to='/register' >Register</Link>
                         <Link to='/login' className='link' >Login</Link>
