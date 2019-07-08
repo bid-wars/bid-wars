@@ -3,6 +3,7 @@ import axios from 'axios'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import TextField from 'material-ui/TextField'
 import {Link} from 'react-router-dom'
+import {connect} from 'react-redux'
 
 class LogInForm extends Component {
     state ={
@@ -20,7 +21,7 @@ class LogInForm extends Component {
         axios.post('/auth/login',{
             email: this.state.email,
            password: this.state.password
-        }).then(res => console.log(res.data))
+        }).then(res => this.props.addUserInfo(res.data))
      
         this.setState({
             email: '',
@@ -80,4 +81,8 @@ class LogInForm extends Component {
         )
     }
 }
-export default LogInForm
+function mapStateToProps(state){
+    return state
+}
+
+export default connect(mapStateToProps)(LogInForm)
