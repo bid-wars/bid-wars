@@ -3,7 +3,7 @@ import DashBoardRouter from './dashBoardRouter'
 import {Link} from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faUserCog, faClipboardList, faPlusCircle} from '@fortawesome/free-solid-svg-icons'
-import logo from '../assets/logo.png'
+
 
  class DashBoard extends Component {
     state ={
@@ -40,7 +40,7 @@ import logo from '../assets/logo.png'
             <div className='dashboard'>
                 <header>
                     <div className='logo'>
-                        <img src={logo} alt=""/>
+                        <img src='https://bidtracker.s3-us-west-1.amazonaws.com/zsPOb9QgpJQtOSSAMgHPXvRhdbSRNemp-logo.png' alt=""/>
                        
                     </div>
                     <div className='title'>
