@@ -1,13 +1,35 @@
-@import url(c:\Users\Mike\Desktop\DevMnt\Group project\bid-wars\node_modules\@syncfusion\ej2-base\styles\material.css);
-@import url(c:\Users\Mike\Desktop\DevMnt\Group project\bid-wars\node_modules\@syncfusion\ej2-buttons\styles\material.css);
-@import url(c:\Users\Mike\Desktop\DevMnt\Group project\bid-wars\node_modules\@syncfusion\ej2-calendars\styles\material.css);
-@import url(c:\Users\Mike\Desktop\DevMnt\Group project\bid-wars\node_modules\@syncfusion\ej2-dropdowns\styles\material.css);
-@import url(c:\Users\Mike\Desktop\DevMnt\Group project\bid-wars\node_modules\@syncfusion\ej2-inputs\styles\material.css);
-@import url(c:\Users\Mike\Desktop\DevMnt\Group project\bid-wars\node_modules\@syncfusion\ej2-lists\styles\material.css);
-@import url(c:\Users\Mike\Desktop\DevMnt\Group project\bid-wars\node_modules\@syncfusion\ej2-navigations\styles\material.css);
-@import url(c:\Users\Mike\Desktop\DevMnt\Group project\bid-wars\node_modules\@syncfusion\ej2-popups\styles\material.css);
-@import url(c:\Users\Mike\Desktop\DevMnt\Group project\bid-wars\node_modules\@syncfusion\ej2-buttons\styles\material.css);
-@import url(c:\Users\Mike\Desktop\DevMnt\Group project\bid-wars\node_modules\@syncfusion\ej2-react-schedule\styles\material.css);
+.butn-primary {
+  background: #3454D1;
+  color: #e8e8e8;
+  font-family: "Roboto", sans-serif;
+  font-size: 1em;
+  border: none;
+  text-decoration: none;
+  border-radius: 8px;
+  padding: 10px 20px 10px 20px;
+}
+
+.butn-primary :hover {
+  background: #2d4abd;
+  text-decoration: none;
+}
+
+.butn-negative {
+  background: rgba(77, 77, 77, 0.315);
+  color: #4d4d4d;
+  font-family: "Roboto", sans-serif;
+  font-size: 1em;
+  border: none;
+  text-decoration: none;
+  border-radius: 8px;
+  padding: 10px 20px 10px 20px;
+}
+
+.butn-negative :hover {
+  background: rgba(77, 77, 77, 0.515);
+  text-decoration: none;
+}
+
 .Loginpage {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -335,45 +357,6 @@
           justify-content: flex-start;
 }
 
-.dashboard main .routedisplay {
-  width: 85vw;
-  height: 90vh;
-  background: #e8e8e8;
-}
-
-.dashboard main .routedisplay .reportsTypePlaceholder .reportsType {
-  margin: 1em 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  -webkit-box-align: baseline;
-      -ms-flex-align: baseline;
-          align-items: baseline;
-  -ms-flex-line-pack: stretch;
-      align-content: stretch;
-}
-
-.dashboard main .routedisplay .reportsTypePlaceholder .reportsType h2 {
-  margin-left: 1vw;
-  font-family: "Roboto", sans-serif;
-  font-size: 1.5em;
-}
-
-.dashboard main .routedisplay .reportsTypePlaceholder .reportsType select {
-  margin-left: 1em;
-  padding: .5em;
-  font-size: 1em;
-}
-
 .dashboard main nav {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -456,6 +439,127 @@
   font-weight: bold;
   -webkit-transition: all .5s ease-in-out;
   transition: all .5s ease-in-out;
+}
+
+.routedisplay {
+  width: 85vw;
+  height: 90vh;
+  background: #e8e8e8;
+}
+
+.routedisplay .new-bid-page {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  overflow: scroll;
+  overflow-x: hidden;
+  padding-top: 2em;
+  padding-left: 2em;
+}
+
+.routedisplay .new-bid-page h1 {
+  font-family: "Roboto", sans-serif;
+  font-size: 2em;
+  color: #4d4d4d;
+  font-weight: 600;
+}
+
+.routedisplay .new-bid-page h3 {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.2em;
+  color: #4d4d4d;
+  font-weight: 500;
+}
+
+.routedisplay .new-bid-page .form {
+  width: 100%;
+}
+
+.routedisplay .new-bid-page .form .form-content {
+  margin-left: 2em;
+}
+
+.routedisplay .new-bid-page .form .message-input {
+  margin-left: 4em;
+  margin-top: 1em;
+  width: 50%;
+  height: 10vh;
+}
+
+.routedisplay .new-bid-page .display-inline {
+  display: inline;
+}
+
+.routedisplay .new-bid-page .line {
+  width: 80%;
+  height: 1px;
+  border-bottom: 1px solid rgba(77, 77, 77, 0.315);
+  margin: 1em 0 .5em 0;
+}
+
+.routedisplay .new-bid-page .buttons-box {
+  width: 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.routedisplay .new-bid-page .buttons-box button {
+  margin: .5em;
+}
+
+.routedisplay .new-bid-page .buttons-box .butn-primary {
+  margin: .5em;
+}
+
+.routedisplay .new-bid-page .icon {
+  margin: .5em;
+}
+
+.routedisplay .reportsTypePlaceholder .reportsType {
+  margin: 1em 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+  -ms-flex-line-pack: stretch;
+      align-content: stretch;
+}
+
+.routedisplay .reportsTypePlaceholder .reportsType h2 {
+  margin-left: 1vw;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.5em;
+}
+
+.routedisplay .reportsTypePlaceholder .reportsType select {
+  margin-left: 1em;
+  padding: .5em;
+  font-size: 1em;
 }
 
 .mainDash {
