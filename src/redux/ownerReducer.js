@@ -61,6 +61,7 @@ function reducer (state = initialState, action){
             schedule,
             role    
             } = action.payload
+           
             return {firstname,
                 lastname,
                 companyName,

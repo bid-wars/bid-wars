@@ -2,7 +2,10 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import TextField from 'material-ui/TextField'
-import {Link} from 'react-router-dom'
+import {Link, withRouter} from 'react-router-dom'
+import {connect} from 'react-redux'
+import addUserInfo from '../redux/ownerReducer'
+
 
 class LogInForm extends Component {
     state ={
@@ -20,7 +23,9 @@ class LogInForm extends Component {
         axios.post('/auth/login',{
             email: this.state.email,
            password: this.state.password
-        }).then(res => console.log(res.data))
+        }).then(res => {console.log(res.data)
+            this.props.addUserInfo(res.data)})
+            .then(res => this.props.history.push('/dashboard'))
      
         this.setState({
             email: '',
@@ -41,8 +46,7 @@ class LogInForm extends Component {
                     
                   
                         <TextField 
-                        type='emal'
-                   
+                        type='email'
                         floatingLabelText='Email'
                         floatingLabelFocusStyle={{color: '#4D4D4D',
                          fontSize: '1.2em'   
@@ -57,7 +61,6 @@ class LogInForm extends Component {
                      
                     
                         <TextField 
-                     
                         floatingLabelText='Password'
                         floatingLabelFocusStyle={{color: '#4D4D4D',
                          fontSize: '1.2em'   
@@ -69,7 +72,7 @@ class LogInForm extends Component {
                         value={this.state.password}
                         onChange={this.handleChange}/>
                  
-                    <Link className='link' to='/dashboard'>Login</Link>
+                    <button className='link' >Login</button>
                     <Link className='link' to='/'>Back</Link>
                 </form>
 
@@ -80,4 +83,8 @@ class LogInForm extends Component {
         )
     }
 }
-export default LogInForm
+function mapStateToProps(state){
+    return state
+}
+
+export default withRouter(connect(mapStateToProps, {addUserInfo})(LogInForm))
