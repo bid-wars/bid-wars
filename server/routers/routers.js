@@ -8,7 +8,7 @@ const {s3Router} = require('./s3_router');
 const addRoutes = (app) => {
     app.use('/auth', AuthRouter);
     app.use('/bids', BidRouter);
-    app.use('/twilio', TwilioRouter);
+    // app.use('/twilio', TwilioRouter);
     app.use('/s3', s3Router);
 }
 

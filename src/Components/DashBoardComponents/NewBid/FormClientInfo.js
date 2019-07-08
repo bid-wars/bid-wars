@@ -5,6 +5,8 @@ import RaisedButton from 'material-ui/RaisedButton'
 
 
 export default class FormClientInfo extends Component{
+  
+  
   continue = e => {
     e.preventDefault();
     this.props.nextStep();
@@ -18,86 +20,73 @@ export default class FormClientInfo extends Component{
   render(){
     const {values, handleChange, handleChangePhone} = this.props;
     return (
+      <div className='new-bid-page'>
       <MuiThemeProvider>
         <React.Fragment>
+          <div className='form'>
+            <h3>Client Info</h3>
 
-          <h1>Get Started</h1>
-          <h1>Client Info</h1>
-          <br/>
-          <TextField
-            hintText="Company Name"
-            floatingLabelText="Company Name (if applicable)"
-            onChange={handleChange('companyName')}
-            defaultValue={values.companyName}
-          />
-          <br/>
-          <TextField
-            hintText="First Name"
-            floatingLabelText="First Name"
-            onChange={handleChange('contactFirst')}
-            defaultValue={values.contactFirst}
-          />
-          <br/>
-          <TextField
-            hintText="Last Name"
-            floatingLabelText="Last Name"
-            onChange={handleChange('contactLast')}
-            defaultValue={values.contactLast}
-          />
-          <br/>
-          {/* <input
-            type="tel"
-            name="contactPhone"
-            value={values.contactPhone}
-            onChange={handleChangePhone}
-            // hintText="Phone"
-            // floatingLabelText="Phone"
-            // onChange={handleChangePhone}
-            // defaultValue={values.contactPhone}
-          />
-          <br/> */}
+            <div className='form-content'>
+              <TextField
+                hintText="Company Name"
+                floatingLabelText="Company Name (if applicable)"
+                onChange={handleChange('companyName')}
+                defaultValue={values.companyName}
+              />
+              <br/>
+              <TextField
+                hintText="First Name"
+                floatingLabelText="First Name"
+                onChange={handleChange('contactFirst')}
+                defaultValue={values.contactFirst}
+              />
+              <br/>
+              <TextField
+                hintText="Last Name"
+                floatingLabelText="Last Name"
+                onChange={handleChange('contactLast')}
+                defaultValue={values.contactLast}
+              />
+              <br/>
+              <TextField
+                type="tel"
+                name="contactPhone"
+                value={values.contactPhone}
+                onChange={handleChangePhone}
+                hintText="Phone"
+                floatingLabelText="Phone"
+              />
+              <br/>
+              <TextField
+                floatingLabelText="Email"
+                onChange={handleChange('contactEmail')}
+                defaultValue={values.contactEmail}
+              />
+            </div>
+          </div>
+          <div className='line'>
+          </div>  
+          <div className='buttons-box'>
+            <br/>
+            <button 
+              className='butn-negative'
+              onClick={this.cancel} 
+              >Cancel
+            </button>
+            <button 
+              className='butn-primary'
+              onClick={this.continue} 
+              >Save & Continue
+            </button>
+          </div>
 
-          <TextField
-            type="tel"
-            name="contactPhone"
-            value={values.contactPhone}
-            onChange={handleChangePhone}
-            hintText="Phone"
-            floatingLabelText="Phone"
-          />
-          <br/>
-
-          <TextField
-            hintText="Email"
-            floatingLabelText="Email"
-            onChange={handleChange('contactEmail')}
-            defaultValue={values.contactEmail}
-          />
-
-          <hr/>
-          <br/>
-          <RaisedButton
-            label="Cancel"
-            primary={false}
-            style={styles.button}
-            onClick={this.cancel}
-          />
-          <RaisedButton
-            label="Save & Continue"
-            primary={true}
-            style={styles.button}
-            onClick={this.continue}
-          />
           
         </React.Fragment>
       </MuiThemeProvider>
+      </div>
     )
   }
 }
 
-const styles = {
-  button: {
-    margin: 15
-  }
-}
+
 
