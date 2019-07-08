@@ -1,4 +1,3 @@
-
 @import url(c:\Users\Mike\Desktop\DevMnt\Group project\bid-wars\node_modules\@syncfusion\ej2-base\styles\material.css);
 @import url(c:\Users\Mike\Desktop\DevMnt\Group project\bid-wars\node_modules\@syncfusion\ej2-buttons\styles\material.css);
 @import url(c:\Users\Mike\Desktop\DevMnt\Group project\bid-wars\node_modules\@syncfusion\ej2-calendars\styles\material.css);
@@ -9,16 +8,7 @@
 @import url(c:\Users\Mike\Desktop\DevMnt\Group project\bid-wars\node_modules\@syncfusion\ej2-popups\styles\material.css);
 @import url(c:\Users\Mike\Desktop\DevMnt\Group project\bid-wars\node_modules\@syncfusion\ej2-buttons\styles\material.css);
 @import url(c:\Users\Mike\Desktop\DevMnt\Group project\bid-wars\node_modules\@syncfusion\ej2-react-schedule\styles\material.css);
-
-
-.LogInForm {
-  border: #4d4d4d solid 1px;
-  border-radius: 5px;
-  -webkit-box-shadow: 6px 6px 6px -6px #4d4d4d;
-          box-shadow: 6px 6px 6px -6px #4d4d4d;
-  width: 40vw;
-  height: 40vh;
-  background: #F9F9F9;
+.Loginpage {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -28,9 +18,32 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  height: 100vh;
+  width: 100vw;
+  background: url("https://images.unsplash.com/photo-1507898152394-7dd0e22fe102?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80");
+  background-size: cover;
 }
 
-.LogInForm form {
+.Loginpage .LogInForm {
+  border-radius: 5px;
+  -webkit-box-shadow: 6px 6px 6px -6px #4d4d4d;
+          box-shadow: 6px 6px 6px -6px #4d4d4d;
+  width: 35vw;
+  height: 35vh;
+  background: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-right: 4vw;
+}
+
+.Loginpage .LogInForm form {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -46,50 +59,36 @@
           align-items: center;
 }
 
-.LogInForm form button {
+.Loginpage .LogInForm form .link {
   background: #3454D1;
   color: #e8e8e8;
   font-family: "Roboto", sans-serif;
+  font-size: 1.5em;
   border: none;
   padding: .5em 2em;
+  margin-top: 1em;
   -webkit-box-shadow: 6px 6px 6px -6px #4d4d4d;
           box-shadow: 6px 6px 6px -6px #4d4d4d;
+  border-radius: 10px;
 }
 
-.LogInForm form span {
-  width: 100%;
+.RegisterPage {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  background: url("https://images.unsplash.com/photo-1517524285303-d6fc683dddf8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=675&q=80");
+  background-size: cover;
+  height: 100vh;
+  width: 100vw;
 }
 
-.LogInForm form span h4 {
-  color: #4d4d4d;
-  font-family: "Roboto", sans-serif;
-}
-
-.LogInForm form span input {
-  height: 2vh;
-  margin-left: 1em;
-  border: none;
-  background: #F9F9F9;
-  border-bottom: #4d4d4d solid 1px;
-  text-align: center;
-}
-
-.LogInForm form span input:focus {
-  outline: 0;
-  text-align: center;
-}
-
-.RegisterForm {
-  border: #4d4d4d solid 1px;
+.RegisterPage .RegisterForm {
   border-radius: 5px;
   -webkit-box-shadow: 6px 6px 6px -6px #4d4d4d;
           box-shadow: 6px 6px 6px -6px #4d4d4d;
@@ -111,16 +110,12 @@
           flex-direction: column;
 }
 
-.RegisterForm select {
-  margin-bottom: 3vh;
-}
-
-.RegisterForm .logoUploaded img {
+.RegisterPage .RegisterForm .logoUploaded img {
   max-width: 10vw;
   max-height: 10vh;
 }
 
-.RegisterForm .iconDiv {
+.RegisterPage .RegisterForm .iconDiv {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -137,14 +132,15 @@
   cursor: pointer;
 }
 
-.RegisterForm h1 {
+.RegisterPage .RegisterForm h1 {
   color: #4d4d4d;
   font-family: "Roboto", sans-serif;
-  font-size: 2.2em;
+  font-size: 2.7em;
   margin: 5vh;
+  font-weight: bolder;
 }
 
-.RegisterForm form {
+.RegisterPage .RegisterForm form {
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -161,28 +157,77 @@
           align-items: center;
 }
 
-.RegisterForm form button {
-  margin-top: 1em;
+.RegisterPage .RegisterForm form .mid {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  margin: 5vh 0;
+}
+
+.RegisterPage .RegisterForm form .mid .left {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.RegisterPage .RegisterForm form .mid .right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.RegisterPage .RegisterForm form .link {
   background: #3454D1;
   color: #e8e8e8;
   font-family: "Roboto", sans-serif;
+  font-size: 1.5em;
   border: none;
   padding: .5em 2em;
+  margin-top: 1em;
   -webkit-box-shadow: 6px 6px 6px -6px #4d4d4d;
           box-shadow: 6px 6px 6px -6px #4d4d4d;
+  border-radius: 10px;
 }
 
-.RegisterForm form i {
+.RegisterPage .RegisterForm form i {
   color: #3454D1;
 }
 
-.RegisterForm form h2 {
+.RegisterPage .RegisterForm form h2 {
   font-family: "Roboto", sans-serif;
   color: #4d4d4d;
-  margin-right: 30vw;
+  font-weight: 500;
+  font-size: 1.8em;
 }
 
-.RegisterForm form span {
+.RegisterPage .RegisterForm form span {
   width: 45%;
   height: 5vh;
   display: -webkit-box;
@@ -196,12 +241,12 @@
           justify-content: space-between;
 }
 
-.RegisterForm form span h4 {
+.RegisterPage .RegisterForm form span h4 {
   color: #4d4d4d;
   font-family: "Roboto", sans-serif;
 }
 
-.RegisterForm form span input {
+.RegisterPage .RegisterForm form span input {
   height: 2vh;
   margin-left: 1em;
   border: none;
@@ -210,7 +255,7 @@
   text-align: center;
 }
 
-.RegisterForm form span input:focus {
+.RegisterPage .RegisterForm form span input:focus {
   outline: 0;
   text-align: center;
 }
@@ -251,10 +296,8 @@
           align-items: center;
 }
 
-.dashboard header .logo h1 {
-  margin-left: 1vw;
-  font-family: "Roboto", sans-serif;
-  font-size: 1.5em;
+.dashboard header .logo img {
+  height: 9vh;
 }
 
 .dashboard header .settings {
@@ -297,7 +340,6 @@
   background: #e8e8e8;
 }
 
-
 .dashboard main .routedisplay .reportsTypePlaceholder .reportsType {
   margin: 1em 0;
   display: -webkit-box;
@@ -325,6 +367,11 @@
   font-size: 1.5em;
 }
 
+.dashboard main .routedisplay .reportsTypePlaceholder .reportsType select {
+  margin-left: 1em;
+  padding: .5em;
+  font-size: 1em;
+}
 
 .dashboard main nav {
   display: -webkit-box;
@@ -360,13 +407,28 @@
   height: 10vh;
 }
 
+.dashboard main nav .bottombuttons .newbid {
+  background: #ff4040;
+  color: #e8e8e8;
+  font-family: "Roboto", sans-serif;
+  font-size: 1em;
+  border: none;
+  padding: .7em 2em;
+  border-radius: 10px;
+  margin-right: 4vw;
+  cursor: pointer;
+}
+
 .dashboard main nav .bottombuttons button {
   background: #3454D1;
   color: #e8e8e8;
   font-family: "Roboto", sans-serif;
   border: none;
-  padding: .5em 1.5em;
-  margin-right: 2vw;
+  padding: .7em 2em;
+  border-radius: 10px;
+  margin-right: 4vw;
+  cursor: pointer;
+  font-size: 1em;
 }
 
 .dashboard main nav ul {
@@ -387,7 +449,8 @@
 }
 
 .dashboard main nav ul .selected {
-  background: #34d1bf;
+  background: -webkit-gradient(linear, left top, right top, from(#72ffff), color-stop(#34d1bf), to(#34d1bf));
+  background: linear-gradient(0.25turn, #72ffff, #34d1bf, #34d1bf);
   color: #24242c;
   font-weight: bold;
   -webkit-transition: all .5s ease-in-out;
@@ -427,11 +490,27 @@
 }
 
 .mainDash .top .customername {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   font-family: "Roboto", sans-serif;
-  color: #4d4d4d;
-  margin: 10vh;
+  color: #e8e8e8;
+  margin: 5vh;
   font-size: 2em;
+  width: 100%;
+  height: 10vh;
+  text-align: center;
   font-weight: bolder;
+  background: #3453d1;
+  -webkit-box-shadow: 6px 6px 6px -6px #4d4d4d;
+          box-shadow: 6px 6px 6px -6px #4d4d4d;
+  border-radius: 5px;
 }
 
 .mainDash .bottom {
@@ -440,9 +519,9 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -478,14 +557,16 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 37.5vh;
+  height: 35vh;
   width: 100%;
+  overflow: hidden;
+  -webkit-box-shadow: 6px 6px 6px -6px #4d4d4d;
+          box-shadow: 6px 6px 6px -6px #4d4d4d;
 }
 
 .mainDash .bottom .leftdiv .schedule .scheduleBox {
   height: 100%;
   width: 100%;
-  overflow: auto;
 }
 
 .mainDash .bottom .leftdiv .bidchart {
@@ -502,14 +583,15 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 37.5vh;
+  height: 35vh;
   width: 100%;
+  -webkit-box-shadow: 6px 6px 6px -6px #4d4d4d;
+          box-shadow: 6px 6px 6px -6px #4d4d4d;
 }
 
 .mainDash .bottom .leftdiv .bidchart .bidchartBox {
   height: 100%;
   width: 100%;
-  background: gray;
 }
 
 .mainDash .bottom .rightdiv {
@@ -525,7 +607,7 @@
           justify-content: space-evenly;
   width: 42.5vw;
   height: 100%;
-  margin-left: 5vw;
+  margin: 0 5vw;
 }
 
 .mainDash .bottom .rightdiv .unacceptedBox {
@@ -542,14 +624,172 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 37.5vh;
+  height: 90%;
   width: 100%;
 }
 
 .mainDash .bottom .rightdiv .unacceptedBox .bidsBox {
   height: 100%;
   width: 100%;
-  background: gray;
+  background: white;
+  -webkit-box-shadow: 6px 6px 6px -6px #4d4d4d;
+          box-shadow: 6px 6px 6px -6px #4d4d4d;
 }
 
+.schedule {
+  height: 100%;
+  width: 100%;
+  overflow: scroll;
+  overflow-x: hidden;
+}
+
+.homePage {
+  background: url("https://images.unsplash.com/photo-1496902526517-c0f2cb8fdb6a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80");
+  -webkit-box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.561);
+          box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.561);
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.homePage .topbanner {
+  width: 100%;
+  height: 10vh;
+  top: 0;
+  position: fixed;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: rgba(0, 0, 0, 0.658);
+}
+
+.homePage .topbanner img {
+  height: 9vh;
+  margin: 0 2vw;
+}
+
+.homePage .topbanner .links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.homePage .topbanner .links .link {
+  text-decoration: none;
+  color: #F9F9F9;
+  margin: 0 2vw;
+}
+
+.homePage .navholder {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 55vw;
+  height: 60vh;
+}
+
+.homePage .navholder .topnav {
+  width: 100%;
+  height: 10vh;
+  background: #F9F9F9;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-shadow: 6px 6px 6px -6px #4d4d4d;
+          box-shadow: 6px 6px 6px -6px #4d4d4d;
+}
+
+.homePage .navholder .topnav .icon {
+  cursor: pointer;
+  -webkit-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
+}
+
+.homePage .navholder .topnav .icon:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.homePage .navholder .topnav h1 {
+  font-family: "Roboto", sans-serif;
+  font-size: 2.5em;
+  color: white;
+  font-weight: 600;
+}
+
+.homePage .navholder .bottomnav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.homePage .navholder .bottomnav .left {
+  height: 100%;
+  width: 50%;
+  background: #dbdbdb;
+  -webkit-box-shadow: 6px 6px 6px -6px #4d4d4d;
+          box-shadow: 6px 6px 6px -6px #4d4d4d;
+  -webkit-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+}
+
+.homePage .navholder .bottomnav .right {
+  height: 100%;
+  width: 50%;
+}
 /*# sourceMappingURL=style.css.map */
