@@ -1,8 +1,11 @@
 import React, { Component } from 'react'
 import DashBoardRouter from './dashBoardRouter'
-import {Link} from 'react-router-dom'
+import {Link, withRouter} from 'react-router-dom'
+import {connect} from 'react-redux'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {faUserCog, faClipboardList, faPlusCircle} from '@fortawesome/free-solid-svg-icons'
+import {faUserCog, faPlusCircle} from '@fortawesome/free-solid-svg-icons'
+import logOut from '../redux/ownerReducer'
+import axios from 'axios'
 
 
  class DashBoard extends Component {
@@ -33,6 +36,10 @@ import {faUserCog, faClipboardList, faPlusCircle} from '@fortawesome/free-solid-
             }
         }
         
+    }
+    logOut = () => {
+        this.props.logOut()
+        this.props.history.push('/')
     }
     render() {
 
@@ -100,7 +107,7 @@ import {faUserCog, faClipboardList, faPlusCircle} from '@fortawesome/free-solid-
                             color='#e8e8e8'
                             />NEW BID</button>
                         </Link>
-                        <button className='logout'>Log out</button>
+                        <button className='logout' onClick={this.logOut}>Log out</button>
                         </div>
                     </nav>
                     <div className='routedisplay'>
@@ -111,4 +118,7 @@ import {faUserCog, faClipboardList, faPlusCircle} from '@fortawesome/free-solid-
         )
     }
 }
-export default DashBoard
+function mapStateToProps(state){
+    return state
+}
+export default withRouter(connect(mapStateToProps, {logOut})(DashBoard))
