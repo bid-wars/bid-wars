@@ -45,6 +45,7 @@ import axios from 'axios'
 
         return (
             <div className='dashboard'>
+               
                 <header>
                     <div className='logo'>
                         <img src='https://bidtracker.s3-us-west-1.amazonaws.com/zsPOb9QgpJQtOSSAMgHPXvRhdbSRNemp-logo.png' alt=""/>

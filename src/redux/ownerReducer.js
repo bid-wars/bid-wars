@@ -1,4 +1,4 @@
-import axios from 'axios'
+
 const initialState = {
     firstname: '',
     lastname: '',
@@ -90,14 +90,19 @@ function reducer (state = initialState, action){
                     EndTime,
                     Id
                 } = action.payload
-                return console.log({
-                    Subject,
+                return {
+                    ...state,
+                    schedule: [...state.schedule, {
+                        Subject,
                     Description,
                     Location,
                     StartTime,
                     EndTime,
                     Id
-                })
+                    }]
+                }
+                    
+               
                 
         case DELETE_DAY:
          
