@@ -347,6 +347,20 @@
   text-decoration: none;
 }
 
+.dashboard header .settings img {
+  max-height: 9vh;
+}
+
+.dashboard header .settings .companyname {
+  width: 11vw;
+}
+
+.dashboard header .settings .companyname h4 {
+  font-family: "Roboto", sans-serif;
+  color: #e8e8e8;
+  font-size: 1.2em;
+}
+
 .dashboard header .settings .link {
   margin: 0 2vw;
   text-decoration: none;

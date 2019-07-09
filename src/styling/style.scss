@@ -252,6 +252,18 @@ $darkBackgroundColor: rgb(36, 36, 44);
             align-items: center;
             margin-right: 2vw;
             text-decoration: none;
+            img{
+                max-height: 9vh;
+            }
+            .companyname{
+                width: 11vw;
+                h4{
+                    font-family: $font;
+                    color: $fontColorLight;
+                    font-size: 1.2em;
+                }
+            }
+            
             
             .link{
                 margin: 0 2vw; 

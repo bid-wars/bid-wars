@@ -58,7 +58,7 @@ function reducer (state = initialState, action){
             console.log(action.payload)
             const {firstname,
             lastname,
-            companyName,
+            name,
             website,
             phone,
             email,
@@ -71,7 +71,7 @@ function reducer (state = initialState, action){
            
             return {firstname,
                 lastname,
-                companyName,
+                companyName: name,
                 website,
                 phone,
                 email,

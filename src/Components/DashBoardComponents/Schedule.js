@@ -31,7 +31,7 @@ import axios from 'axios'
       //    return this.props.updateDate(args.data)      
       //  }
       if(args.requestType === 'eventCreated'){
-       
+        console.log(args.data)
           this.setState({
             newData: [...this.state.newData, args.data]
           })
@@ -40,11 +40,12 @@ import axios from 'axios'
                     Description: args.data.Description,
                     Location: args.data.Location,
                     StartTime: args.data.StartTime,
-                    EndTime: args.data.endTime    
+                    EndTime: args.data.EndTime    
           }).then(res => {
+          
             this.setState({
-              [this.state.newData[-1]]: res.data[0].id,
-              [this.state.data[-1]]: res.data[0].id
+              [this.state.newData[-1]]: res.data.id,
+              [this.state.data[-1]]: res.data.id
             })
           })
 
@@ -74,7 +75,8 @@ import axios from 'axios'
                   data: dates
                 })
           }
-          axios.delete('/events/delete', {Id})           
+          console.log(Id)
+          axios.delete(`/events/delete/${args.data[0].Id}`)          
       
       }else if(args.requestType === 'eventChanged'){
         const {
@@ -112,6 +114,7 @@ import axios from 'axios'
 
       }
     render() {
+      
         return (
             <div className='schedule'>
  
