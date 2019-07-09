@@ -55,7 +55,8 @@ import axios from 'axios'
                         <h1>{this.state.active}</h1>
                     </div>
                     <div className='settings'>
-                        <h4>company name</h4>
+                        <h4>this.props.companyName</h4>
+                        <img src={this.props.logo} alt=""/>
                         <Link className='link'
                         to='/dashboard/settings'>
                             <FontAwesomeIcon 

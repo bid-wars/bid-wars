@@ -17,16 +17,16 @@ class BidsMadeVSClosed extends Component {
 
   getBidsMade(){
     let date = new Date();
-    axios
-    .post('/bids/open30', {date})
-    .then((res) => {
-      this.setState({
-        open30: res.data
-      })
-    })
-    .catch((err) => 
-      {if(err) throw err}
-    )
+    // axios
+    // .post('/bids/reports', {date})
+    // .then((res) => {
+    //   this.setState({
+    //     open30: res.data
+    //   })
+    // })
+    // .catch((err) => 
+    //   {if(err) throw err}
+    // )
   }
 
   render(){

@@ -35,7 +35,7 @@ import axios from 'axios'
           this.setState({
             newData: [...this.state.newData, args.data]
           })
-          axios.post('/event/add', {
+          axios.post('/events/add', {
                     Subject: args.data.Subject ,
                     Description: args.data.Description,
                     Location: args.data.Location,
@@ -74,7 +74,7 @@ import axios from 'axios'
                   data: dates
                 })
           }
-          axios.delete('/event/delete', {Id})           
+          axios.delete('/events/delete', {Id})           
       
       }else if(args.requestType === 'eventChanged'){
         const {
@@ -99,7 +99,7 @@ import axios from 'axios'
             newData: newArray
           })
         }
-        axios.put('/event/update', {
+        axios.put('/events/update', {
           Subject,
           Description,
           Location,
