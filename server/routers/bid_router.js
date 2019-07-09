@@ -10,7 +10,7 @@ const bid_ctrl = require('../controllers/bid_controller');
 // ROUTER
 const BidRouter = express.Router();
 
-// ROUTES
+// ENDPOINT ROUTES
 BidRouter.post('/reports', midWare.userLoggedIn, midWare.userIsBusiness, bid_ctrl.bidReports);
 BidRouter.get('/all', midWare.userLoggedIn, midWare.userIsBusiness, bid_ctrl.getBids);
 BidRouter.post('/add', midWare.userLoggedIn, midWare.userIsBusiness, bid_ctrl.addBid);
