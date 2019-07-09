@@ -58,6 +58,7 @@ module.exports = {
     deleteEvent: (req, res) => {
         const db = req.app.get('db');
         const {id} = req.params;
+        const db = req.app.get('db');
         db.events.delete_event({
             id
         });
