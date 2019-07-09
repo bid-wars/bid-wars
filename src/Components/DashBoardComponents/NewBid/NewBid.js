@@ -16,7 +16,8 @@ export default class NewBid extends Component {
         bidType: '',
         expirationDate: '',
         bidTotal: 0,
-        sendNote: 'We would love to work for you! Please see that link below to view your bid.'
+        sendNote: 'We would love to work for you! Please see that link below to view your bid.',
+        bidItems: []
         
 
     }
@@ -52,6 +53,13 @@ export default class NewBid extends Component {
         this.props.history.push('/dashboard')
     }
 
+    handleAddItem = e => {
+        this.setState({
+            bidItems: [...this.state.bidItems, e]
+        })
+        console.log(this.state.bidItems)
+      }
+
     // Handle fields change
     handleChange = input => e => {
         this.setState({[input]: e.target.value});
@@ -68,6 +76,10 @@ export default class NewBid extends Component {
         const{ step } = this.state;
         const { companyName, contactFirst, contactLast, contactPhone, contactEmail, bidType, expirationDate, bidTotal, sendNote} = this.state;
         const values = { companyName, contactFirst, contactLast, contactPhone, contactEmail, bidType, expirationDate, bidTotal, sendNote}
+        
+        const invoiceTotal = this.state.bidItems.reduce((total, element) =>{
+            return total += (element.unitPrice * element.qty)
+        }, 0)
 
         switch(step) {
             case 1:
@@ -87,6 +99,9 @@ export default class NewBid extends Component {
                         prevStep={this.prevStep}
                         handleChange={this.handleChange}
                         values={values}
+                        handleAddItem={this.handleAddItem}
+                        bidItems={this.state.bidItems}
+                        invoiceTotal={invoiceTotal}
                     />
                 )
             case 3: 

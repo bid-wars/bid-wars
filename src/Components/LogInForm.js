@@ -4,7 +4,7 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import TextField from 'material-ui/TextField'
 import {Link, withRouter} from 'react-router-dom'
 import {connect} from 'react-redux'
-import addUserInfo from '../redux/ownerReducer'
+import {addUserInfo} from '../redux/ownerReducer'
 
 
 class LogInForm extends Component {
@@ -23,9 +23,11 @@ class LogInForm extends Component {
         axios.post('/auth/login',{
             email: this.state.email,
            password: this.state.password
-        }).then(res => {console.log(res.data)
-            this.props.addUserInfo(res.data)})
-            .then(res => this.props.history.push('/dashboard'))
+        }).then(res => this.props.addUserInfo(res.data))
+        .then(res => this.props.history.push('/dashboard')).catch(err => console.log(err))
+
+           
+            
      
         this.setState({
             email: '',

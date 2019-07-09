@@ -20,54 +20,64 @@ export default class BidDetails extends Component{
   render(){
     const {values: {contactEmail, contactFirst, contactLast, expirationDate, bidTotal, sendNote}, handleChange} = this.props;
     return (
-      <MuiThemeProvider>
-        <React.Fragment>
-          <h1>Confirm and Send</h1>
-          <h1>Message Details</h1>
-          <List>
-            <ListItem
-              primaryText="Email:"
-              secondaryText={ contactEmail }
-            />
-            <ListItem
-              primaryText="Name:"
-              ////////////////////////// need to add first and last
-              secondaryText={ contactFirst }
-            />
-            <ListItem
-              primaryText="Bid Expiration Date:"
-              secondaryText={ expirationDate }
-            />
-            <ListItem
-              primaryText="Bid Total:"
-              secondaryText={ bidTotal }
-            />
-          </List>
-          <h1>Add a Note:</h1>
-          <input
-            // hintText="Bid Type"
-            // floatingLabelText="Enter Bid Type"
-            onChange={handleChange('sendNote')}
-            defaultValue={sendNote}
-          />
-          <br/>
+      <div className='new-bid-page'>
+        <MuiThemeProvider>
+          <React.Fragment>
+            <h1>Confirm and Send</h1>
+            <div className='form'>
+              <h3>Message Details</h3>
+              <div className='form-content'>
+                <List>
+                  <ListItem
+                    primaryText="Email:"
+                    secondaryText={ contactEmail }
+                  />
+                  <ListItem
+                    primaryText="Name:"
+                    ////////////////////////// need to add first and last
+                    secondaryText={ contactFirst }
+                  />
+                  <ListItem
+                    primaryText="Bid Expiration Date:"
+                    secondaryText={ expirationDate }
+                  />
+                  <ListItem
+                    primaryText="Bid Total:"
+                    secondaryText={ bidTotal }
+                  />
+                </List>
+              </div>
+            </div>
 
-          <hr/>
-          <RaisedButton
-            label="Back"
-            primary={false}
-            style={styles.button}
-            onClick={this.back}
-          />
-          <RaisedButton
-            label="Send Bid"
-            primary={true}
-            style={styles.button}
-            onClick={this.continue}
-          />
-          
-        </React.Fragment>
-      </MuiThemeProvider>
+            <div className='form'> 
+              <h3>Add a Note:</h3>
+              {/* <div className='form-content'> */}
+                <textarea className='message-input'
+                  // hintText="Bid Type"
+                  // floatingLabelText="Enter Bid Type"
+                  onChange={handleChange('sendNote')}
+                  defaultValue={sendNote}
+                />
+              {/* </div> */}
+            </div>
+
+            <div className='line'></div>
+            <div className='buttons-box'>
+              <button 
+                className='butn-negative'
+                onClick={this.back} 
+                >Back
+              </button>
+              <button 
+                className='butn-primary'
+                onClick={this.continue} 
+                >Send Bid
+              </button>
+            </div>
+            
+          </React.Fragment>
+        </MuiThemeProvider>
+      </div>
     )
   }
 }
