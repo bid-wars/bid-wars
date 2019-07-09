@@ -24,6 +24,8 @@ export default class BidDetails extends Component{
           bidRow={element}
           key={index}
           index={index}
+          handleDeleteLine={this.props.handleDeleteLine}
+          handleUpdateLine={this.props.handleUpdateLine}
         />
       )
     })
@@ -43,7 +45,15 @@ export default class BidDetails extends Component{
               />
               <br/>
               <TextField
+                hintText="Discount Amount"
+                floatingLabelText="Enter Discount Amount"
+                onChange={handleChange('dollarDisc')}
+                defaultValue={values.dollarDisc}
+              />
+              <br/>
+              <TextField
                 type="date"
+                floatingLabelText="Expiration Date"
                 label="Expiration Date"
                 // hintText="mm/dd/yyyy"
                 // floatingLabelText="Expiration Date"
@@ -64,6 +74,7 @@ export default class BidDetails extends Component{
                 <th>Unit Price</th>
                 <th>Qty</th>
                 <th>Extended Price</th>
+                <th>Action</th>
               </tr>
             </thead>
             <tbody>
@@ -74,10 +85,12 @@ export default class BidDetails extends Component{
             </tbody>
           </table>
 
-          <h1>bid total: {this.props.invoiceTotal}</h1>
+          <h1>Subtotal: {this.props.subtotal}</h1>
+          <h1>Less Discount: {values.dollarDisc}</h1>
+          <h1>Total: {this.props.invoiceTotal}</h1>
+
 
           <div className='line'></div>
-
           <div className='buttons-box'>
             <button 
               className='butn-negative'

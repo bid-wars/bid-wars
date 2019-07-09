@@ -17,9 +17,8 @@ export default class NewBid extends Component {
         expirationDate: '',
         bidTotal: 0,
         sendNote: 'We would love to work for you! Please see that link below to view your bid.',
-        bidItems: []
-        
-
+        bidItems: [],
+        dollarDisc: ''
     }
 
     // proceed to the next step
@@ -47,7 +46,7 @@ export default class NewBid extends Component {
             contactEmail: '',
             bidType: '',
             expirationDate: '',
-            bidTotal: 0,
+            bidTotal: '',
             sendNote: 'We would love to work for you! Please see that link below to view your bid.' 
         })
         this.props.history.push('/dashboard')
@@ -71,15 +70,31 @@ export default class NewBid extends Component {
             contactPhone: phoneTest
         })
     }
+
+    handleDeleteLine = (index) => {
+        let newBidItems = [...this.state.bidItems]
+        newBidItems.splice(index, 1)
+        this.setState({bidItems: newBidItems})
+    }
+
+    handleUpdateLine = (index, updateRow) => {
+        let newBidItems = [...this.state.bidItems]
+        newBidItems.splice(index, 1, updateRow)
+        this.setState({bidItems: newBidItems})
+    }
     
     render() {
         const{ step } = this.state;
-        const { companyName, contactFirst, contactLast, contactPhone, contactEmail, bidType, expirationDate, bidTotal, sendNote} = this.state;
-        const values = { companyName, contactFirst, contactLast, contactPhone, contactEmail, bidType, expirationDate, bidTotal, sendNote}
+        const { companyName, contactFirst, contactLast, contactPhone, contactEmail, bidType, expirationDate, bidTotal, sendNote, dollarDisc} = this.state;
+        const values = { companyName, contactFirst, contactLast, contactPhone, contactEmail, bidType, expirationDate, bidTotal, sendNote, dollarDisc}
         
-        const invoiceTotal = this.state.bidItems.reduce((total, element) =>{
+        const subtotal = this.state.bidItems.reduce((total, element) =>{
             return total += (element.unitPrice * element.qty)
         }, 0)
+        const invoiceTotal = this.state.bidItems.reduce((total, element) =>{
+            return total += (element.unitPrice * element.qty)
+        }, 0) - this.state.dollarDisc
+        console.log('updated bid items:', this.state.dollarDisc)
 
         switch(step) {
             case 1:
@@ -101,7 +116,10 @@ export default class NewBid extends Component {
                         values={values}
                         handleAddItem={this.handleAddItem}
                         bidItems={this.state.bidItems}
+                        subtotal={subtotal}
                         invoiceTotal={invoiceTotal}
+                        handleDeleteLine={this.handleDeleteLine}
+                        handleUpdateLine={this.handleUpdateLine}
                     />
                 )
             case 3: 
@@ -111,6 +129,7 @@ export default class NewBid extends Component {
                         prevStep={this.prevStep}
                         handleChange={this.handleChange}
                         values={values}
+                        invoiceTotal={invoiceTotal}
                     />
                 )
             case 4:
