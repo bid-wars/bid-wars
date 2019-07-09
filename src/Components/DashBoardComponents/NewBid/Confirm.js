@@ -43,7 +43,7 @@ export default class BidDetails extends Component{
                   />
                   <ListItem
                     primaryText="Bid Total:"
-                    secondaryText={ bidTotal }
+                    secondaryText={ this.props.invoiceTotal }
                   />
                 </List>
               </div>
