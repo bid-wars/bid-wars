@@ -1,5 +1,5 @@
 module.exports = {
-    getEvents: (req, res) => {
+    getEvents: async (req, res) => {
         const db = req.app.get('db');
         const {company_id} = req.session.user;
         const events = await db.events.get_all({
