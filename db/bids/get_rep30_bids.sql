@@ -1,4 +1,4 @@
-SELECT count(*)
+SELECT us.firstname, count(*) as bidsclosed
 FROM bids bi
 JOIN companies co
 ON bi.company_id = co.id
@@ -10,4 +10,4 @@ WHERE (
     bi.date >= ${past} AND 
     bi.status = 'closed' AND 
     co.id = ${company_id})
-GROUP BY bi.salesman_id;
+GROUP BY us.firstname;
