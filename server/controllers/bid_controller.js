@@ -27,15 +27,23 @@ module.exports = {
         res.status(200).send(output);
     },
     getBids: (req, res) => {
+        console.log('Body', req.body);
+        console.log('session.user', req.session.user);
         res.sendStatus(200);
     },
     addBid: (req, res) => {
+        console.log('Body', req.body);
+        console.log('session.user', req.session.user);
         res.sendStatus(200);
     },
     updateBid: (req, res) => {
+        console.log('Body', req.body);
+        console.log('session.user', req.session.user);
         res.sendStatus(200);
     },
     deleteBid: (req, res) => {
+        console.log('Body', req.body);
+        console.log('session.user', req.session.user);
         res.sendStatus(200);
     }
 }

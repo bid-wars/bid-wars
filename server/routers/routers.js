@@ -14,7 +14,7 @@ const addRoutes = (app) => {
     app.use('/s3', s3Router);
 }
 
-// EXPORTS
+// EXPORTS ROUTES
 module.exports = {
     addRoutes
 };

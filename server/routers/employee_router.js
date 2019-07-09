@@ -10,7 +10,7 @@ const employee_ctrl = require('../controllers/employee_controller');
 // ROUTER
 const EmployeeRouter = express.Router();
 
-// ROUTES
+// ENDPOINT ROUTES
 EmployeeRouter.get('/all', midWare.userLoggedIn, midWare.userIsOwner, employee_ctrl.getEmployees);
 EmployeeRouter.post('/add', midWare.userLoggedIn, midWare.userIsOwner, employee_ctrl.addEmployee);
 EmployeeRouter.put('/update', midWare.userLoggedIn, midWare.userIsOwner, employee_ctrl.updateEmployee);
