@@ -14,7 +14,7 @@ const EventRouter = express.Router();
 EventRouter.get('/all', midWare.userLoggedIn, midWare.userIsBusiness, event_ctrl.getEvents);
 EventRouter.post('/add', midWare.userLoggedIn, midWare.userIsBusiness, event_ctrl.addEvent);
 EventRouter.put('/update', midWare.userLoggedIn, midWare.userIsBusiness, event_ctrl.updateEvent);
-EventRouter.delete('/delete', midWare.userLoggedIn, midWare.userIsBusiness, event_ctrl.deleteEvent);
+EventRouter.delete('/delete/:id', midWare.userLoggedIn, midWare.userIsBusiness, event_ctrl.deleteEvent);
 
 // EXPORT ROUTER
 module.exports = {

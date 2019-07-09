@@ -39,13 +39,27 @@ module.exports = {
         res.status(200).send(Id[0]);
     },
     updateEvent: (req, res) => {
-        console.log('Body', req.body);
-        console.log('session.user', req.session.user);
+        const db = req.app.get('db');
+        const {Id, Subject, Description, Location, StartTime, EndTime} = req.body;
+        const newStartTime = new Date(StartTime);
+        const newEndTime = new Date(EndTime);
+        const startCorrected = newStartTime.getTime();
+        const endCorrected = newEndTime.getTime();
+        db.events.update_event({
+            Id,
+            Subject,
+            Description,
+            Location,
+            startCorrected,
+            endCorrected
+        });
         res.sendStatus(200);
     },
     deleteEvent: (req, res) => {
-        console.log('Body', req.body);
-        console.log('session.user', req.session.user);
+        const {id} = req.params;
+        db.events.delete_event({
+            id
+        });
         res.sendStatus(200);
     }
 }
