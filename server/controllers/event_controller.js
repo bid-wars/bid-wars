@@ -56,6 +56,7 @@ module.exports = {
         res.sendStatus(200);
     },
     deleteEvent: (req, res) => {
+        const db = req.app.get('db');
         const {id} = req.params;
         db.events.delete_event({
             id
