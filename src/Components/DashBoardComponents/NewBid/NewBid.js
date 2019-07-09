@@ -55,7 +55,7 @@ export default class NewBid extends Component {
 
     handleAddItem = e => {
         this.setState({
-            bidItems: [...this.state.bidItems, {e}]
+            bidItems: [...this.state.bidItems, e]
         })
         console.log(this.state.bidItems)
       }
@@ -76,6 +76,11 @@ export default class NewBid extends Component {
         const{ step } = this.state;
         const { companyName, contactFirst, contactLast, contactPhone, contactEmail, bidType, expirationDate, bidTotal, sendNote} = this.state;
         const values = { companyName, contactFirst, contactLast, contactPhone, contactEmail, bidType, expirationDate, bidTotal, sendNote}
+        
+        const invoiceTotal = this.state.bidItems.reduce((total, element) =>{
+            return total += (element.unitPrice * element.qty)
+        }, 0)
+
         switch(step) {
             case 1:
                 return(
@@ -95,6 +100,8 @@ export default class NewBid extends Component {
                         handleChange={this.handleChange}
                         values={values}
                         handleAddItem={this.handleAddItem}
+                        bidItems={this.state.bidItems}
+                        invoiceTotal={invoiceTotal}
                     />
                 )
             case 3: 

@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 
-class FormBidRows extends Component {
+class NewBidRow extends Component {
   state = {
     name: 'Material one',
     description: '',
@@ -45,11 +45,10 @@ class FormBidRows extends Component {
   }
 
   render(){
-    console.log(this.state)
     let rowTotal = +this.state.unitPrice * +this.state.qty
     return(
       <>
-        <tr>
+        {/* <tr>
           <td>1</td>
           <td>Name</td>
           <td>Desc</td>
@@ -57,10 +56,10 @@ class FormBidRows extends Component {
           <td>Unit Price</td>
           <td>Qty</td>
           <td>Extended Price</td>
-        </tr>
+        </tr> */}
         
         <tr>
-          <td>1</td>
+          <td>+</td>
           <td><input onChange={this.handleChangeItem} value={this.state.name}type='text' name='name' /></td>
           <td><input onChange={this.handleChangeItem} value={this.state.description}type='text' name='description'/></td>
           <td><input onChange={this.handleChangeItem} value={this.state.unitMeasure}type='text' name='unitMeasure'/></td>
@@ -75,4 +74,4 @@ class FormBidRows extends Component {
   }
 }
 
-export default FormBidRows
+export default NewBidRow
