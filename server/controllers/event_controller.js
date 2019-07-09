@@ -11,13 +11,15 @@ module.exports = {
         const db = req.app.get('db');
         const {Subject, Description, Location, StartTime, EndTime} = req.body;
         const {company_id} = req.session.user;
+        const startCorrected = StartTime.getTime();
+        const endCorrected = EndTime.getTime();
         const Id = await db.events.add_event({
             company_id,
             Subject,
             Description,
             Location,
-            StartTime,
-            EndTime
+            startCorrected,
+            endCorrected
         });
         res.status(200).send(Id);
     },
