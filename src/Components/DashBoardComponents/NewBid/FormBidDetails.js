@@ -2,8 +2,8 @@ import React, {Component} from 'react'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import TextField from 'material-ui/TextField'
 import RaisedButton from 'material-ui/RaisedButton'
-import FormBidRows from './FormBidRows'
-
+import NewBidRow from './NewBidRow'
+import BidRows from './BidRows';
 
 export default class BidDetails extends Component{
   continue = e => {
@@ -18,6 +18,15 @@ export default class BidDetails extends Component{
 
   render(){
     const {values, handleChange} = this.props;
+    let mappedBidItems = this.props.bidItems.map((element, index) => {
+      return(
+        <BidRows
+          bidRow={element}
+          key={index}
+          index={index}
+        />
+      )
+    })
     return (
       <div className='new-bid-page'>
       <MuiThemeProvider>
@@ -58,11 +67,14 @@ export default class BidDetails extends Component{
               </tr>
             </thead>
             <tbody>
-                <FormBidRows
+                {mappedBidItems}
+                <NewBidRow
                   handleAddItem={this.props.handleAddItem}
                 />
             </tbody>
           </table>
+
+          <h1>bid total: {this.props.invoiceTotal}</h1>
 
           <div className='line'></div>
 
