@@ -7,7 +7,7 @@ class BidsMadeVSClosed extends Component {
   constructor(){
     super()
     this.state = {
-      open30: []
+      reportData: []
     }
   }
 
@@ -18,10 +18,10 @@ class BidsMadeVSClosed extends Component {
   getBidsMade(){
     let date = new Date();
     axios
-    .post('/bids/open30', {date})
+    .post('/bids/reports', {date})
     .then((res) => {
       this.setState({
-        open30: res.data
+        reportData: res.data
       })
     })
     .catch((err) => 
@@ -30,7 +30,7 @@ class BidsMadeVSClosed extends Component {
   }
 
   render(){
-    console.log('30 day history:', this.state.open30)
+    console.log('30 day history:', this.state.reportData)
     return(
       <div className='size'>
         <div>
