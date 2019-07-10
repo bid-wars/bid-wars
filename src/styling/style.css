@@ -911,4 +911,177 @@
   height: 100%;
   width: 50%;
 }
+
+.Employees {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background: #F9F9F9;
+}
+
+.Employees button {
+  background: #3454D1;
+  color: #e8e8e8;
+  font-family: "Roboto", sans-serif;
+  border: none;
+  padding: .6vh 1.5vw;
+  border-radius: 10px;
+  margin-right: 4vw;
+  cursor: pointer;
+  font-size: 1em;
+  -webkit-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
+}
+
+.Employees button:hover {
+  background: #2d4abd;
+}
+
+.Employees .top .addedlist {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 80%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.Employees .top .addedlist .addedPerson {
+  margin: 0 1vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: auto;
+}
+
+.Employees .top .addedlist .addedPerson .trash {
+  margin-top: 1vh;
+  cursor: pointer;
+}
+
+.Employees .top .addedlist .addedPerson .trash:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.Employees .top .addedlist .addedPerson h2 {
+  font-family: "Roboto", sans-serif;
+  color: #4d4d4d;
+  font-size: 1.5em;
+}
+
+.Employees .bottom {
+  height: 100%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.Employees .bottom .line {
+  margin: 5vh 0;
+  width: 80%;
+  height: 1px;
+  background: #4d4d4d;
+}
+
+.Employees .bottom .employeeList {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 80%;
+  height: 100%;
+}
+
+.Employees .bottom .employeeList .person {
+  width: 30vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 3vh 0;
+}
+
+.Employees .bottom .employeeList .person h2 {
+  font-family: "Roboto", sans-serif;
+  color: #4d4d4d;
+  font-size: 2em;
+  margin: 0 .5vw;
+}
+
+.Employees .bottom .employeeList .names {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.Employees .bottom .employeeList .names h1 {
+  font-family: "Roboto", sans-serif;
+  color: #4d4d4d;
+  font-size: 2em;
+  margin: 0 .5vw;
+}
+
+.Employees .bottom .employeeList .inputboxes {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
 /*# sourceMappingURL=style.css.map */
