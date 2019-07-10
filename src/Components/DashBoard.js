@@ -3,9 +3,11 @@ import DashBoardRouter from './dashBoardRouter'
 import {Link, withRouter} from 'react-router-dom'
 import {connect} from 'react-redux'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {faUserCog, faPlusCircle} from '@fortawesome/free-solid-svg-icons'
+import {faUserCog, faPlusCircle, faRocket} from '@fortawesome/free-solid-svg-icons'
 import {logOut} from '../redux/ownerReducer'
-import axios from 'axios'
+import Boom from './Boom';
+import '../styling/schedule.css'
+
 
 
  class DashBoard extends Component {
@@ -16,9 +18,11 @@ import axios from 'axios'
         reports: 'notactive',
         schedule: 'notactive',
         employees: 'notactive',
-        nurture: 'notactive'
-       
+        nurture: 'notactive',
+        fireworks: false
+        
     }
+    
     handleActive = (e) =>{
  
         let current = this.state.active
@@ -38,24 +42,36 @@ import axios from 'axios'
         
     }
     logOut = () => {
+      
         this.props.logOut()
         this.props.history.push('/')
     }
+    onFireWorks = () =>{
+        this.setState({
+            fireworks: !this.state.fireworks
+        })
+    }
     render() {
+        console.log(this.props)
 
         return (
             <div className='dashboard'>
-               
+               {this.state.fireworks && <><Boom/></>}
+
                 <header>
                     <div className='logo'>
-                        <img src='https://bidtracker.s3-us-west-1.amazonaws.com/zsPOb9QgpJQtOSSAMgHPXvRhdbSRNemp-logo.png' alt=""/>
+                        <img src='https://bidtracker.s3-us-west-1.amazonaws.com/Da5UHE34nlKosYUztHDgJ4DD7J0c4Z0f-text939-1.png' alt=""/>
                        
                     </div>
                     <div className='title'>
                         <h1>{this.state.active}</h1>
                     </div>
                     <div className='settings'>
-                        <h4>company name</h4>
+                        <div className='companyname'>
+                        <h4>{this.props.companyName}</h4>
+                        </div>
+                        
+                        <img src={this.props.logo} alt=""/>
                         <Link className='link'
                         to='/dashboard/settings'>
                             <FontAwesomeIcon 
@@ -109,6 +125,10 @@ import axios from 'axios'
                             />NEW BID</button>
                         </Link>
                         <button className='logout' onClick={this.logOut}>Log out</button>
+                        {/* <FontAwesomeIcon 
+                        onClick={this.onFireWorks}
+                        icon={faRocket}
+                        /> */}
                         </div>
                     </nav>
                     <div className='routedisplay'>

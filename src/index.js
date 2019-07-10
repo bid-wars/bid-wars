@@ -8,6 +8,7 @@ import '../src/styling/resetStyle.css'
 import '../src/styling/style.css'
 
 
+
 ReactDOM.render(
     <Provider store={store}>
        

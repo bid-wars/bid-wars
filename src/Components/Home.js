@@ -38,7 +38,7 @@ export default class Home extends Component {
             <div className='homePage'>
                 <div className='topbanner'>
                     
-                        <img src='https://bidtracker.s3-us-west-1.amazonaws.com/zsPOb9QgpJQtOSSAMgHPXvRhdbSRNemp-logo.png' alt=""/>
+                        <img src='https://bidtracker.s3-us-west-1.amazonaws.com/Da5UHE34nlKosYUztHDgJ4DD7J0c4Z0f-text939-1.png' alt=""/>
                     <div className='links'>
                         <Link className='link' to='/register' >Register</Link>
                         <Link to='/login' className='link' >Login</Link>
