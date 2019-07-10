@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faUserCog, faPlusCircle, faRocket} from '@fortawesome/free-solid-svg-icons'
 import {logOut} from '../redux/ownerReducer'
 import Boom from './Boom';
+import '../styling/schedule.css'
 
 
 

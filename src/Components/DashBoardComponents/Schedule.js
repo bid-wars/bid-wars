@@ -3,6 +3,7 @@ import {connect} from 'react-redux'
 import {updateNewDate, deleteDay, updateDate} from '../../redux/ownerReducer'
 import { ScheduleComponent, Day, Week, Month, Inject, ViewsDirective, ViewDirective,  } from '@syncfusion/ej2-react-schedule';
 import axios from 'axios'
+import '../../styling/schedule.css'
 
 
 
