@@ -35,7 +35,11 @@ export default class Employees extends Component {
     handleEditButton = (i) => {
         this.setState({
             edit: !this.state.edit,
-            onEdit: this.state.employees[i]
+            onEdit: this.state.employees[i],
+            editfirstname: this.state.employees[i].firstname,
+            editlastname: this.state.employees[i].lastname,
+            editemail: this.state.employees[i].email,
+            editpassword: ''
         })
     }
     completeEdit = (id) => {
@@ -45,13 +49,24 @@ export default class Employees extends Component {
            firstname: this.state.editfirstname,
            lastname: this.state.editlastname,
            email: this.state.editemail,
-           password: this.state.editpassword
+           password: this.state.editpassword,
+           role: 'sales'
          
        }) 
-       this.handleEditButton()
+       this.setState({
+        editfirstname: '',
+        editlastname: '',
+        editemail: '',
+        editpassword: ''
+       })
+       axios.get('/employees/all').then(res => this.setState({employees: res.data}))
+       this.editSwitch()
     }
     delete = (id) => {
         axios.delete(`/employees/delete/${id}`)
+        axios.get('/employees/all').then(res => this.setState({employees: res.data}))
+        this.editSwitch()
+      
     }
     addEmployeesToList = (e) =>{
       
@@ -63,7 +78,7 @@ export default class Employees extends Component {
                 lastname,
                 email,
                 password,
-                roll: 'sales'
+                role: 'sales'
             }],
             firstname: '',
             lastname: '',
@@ -80,9 +95,17 @@ export default class Employees extends Component {
     }
     submitToDb = () =>{
         axios.post('/employees/add', this.state.addedEmployees).then(res => this.setState({addedEmployees: []}))
-
+        axios.get('/employees/all').then(res => this.setState({employees: res.data}))
     }
-
+    editSwitch = () => {
+        this.setState({
+            edit: !this.state.edit,
+            editfirstname: '',
+            editlastname: '',
+            editemail: '',
+            editpassword: ''
+        })
+    }
     render() {
         console.log(this.state)
         let employees = this.state.employees.map((person, i) => {
@@ -197,7 +220,7 @@ fontSize: '1.2em'}
                         onChange={this.handleChange}
                         />
                         <TextField 
-                        floatingLabelText='Password'
+                        floatingLabelText='Add Password'    
                         floatingLabelFocusStyle={{color: '#4D4D4D',
                          fontSize: '1.2em'   
                         }}
@@ -207,7 +230,11 @@ fontSize: '1.2em'}
                         name='editpassword'
                         value={this.state.editpassword}
                         onChange={this.handleChange}/>
+                        
+                        </div>
+                        <div className='buttonsdiv'>
                         <button onClick={() =>this.completeEdit(this.state.onEdit.id)}>Submit</button>
+                        <button onClick={this.editSwitch}>Cancel</button>
                         <FontAwesomeIcon 
                         className='trash'
                         icon={faTrashAlt}

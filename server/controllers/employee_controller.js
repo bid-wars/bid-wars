@@ -10,7 +10,7 @@ module.exports = {
     addEmployee: async (req, res) => {
         const db = req.app.get('db');
         const {company_id} = req.session.user;
-        for (employee in req.body) {
+        for (let employee of req.body) {
             const {email, password, firstname, lastname, role} = employee;
             const userFound = await db.auth.check_user_email({email});
             if (!userFound[0]) {
@@ -31,10 +31,11 @@ module.exports = {
     updateEmployee: (req, res) => {
         const db = req.app.get('db');
         const {company_id} = req.session.user;
-        const {email, password, firstname, lastname, role} = req.body;
+        const {email, password, firstname, lastname, role, id} = req.body;
         const salt = bcrypt.genSaltSync(10);
         const hash = bcrypt.hashSync(password, salt);
         db.auth.update_user({
+            id,
             email,
             password: hash,
             firstname,
