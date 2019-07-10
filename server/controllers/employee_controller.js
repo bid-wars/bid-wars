@@ -29,13 +29,25 @@ module.exports = {
         res.sendStatus(200);
     },
     updateEmployee: (req, res) => {
-        console.log('Body', req.body);
-        console.log('session.user', req.session.user);
+        const db = req.app.get('db');
+        const {company_id} = req.session.user;
+        const {email, password, firstname, lastname, role} = req.body;
+        const salt = bcrypt.genSaltSync(10);
+        const hash = bcrypt.hashSync(password, salt);
+        db.auth.update_user({
+            email,
+            password: hash,
+            firstname,
+            lastname,
+            role,
+            company_id
+        });
         res.sendStatus(200);
     },
     deleteEmployee: (req, res) => {
-        console.log('Body', req.body);
-        console.log('session.user', req.session.user);
+        const db = req.app.get('db');
+        const {id} = req.params;
+        db.employees.delete_employee({id});
         res.sendStatus(200);
     }
 }
