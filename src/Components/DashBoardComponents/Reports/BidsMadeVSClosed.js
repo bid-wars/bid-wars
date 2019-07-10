@@ -6,17 +6,27 @@ import { connect } from 'react-redux'
 class BidsMadeVSClosed extends Component {
 
   render(){
-    console.log("data from redux", this.props)
+    function dateArray () {
+      let last30 = []
+      let today = new Date()
+      for (let i = 30; i >= 1; i--){
+        let today = new Date()
+        let day = today.setDate(today.getDate() - i)
+        let formatedDay = String(new Date(day)).slice(4, 10)
+        last30.push(formatedDay)
+      }
+      return last30
+    } 
+    let {open30Bids, closed30Bids} = this.props.reduxState
     return(
       <div className='size'>
         <div>
           <Line 
-            data={{labels: ['7-3', '7-4', '7-5'],
+            data={{labels: dateArray(),
             datasets: [
               {
                 label: 'Bids Made',
                 fill: false,
-                lineTension: 0.1,
                 backgroundColor: 'rgba(75, 192, 192, 0.4)',
                 borderColor: 'rgba(75, 192, 192, 1',
                 borderCapStyle: 'butt',
@@ -32,28 +42,27 @@ class BidsMadeVSClosed extends Component {
                 pointHoverBorderWidth: 2,
                 pointRadius: 1, 
                 pointHitRadius: 10,
-                data: [60, 50, 40]
+                data: open30Bids
               },
               {
                 label: 'Bids Closed',
                 fill: false,
-                lineTension: 0.1,
-                backgroundColor: 'rgba(141, 64, 192, .5)',
-                borderColor: 'rgba(141, 64, 192)',
+                backgroundColor: 'rgba(255, 64, 64, 0.9)',
+                borderColor: 'rgba(255, 64, 64)',
                 borderCapStyle: 'butt',
                 borderDash: [],
                 borderDashOffset: 0.0,
                 borderJoinStyle: 'miter',
-                pointBorderColor: 'rgba(141, 64, 192)',
+                pointBorderColor: 'rgba(255, 64, 64)',
                 pointBackgroundColor: '#fff',
                 pointBorderWidth: 1,
                 pointHoverRadius: 5,
-                pointHoverBackgroundColor: 'rgba(141, 64, 192)',
-                pointHoverBorderColor: 'rgba(141, 64, 192)',
+                pointHoverBackgroundColor: 'rgba(255, 64, 64)',
+                pointHoverBorderColor: 'rgba(255, 64, 64)',
                 pointHoverBorderWidth: 2,
                 pointRadius: 1, 
                 pointHitRadius: 10,
-                data: [40, 50, 60]
+                data: closed30Bids
               }
             ],
             
