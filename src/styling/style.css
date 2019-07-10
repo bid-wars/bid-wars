@@ -421,7 +421,7 @@
   font-family: "Roboto", sans-serif;
   font-size: 1em;
   border: none;
-  padding: .7em 2em;
+  padding: .6vh 1.5vw;
   border-radius: 10px;
   margin-right: 4vw;
   cursor: pointer;
@@ -432,7 +432,7 @@
   color: #e8e8e8;
   font-family: "Roboto", sans-serif;
   border: none;
-  padding: .7em 2em;
+  padding: .6vh 1.5vw;
   border-radius: 10px;
   margin-right: 4vw;
   cursor: pointer;
