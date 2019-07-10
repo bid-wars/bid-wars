@@ -1,20 +1,27 @@
 import React, { Component } from 'react'
 import {Bar} from 'react-chartjs-2'
-
+import { connect } from 'react-redux'
 
 class QtyClosedByRep extends Component {
-
   render(){
+    console.log(this.props.reduxState.salesBidCount)
+    let {salesBidCount} = this.props.reduxState
+    let salesNames = []
+    let salesCloses = [] 
+    salesBidCount.map(salesperson => {
+      salesNames.push(salesperson.firstname)
+      salesCloses.push(salesperson.bidsclosed)
+    })
     return(
       <div className='chart-size-1'>
         <Bar
-          data={{labels: ['john', 'jack', 'jill', 'Deborah'],
+          data={{labels: salesNames,
           datasets: [
             {
               type: 'bar',
               label: 'Bids Closed',
-              backgroundColor: 'rgba(217, 83, 79, 0.75)',
-              data: [10, 11, 12, 13]
+              backgroundColor: 'rgba(255, 64, 64, 0.9)',
+              data: salesCloses
             }
 
           ]
@@ -47,4 +54,11 @@ class QtyClosedByRep extends Component {
     )
   }
 }
-export default QtyClosedByRep
+
+function mapStateToProps(reduxState) {
+  return {
+    reduxState
+  }
+}
+
+export default connect(mapStateToProps)(QtyClosedByRep)
