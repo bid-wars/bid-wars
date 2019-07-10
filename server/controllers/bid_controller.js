@@ -26,10 +26,25 @@ module.exports = {
         output.salesBidCount = await db.bids.get_rep30_bids({id, past, company_id});
         res.status(200).send(output);
     },
-    getBids: (req, res) => {
-        console.log('Body', req.body);
-        console.log('session.user', req.session.user);
-        res.sendStatus(200);
+    getBids: async (req, res) => {
+        db = req.app.get('db');
+        const{id} = req.session.user;
+        const bids = await db.bids.get_bids({id});
+        const output = bids.map((bid) => {
+            const {id, status, company_id, customer_id, date, salesman_id, items} = bid;
+            const correctedDate = new Date(date);
+            const correctedItems = JSON.parse(items);
+            return {
+                id,
+                status,
+                company_id,
+                customer_id,
+                date: correctedDate,
+                salesman_id,
+                items: correctedItems
+            }
+        });
+        res.status(200).send(output);
     },
     addBid: (req, res) => {
         console.log('Body', req.body);
