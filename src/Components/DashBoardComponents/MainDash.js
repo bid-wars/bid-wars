@@ -2,9 +2,27 @@ import React, { Component } from 'react'
 import {connect} from 'react-redux'
 import Schedule from './Schedule'
 import BidsMadeVSClosed from './Reports/BidsMadeVSClosed'
+import {updateReportData} from '../../redux/ownerReducer'
+import axios from 'axios'
 
  class MainDash extends Component {
-     
+    componentDidMount(){
+        this.getBidReportData();
+    }
+
+    getBidReportData(){
+    let date = new Date();
+    axios
+    .post('/bids/reports', {date})
+    .then((res) => {
+        this.props.updateReportData(res.data)
+    })
+    .catch((err) => 
+        {if(err) throw err}
+        )
+    }
+
+
 
     render() {
      
@@ -42,4 +60,4 @@ function mapStateToProps(state){
     return state
 }
 
-export default connect(mapStateToProps)(MainDash)
+export default connect(mapStateToProps, {updateReportData})(MainDash)

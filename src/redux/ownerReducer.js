@@ -10,8 +10,10 @@ const initialState = {
     user_id: null,
     bids: [],
     schedule: [],
-    role: ''
-    
+    role: '',
+    open30Bids: [],
+    closed30Bids: [],
+    salesBidCount: []
 }
 
     const UPDATE_USER = 'UPDATE_USER'
@@ -19,6 +21,7 @@ const initialState = {
     const DELETE_DAY = 'DELETE_DAY'
     const UPDATE_DATE = 'UPDATE_DATE'
     const LOGOUT = 'LOGOUT'
+    const UPDATE_REPORT_DATA = 'UPDATE_REPORT_DATA' 
    
 
     export function addUserInfo(user){
@@ -50,6 +53,13 @@ const initialState = {
                 type: LOGOUT
             }
     }
+    export function updateReportData(reportData){
+        return{
+            type: UPDATE_REPORT_DATA,
+            payload: reportData
+        }
+    }
+
     
 
 
@@ -143,7 +153,15 @@ function reducer (state = initialState, action){
                     return {...state}
                 case LOGOUT: 
                    return {...initialState}
-                
+        case UPDATE_REPORT_DATA:
+            const {open30Bids, closed30Bids, salesBidCount} = action.payload
+            console.log(action.payload.open30Bids)
+            return {
+                ...state,
+                open30Bids: open30Bids,
+                closed30Bids: closed30Bids,
+                salesBidCount: salesBidCount
+            }
                 
         default:
              return state

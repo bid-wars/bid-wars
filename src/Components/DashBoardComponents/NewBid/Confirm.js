@@ -3,6 +3,8 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import TextField from 'material-ui/TextField'
 import RaisedButton from 'material-ui/RaisedButton'
 import {List, ListItem} from 'material-ui/List'
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 
 export default class BidDetails extends Component{
@@ -71,7 +73,14 @@ export default class BidDetails extends Component{
               <button 
                 className='butn-primary'
                 onClick={this.continue} 
-                >Send Bid
+              >
+                <FontAwesomeIcon 
+                  className='icon'
+                  icon={faEnvelope}
+                  size='1x'
+                  color={'#fff'}
+                />
+              Send Bid
               </button>
             </div>
             

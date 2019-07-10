@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 // import axios from 'axios'
 import {Line} from 'react-chartjs-2'
-import axios from 'axios'
+import { connect } from 'react-redux'
 
 class BidsMadeVSClosed extends Component {
   constructor(){
@@ -30,7 +30,7 @@ class BidsMadeVSClosed extends Component {
   }
 
   render(){
-    console.log('30 day history:', this.state.open30)
+    console.log("data from redux", this.props)
     return(
       <div className='size'>
         <div>
@@ -112,6 +112,10 @@ class BidsMadeVSClosed extends Component {
   }
 }
 
+function mapStateToProps(reduxState) {
+  return {
+    reduxState
+  }
+}
 
-
-export default BidsMadeVSClosed
+export default connect(mapStateToProps)(BidsMadeVSClosed)
