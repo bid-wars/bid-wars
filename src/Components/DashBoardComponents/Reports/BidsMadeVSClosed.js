@@ -4,6 +4,30 @@ import {Line} from 'react-chartjs-2'
 import { connect } from 'react-redux'
 
 class BidsMadeVSClosed extends Component {
+  constructor(){
+    super()
+    this.state = {
+      open30: []
+    }
+  }
+
+  componentDidMount(){
+    this.getBidsMade();
+  }
+
+  getBidsMade(){
+    let date = new Date();
+    // axios
+    // .post('/bids/reports', {date})
+    // .then((res) => {
+    //   this.setState({
+    //     open30: res.data
+    //   })
+    // })
+    // .catch((err) => 
+    //   {if(err) throw err}
+    // )
+  }
 
   render(){
     console.log("data from redux", this.props)

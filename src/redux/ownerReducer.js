@@ -66,9 +66,10 @@ const initialState = {
 function reducer (state = initialState, action){
     switch(action.type){
         case UPDATE_USER:
+            console.log(action.payload)
             const {firstname,
             lastname,
-            companyName,
+            name,
             website,
             phone,
             email,
@@ -81,7 +82,7 @@ function reducer (state = initialState, action){
            
             return {firstname,
                 lastname,
-                companyName,
+                companyName: name,
                 website,
                 phone,
                 email,
