@@ -11,6 +11,7 @@ const initialState = {
     bids: [],
     schedule: [],
     role: ''
+    
 }
 
     const UPDATE_USER = 'UPDATE_USER'

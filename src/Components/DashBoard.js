@@ -59,7 +59,7 @@ import Boom from './Boom';
 
                 <header>
                     <div className='logo'>
-                        <img src='https://bidtracker.s3-us-west-1.amazonaws.com/zsPOb9QgpJQtOSSAMgHPXvRhdbSRNemp-logo.png' alt=""/>
+                        <img src='https://bidtracker.s3-us-west-1.amazonaws.com/Da5UHE34nlKosYUztHDgJ4DD7J0c4Z0f-text939-1.png' alt=""/>
                        
                     </div>
                     <div className='title'>
@@ -124,10 +124,10 @@ import Boom from './Boom';
                             />NEW BID</button>
                         </Link>
                         <button className='logout' onClick={this.logOut}>Log out</button>
-                        <FontAwesomeIcon 
+                        {/* <FontAwesomeIcon 
                         onClick={this.onFireWorks}
                         icon={faRocket}
-                        />
+                        /> */}
                         </div>
                     </nav>
                     <div className='routedisplay'>
