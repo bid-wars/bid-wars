@@ -14,7 +14,7 @@ const EmployeeRouter = express.Router();
 EmployeeRouter.get('/all', midWare.userLoggedIn, midWare.userIsOwner, employee_ctrl.getEmployees);
 EmployeeRouter.post('/add', midWare.userLoggedIn, midWare.userIsOwner, employee_ctrl.addEmployee);
 EmployeeRouter.put('/update', midWare.userLoggedIn, midWare.userIsOwner, employee_ctrl.updateEmployee);
-EmployeeRouter.delete('/delete', midWare.userLoggedIn, midWare.userIsOwner, employee_ctrl.deleteEmployee);
+EmployeeRouter.delete('/delete/:id', midWare.userLoggedIn, midWare.userIsOwner, employee_ctrl.deleteEmployee);
 
 // EXPORT ROUTER
 module.exports = {
