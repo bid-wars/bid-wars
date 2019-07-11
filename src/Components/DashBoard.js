@@ -18,7 +18,6 @@ import '../styling/schedule.css'
         reports: 'notactive',
         schedule: 'notactive',
         employees: 'notactive',
-        nurture: 'notactive',
         fireworks: false
         
     }
@@ -109,11 +108,6 @@ import '../styling/schedule.css'
                                 <li onClick={() => this.handleActive('employees')}
                                 className={this.state.employees}
                                 >Manage Employees</li>
-                            </Link>
-                            <Link to='/dashboard/nurture' style={{ textDecoration: 'none' }}>
-                                <li onClick={() => this.handleActive('nurture')}
-                                className={this.state.nurture}
-                                >Nurture Bids</li>
                             </Link>
                         </ul>
                         <div className='bottombuttons'>
