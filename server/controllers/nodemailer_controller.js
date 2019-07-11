@@ -11,6 +11,7 @@ module.exports = {
         // const html = `
         //     <h1>HTML GOES HERE</h1>
         // `
+
         let transporter = nodemailer.createTransport({
             host: "smtp.mail.yahoo.com",
             port: 465,
