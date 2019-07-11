@@ -67,14 +67,14 @@ export default class BidDetails extends Component{
           <table>
             <thead>
               <tr>
-                <th>Line #</th>
-                <th>Name</th>
-                <th>Description</th>
-                <th>Unit Measure</th>
-                <th>Unit Price</th>
-                <th>Qty</th>
-                <th>Extended Price</th>
-                <th>Action</th>
+                <th className='column1'>Line #</th>
+                <th className='column2'>Name</th>
+                <th className='column3'>Description</th>
+                <th className='column4'>Unit Measure</th>
+                <th className='column5'>Unit Price</th>
+                <th className='column6'>Qty</th>
+                <th className='column7'>Extended Price</th>
+                <th className='column8'>Action</th>
               </tr>
             </thead>
             <tbody>

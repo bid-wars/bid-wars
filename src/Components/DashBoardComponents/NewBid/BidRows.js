@@ -111,7 +111,7 @@ export default class BidRows extends Component{
         </>):(
         <>
           <tr>
-            <th>{this.props.index +1}</th>
+            <th className='table1-row1'>{this.props.index +1}</th>
             <th>{this.props.bidRow.name}</th>
             <th>{this.props.bidRow.description}</th>
             <th>{this.props.bidRow.unitMeasure}</th>

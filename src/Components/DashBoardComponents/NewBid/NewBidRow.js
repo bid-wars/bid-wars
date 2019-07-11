@@ -1,4 +1,6 @@
 import React, {Component} from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPlusCircle } from '@fortawesome/free-solid-svg-icons';
 
 class NewBidRow extends Component {
   state = {
@@ -58,17 +60,25 @@ class NewBidRow extends Component {
           <td>Extended Price</td>
         </tr> */}
         
-        <tr>
-          <td>+</td>
-          <td><input onChange={this.handleChangeItem} value={this.state.name}type='text' name='name' /></td>
+        <tr id='table1-add-row'>
+          <td className='column1'>new</td>
+          <td className='column2'><input onChange={this.handleChangeItem} value={this.state.name}type='text' name='name' /></td>
           <td><input onChange={this.handleChangeItem} value={this.state.description}type='text' name='description'/></td>
           <td><input onChange={this.handleChangeItem} value={this.state.unitMeasure}type='text' name='unitMeasure'/></td>
           <td><input onChange={this.handleChangeItem} value={this.state.unitPrice}type='number' name='unitPrice'/></td>
           <td><input onChange={this.handleChangeItem} value={this.state.qty}type='number' name='qty'/></td>
           <td>{rowTotal}</td>
+          <td onClick={this.handleAddItem}>
+            <FontAwesomeIcon 
+            className='icon'
+            icon={faPlusCircle}
+            margin="0"
+            size='2x'
+            color={'rgba(255, 64, 64, 0.715)'}
+          /></td>
         </tr>
 
-        <button onClick={this.handleAddItem}>Add Item</button>
+        {/* <button onClick={this.handleAddItem}>Add Item</button> */}
       </>
     )
   }

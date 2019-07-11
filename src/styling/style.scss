@@ -345,14 +345,18 @@ $darkBackgroundColor: rgb(36, 36, 44);
     height: 90vh;
     background: $platinum;
     .new-bid-page{
+        
         display: flex;
-        justify-content: center;
+        justify-content: flex-start;
         align-items: center;
         flex-direction: column;
+        
+        height: 90vh;
         overflow: scroll;
         overflow-x: hidden;
         padding-top: 2em;
         padding-left: 2em;
+        box-sizing: border-box;
         h1{
             font-family: $font;
             font-size: 2em;
@@ -399,6 +403,67 @@ $darkBackgroundColor: rgb(36, 36, 44);
         }
         .icon{
             margin: .5em;
+        }
+        thead {
+            background: $green;
+            border-bottom: 1px solid $darkColor;
+            color: $fontColorDark;
+            font-weight: 800;
+        }
+        tbody tr th {
+            text-align: left;
+            // padding-left: 0.5em;
+            vertical-align: bottom;
+            border-right: 1px solid $lightGrey;
+        }
+        table{
+            border: 2px solid $darkColor;
+        }
+        tbody tr:nth-child(even){
+            background: $lightGrey;
+        }
+        tbody tr:nth-child(odd){
+            background: #fff;
+        }
+
+        tr td 
+            input {
+                border:none;
+                background-image:none;
+                background-color:transparent;
+                height: 5vh;
+                width: 100%;
+            }
+            .icon {
+                margin: 0 .5em;
+            }
+        #table1-add-row{
+            border-top: 3px solid $green;
+            background: #fff;
+        }
+        .column1 {
+            width: 5vw;
+        }
+        .column2 {
+            width: 15vw;
+        }
+        .column3 {
+            width: 20vw;
+        }
+        .column4 {
+            width: 5vw;
+        }
+        .column5 {
+            width: 5vw;
+        }
+        .column6 {
+            width: 5vw;
+        }
+        .column7 {
+            width: 5vw;
+        }
+        .column8 {
+            width: 7vw;
         }
 
     }
