@@ -21,7 +21,6 @@ module.exports = {
                 pass: PASSWORD
             }
         });
-
         let info = await transporter.sendMail({
             from: EMAIL, // sender address
             to: toEmail, // list of receivers

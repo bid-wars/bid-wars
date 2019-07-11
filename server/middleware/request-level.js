@@ -1,6 +1,8 @@
 module.exports = {
     userLoggedIn: (req, res, next) => {
-        if (!req.session.id) return res.status(401).send('Unauthorized, please log in.');
+        if (!req.session.user) {
+            return res.status(401).send('Unauthorized, please log in.');
+        }
         next();
     },
     userIsBusiness: (req, res, next) => {
@@ -12,7 +14,9 @@ module.exports = {
     },
     userIsOwner: (req, res, next) => {
         const {role} = req.session.user;
-        if (role !== "owner") return res.status(401).send('Unauthorized, you must be the account admin of a business account.');
+        if (role !== "owner") {
+            return res.status(401).send('Unauthorized, you must be the account admin of a business account.');
+        };
         next();
     }
 }
