@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import {Link} from 'react-router-dom'
-import {faChartBar, faAddressBook, faFilePdf, faPaperPlane, faClipboardList} from '@fortawesome/free-solid-svg-icons'
+import {faChartBar, faAddressBook, faPaperPlane, faClipboardList} from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 
@@ -12,7 +12,6 @@ export default class Home extends Component {
         clipboard: 'active',
         chart: 'notactive',
         contact: 'notactive',
-        pdf: 'notactive',
         mail: 'notactive',
     }
     onClick = (e) => {
@@ -33,12 +32,12 @@ export default class Home extends Component {
     }
  
     render() {
-        const {clipboard, chart, contact, pdf, mail, iconColorActive, iconColorNotActive, activeIcon} = this.state
+        const {clipboard, chart, contact, mail, iconColorActive, iconColorNotActive, activeIcon} = this.state
         return (
             <div className='homePage'>
                 <div className='topbanner'>
                     
-                        <img src='https://bidtracker.s3-us-west-1.amazonaws.com/Da5UHE34nlKosYUztHDgJ4DD7J0c4Z0f-text939-1.png' alt=""/>
+                        <img className='logo' src='https://bidtracker.s3-us-west-1.amazonaws.com/Da5UHE34nlKosYUztHDgJ4DD7J0c4Z0f-text939-1.png' alt=""/>
                     <div className='links'>
                         <Link className='link' to='/register' >Register</Link>
                         <Link to='/login' className='link' >Login</Link>
@@ -68,13 +67,6 @@ export default class Home extends Component {
                         color={contact === 'active'? iconColorActive : iconColorNotActive}
                         onClick={() => this.onClick('contact')}
                     />
-                    <FontAwesomeIcon
-                        className='icon' 
-                        icon={faFilePdf}
-                        size='4x'
-                        color={pdf === 'active'? iconColorActive : iconColorNotActive}
-                        onClick={() => this.onClick('pdf')}
-                    />
                     <FontAwesomeIcon 
                         className='icon'
                         icon={faPaperPlane}
@@ -86,11 +78,10 @@ export default class Home extends Component {
                     <div className='bottomnav'>
                         <div className='left'>
                         {
-                            activeIcon === 'clipboard'? <div>
+                            activeIcon === 'clipboard'? 
+                            <div>
                                 
-                                <Link to='/dashboard'>Dashboard</Link>
-
-                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquid modi cupiditate, sed dignissimos, eum tempora consequatur facilis inventore odit temporibus accusamus? Iste optio ad adipisci exercitationem voluptatibus debitis, nisi rerum.</p>
+                                
                             </div> :
                             activeIcon === 'chart' ?
                             <div>
@@ -99,10 +90,6 @@ export default class Home extends Component {
                             activeIcon === 'contact' ?
                             <div>
                                 <h1>contact</h1>
-                            </div>:
-                            activeIcon === 'pdf' ?
-                            <div>
-                                <h1>pdf</h1>
                             </div>:
                             activeIcon === 'mail' ?
                             <div>
