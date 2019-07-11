@@ -47,7 +47,7 @@ module.exports = {
     deleteEmployee: (req, res) => {
         const db = req.app.get('db');
         const {id} = req.params;
-        db.employees.delete_employee({id});
+        db.auth.delete_user({id});
         res.sendStatus(200);
     }
 }
