@@ -13,9 +13,13 @@
     "bcryptjs": "^2.4.3",
     "chart.js": "^2.8.0",
     "dotenv": "^8.0.0",
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.14.0",
     "express": "^4.17.1",
     "express-session": "^1.16.2",
     "fireworks": "^2.2.5",
+    "jest-environment-enzyme": "^7.0.2",
+    "jest-enzyme": "^7.0.2",
     "libphonenumber-js": "^1.7.20",
     "massive": "^5.11.0",
     "material-ui": "^0.20.2",
@@ -31,6 +35,7 @@
     "react-spinners": "^0.5.4",
     "redux": "^4.0.1",
     "redux-logger": "^3.0.6",
+    "redux-mock-store": "^1.5.3",
     "redux-persist": "^5.10.0",
     "socket.io": "^2.2.0",
     "twilio": "^3.33.0",
@@ -63,6 +68,7 @@
     "@babel/preset-env": "^7.5.4",
     "@babel/preset-react": "^7.0.0",
     "babel-jest": "^24.8.0",
+    "identity-obj-proxy": "^3.0.0",
     "react-test-renderer": "^16.8.6"
   }
 }
