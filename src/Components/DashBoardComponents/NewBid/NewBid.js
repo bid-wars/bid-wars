@@ -4,6 +4,7 @@ import FormBidDetails from './FormBidDetails'
 import Confirm from './Confirm'
 import Success from './Success'
 import { AsYouType } from 'libphonenumber-js'
+import axios from 'axios'
 
 export default class NewBid extends Component {
     state = {
@@ -19,6 +20,30 @@ export default class NewBid extends Component {
         sendNote: 'We would love to work for you! Please see that link below to view your bid.',
         bidItems: [],
         dollarDisc: ''
+    }
+
+
+    // submit form
+    handleSendBid = () => {
+        const toEmail = this.state.contactEmail
+        const emailBody = `
+            <h1>${this.state.sendNote}</h1>
+            `
+        axios.post('/bids/add', {
+            //customer info
+            companyName: this.state.companyName,
+            contactFirst: this.state.contactFirst,
+            contactLast: this.state.contactLast,
+            contactPhone: this.state.contactPhone,
+            contactEmail: this.state.contactEmail,
+            // bid info
+            bidType: this.state.bidType,
+            expirationDate: this.state.expirationDate,
+            bidItems: this.state.bidItems,
+            dollarDisc: this.state.dollarDisc
+        })
+        .then('/nodemailer/send', {toEmail, emailBody})
+        .then(this.nextStep())
     }
 
     // proceed to the next step
@@ -47,7 +72,9 @@ export default class NewBid extends Component {
             bidType: '',
             expirationDate: '',
             bidTotal: '',
-            sendNote: 'We would love to work for you! Please see that link below to view your bid.' 
+            sendNote: 'We would love to work for you! Please see that link below to view your bid.' ,
+            bidItems: [],
+            dollarDisc: ''
         })
         this.props.history.push('/dashboard')
     }
@@ -130,6 +157,7 @@ export default class NewBid extends Component {
                         handleChange={this.handleChange}
                         values={values}
                         invoiceTotal={invoiceTotal}
+                        handleSendBid={this.handleSendBid}
                     />
                 )
             case 4:
