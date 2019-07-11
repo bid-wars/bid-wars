@@ -48,18 +48,55 @@ module.exports = {
         res.status(200).send(output);
     },
     addBid: (req, res) => {
-        console.log('Body', req.body);
-        console.log('session.user', req.session.user);
+        const db = req.app.get('db');
+        const {
+            id,
+            status,
+            company_id,
+            customer_id,
+            date,
+            salesman_id,
+            items
+        } = req.body;
+        const correctedItems = JSON.stringify(items);
+        db.bids.add_bid({
+            id,
+            status,
+            company_id,
+            customer_id,
+            date,
+            salesman_id,
+            items: correctedItems
+        })
         res.sendStatus(200);
     },
     updateBid: (req, res) => {
-        console.log('Body', req.body);
-        console.log('session.user', req.session.user);
+        const db = req.app.get('db');
+        const {
+            id,
+            status,
+            company_id,
+            customer_id,
+            date,
+            salesman_id,
+            items
+        } = req.body;
+        const correctedItems = JSON.stringify(items);
+        db.bids.update_bid({
+            id,
+            status,
+            company_id,
+            customer_id,
+            date,
+            salesman_id,
+            items: correctedItems
+        })
         res.sendStatus(200);
     },
     deleteBid: (req, res) => {
-        console.log('Body', req.body);
-        console.log('session.user', req.session.user);
+        const db = req.app.get('db');
+        const {id} = req.params;
+        db.employees.delete_bid({id});
         res.sendStatus(200);
     }
 }
