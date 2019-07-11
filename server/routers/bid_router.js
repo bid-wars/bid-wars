@@ -15,7 +15,7 @@ BidRouter.post('/reports', midWare.userLoggedIn, midWare.userIsBusiness, bid_ctr
 BidRouter.get('/all', midWare.userLoggedIn, midWare.userIsBusiness, bid_ctrl.getBids);
 BidRouter.post('/add', midWare.userLoggedIn, midWare.userIsBusiness, bid_ctrl.addBid);
 BidRouter.put('/update', midWare.userLoggedIn, midWare.userIsBusiness, bid_ctrl.updateBid);
-BidRouter.delete('/delete', midWare.userLoggedIn, midWare.userIsBusiness, bid_ctrl.deleteBid);
+BidRouter.delete('/delete/:id', midWare.userLoggedIn, midWare.userIsBusiness, bid_ctrl.deleteBid);
 
 // EXPORT ROUTER
 module.exports = {

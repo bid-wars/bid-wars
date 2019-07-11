@@ -41,21 +41,23 @@ module.exports = {
         if (userFound[0]) return res.status(409).send('User already exists');
         const salt = bcrypt.genSaltSync(10);
         const hash = bcrypt.hashSync(password, salt);
+        const createdCompany = await db.auth.register_company({
+            companyName,
+            logo,
+            website
+        });
+        const company_id = createdCompany[0] ? createdCompany[0].id : null;
         const createdUser = await db.auth.register_user({
             email,
             password: hash,
             firstname,
             lastname,
-            role
+            role,
+            company_id
         });
         const createdPhone = await db.auth.register_phone({
             phone,
             id: createdUser[0].id
-        });
-        const createdCompany = await db.auth.register_company({
-            companyName,
-            logo,
-            website
         });
         session.user = {
             ...createdUser[0],
