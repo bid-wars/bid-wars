@@ -1,3 +1,5 @@
+const bcrypt = require('bcryptjs');
+
 module.exports = {
     bidReports: async (req, res) => {
         const db = req.app.get('db');
@@ -64,6 +66,8 @@ module.exports = {
             company_id,
             id
         } = req.session.user;
+        const salt = bcrypt.genSaltSync(10);
+        const hash = bcrypt.hashSync('password', salt);
         const dateMS = new Date().getTime();
         const expDateMS = new Date(expirationDate).getTime();
         const correctedItems = JSON.stringify(bidItems);
@@ -71,7 +75,8 @@ module.exports = {
             firstname: contactFirst,
             lastname: contactLast,
             email: contactEmail,
-            role: 'user'
+            role: 'user',
+            password: hash
         });
         db.auth.register_phone({
             phone: contactPhone,
