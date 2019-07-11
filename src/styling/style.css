@@ -473,9 +473,9 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -483,10 +483,13 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  height: 90vh;
   overflow: scroll;
   overflow-x: hidden;
   padding-top: 2em;
   padding-left: 2em;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 .routedisplay .new-bid-page h1 {
@@ -549,6 +552,81 @@
 
 .routedisplay .new-bid-page .icon {
   margin: .5em;
+}
+
+.routedisplay .new-bid-page thead {
+  background: #34d1bf;
+  border-bottom: 1px solid #4d4d4d;
+  color: #4d4d4d;
+  font-weight: 800;
+}
+
+.routedisplay .new-bid-page tbody tr th {
+  text-align: left;
+  vertical-align: bottom;
+  border-right: 1px solid rgba(77, 77, 77, 0.315);
+}
+
+.routedisplay .new-bid-page table {
+  border: 2px solid #4d4d4d;
+}
+
+.routedisplay .new-bid-page tbody tr:nth-child(even) {
+  background: rgba(77, 77, 77, 0.315);
+}
+
+.routedisplay .new-bid-page tbody tr:nth-child(odd) {
+  background: #fff;
+}
+
+.routedisplay .new-bid-page tr td
+input {
+  border: none;
+  background-image: none;
+  background-color: transparent;
+  height: 5vh;
+  width: 100%;
+}
+
+.routedisplay .new-bid-page .icon {
+  margin: 0 .5em;
+}
+
+.routedisplay .new-bid-page #table1-add-row {
+  border-top: 3px solid #34d1bf;
+  background: #fff;
+}
+
+.routedisplay .new-bid-page .column1 {
+  width: 5vw;
+}
+
+.routedisplay .new-bid-page .column2 {
+  width: 15vw;
+}
+
+.routedisplay .new-bid-page .column3 {
+  width: 20vw;
+}
+
+.routedisplay .new-bid-page .column4 {
+  width: 5vw;
+}
+
+.routedisplay .new-bid-page .column5 {
+  width: 5vw;
+}
+
+.routedisplay .new-bid-page .column6 {
+  width: 5vw;
+}
+
+.routedisplay .new-bid-page .column7 {
+  width: 5vw;
+}
+
+.routedisplay .new-bid-page .column8 {
+  width: 7vw;
 }
 
 .routedisplay .reportsTypePlaceholder .reportsType {
