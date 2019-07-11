@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import {connect} from 'react-redux'
-import {updateNewDate, deleteDay, updateDate} from '../../redux/ownerReducer'
+
+
 import { ScheduleComponent, Day, Week, Month, Inject, ViewsDirective, ViewDirective,  } from '@syncfusion/ej2-react-schedule';
 import axios from 'axios'
 import '../../styling/schedule.css'
@@ -150,8 +150,5 @@ import '../../styling/schedule.css'
         )
     }
 }
-function mapStateToProps(state){
 
-  return state
-}
-export default connect(mapStateToProps, {updateNewDate, deleteDay, updateDate})(Schedule)
+export default Schedule

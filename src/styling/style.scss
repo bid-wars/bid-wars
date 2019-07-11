@@ -744,13 +744,37 @@ $darkBackgroundColor: rgb(36, 36, 44);
             .left{
                 height: 100%;
                 width:50%;
-                background: rgb(219, 219, 219);
+                background: rgba(255, 255, 255, 0.726);
                 box-shadow: $shadow;
                 transition: all 300ms ease-in-out;
                 display: flex;
                 justify-content: center;
-                align-items: center;
-                text-align: center
+                align-items: flex-start;
+                text-align: center;
+                h3{
+                    font-family: $font;
+                    font-size: 1.5em;
+                    color: $fontColorDark;
+                    margin: 4vh 0;
+                    font-weight: 600; 
+                }
+                    .link{
+                        background: $red;
+                        color: $platinum;
+                        font-family: $font;
+                        border: none;
+                        margin: 0vh 5vw;
+                        padding: .6vh 1.5vw;
+                        border-radius: 10px;
+                        margin-right: 4vw;
+                        cursor: pointer;
+                        font-size: 1em;
+                        transition: all .5s ease-in-out;
+                    }
+                   .link:hover{
+                        background: rgb(189, 45, 45);
+                    }
+                
             }
             .right{
                 height: 100%;
