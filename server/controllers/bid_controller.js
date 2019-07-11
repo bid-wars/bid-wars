@@ -76,24 +76,25 @@ module.exports = {
             lastname: contactLast,
             email: contactEmail,
             role: 'user',
-            password: hash
+            password: hash,
+            company_id: 0,
         });
-        db.auth.register_phone({
+        const phone = await db.auth.register_phone({
             phone: contactPhone,
-            external_id: customer[0].id
-        })
-        db.bids.add_bid({
+            id: customer[0].id
+        });
+        const bid = await db.bids.add_bid({
             status: 'open',
             company_id,
             customer_id: customer[0].id,
             date: dateMS,
             exp_date: expDateMS,
             salesman_id: id,
-            items: correctedItems,
+            items: `${correctedItems}`,
             name: companyName,
             type: bidType,
             discount: dollarDisc
-        })
+        });
         res.sendStatus(200);
     },
     updateBid: (req, res) => {

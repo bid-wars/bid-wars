@@ -7,9 +7,6 @@ const {
 module.exports = {
     send: async (req, res) => {
         const {toEmail, emailBody} = req.body;
-        // const html = `
-        //     <h1>HTML GOES HERE</h1>
-        // `
         let transporter = nodemailer.createTransport({
             host: "smtp.mail.yahoo.com",
             port: 465,
