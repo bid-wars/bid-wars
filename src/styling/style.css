@@ -767,6 +767,8 @@ input {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  overflow: scroll;
+  overflow-x: hidden;
 }
 
 .mainDash .top {
@@ -1129,9 +1131,9 @@ input {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -1140,6 +1142,8 @@ input {
       -ms-flex-direction: column;
           flex-direction: column;
   background: #F9F9F9;
+  overflow: scroll;
+  overflow-x: hidden;
 }
 
 .Employees button {
@@ -1174,7 +1178,7 @@ input {
 }
 
 .Employees .top .addedlist .addedPerson {
-  margin: 0 1vw;
+  margin: 2vh 1vw 0 1vw;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

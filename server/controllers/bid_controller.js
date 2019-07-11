@@ -33,21 +33,22 @@ module.exports = {
         db = req.app.get('db');
         const{id} = req.session.user;
         const bids = await db.bids.get_bids({id});
-        const output = bids.map((bid) => {
-            const {id, status, company_id, customer_id, date, salesman_id, items} = bid;
-            const correctedDate = new Date(date);
-            const correctedItems = JSON.parse(items);
-            return {
-                id,
-                status,
-                company_id,
-                customer_id,
-                date: correctedDate,
-                salesman_id,
-                items: correctedItems
-            }
-        });
-        res.status(200).send(output);
+        // const output = bids.map((bid) => {
+        //     const {id, status, company_id, customer_id, date, salesman_id, items} = bid;
+        //     console.log(items)
+        //     const correctedDate = new Date(date);
+        //     const correctedItems = items;
+        //     return {
+        //         id,
+        //         status,
+        //         company_id,
+        //         customer_id,
+        //         date: correctedDate,
+        //         salesman_id,
+        //         items: correctedItems
+        //     }
+        // });
+        res.status(200).send(bids);
     },
     addBid: async (req, res) => {
         const db = req.app.get('db');
