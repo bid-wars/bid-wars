@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import {Link} from 'react-router-dom'
-import {faChartBar, faAddressBook, faFilePdf, faPaperPlane, faClipboardList} from '@fortawesome/free-solid-svg-icons'
+import {faChartBar, faAddressBook, faPaperPlane, faClipboardList, faCalendarDay} from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 
@@ -12,8 +12,8 @@ export default class Home extends Component {
         clipboard: 'active',
         chart: 'notactive',
         contact: 'notactive',
-        pdf: 'notactive',
         mail: 'notactive',
+        calendar: 'notactive'
     }
     onClick = (e) => {
         let current = this.state.activeIcon
@@ -33,12 +33,12 @@ export default class Home extends Component {
     }
  
     render() {
-        const {clipboard, chart, contact, pdf, mail, iconColorActive, iconColorNotActive, activeIcon} = this.state
+        const {clipboard, chart, contact, mail, calendar, iconColorActive, iconColorNotActive, activeIcon} = this.state
         return (
             <div className='homePage'>
                 <div className='topbanner'>
                     
-                        <img src='https://bidtracker.s3-us-west-1.amazonaws.com/Da5UHE34nlKosYUztHDgJ4DD7J0c4Z0f-text939-1.png' alt=""/>
+                        <img className='logo' src='https://bidtracker.s3-us-west-1.amazonaws.com/Da5UHE34nlKosYUztHDgJ4DD7J0c4Z0f-text939-1.png' alt=""/>
                     <div className='links'>
                         <Link className='link' to='/register' >Register</Link>
                         <Link to='/login' className='link' >Login</Link>
@@ -68,13 +68,6 @@ export default class Home extends Component {
                         color={contact === 'active'? iconColorActive : iconColorNotActive}
                         onClick={() => this.onClick('contact')}
                     />
-                    <FontAwesomeIcon
-                        className='icon' 
-                        icon={faFilePdf}
-                        size='4x'
-                        color={pdf === 'active'? iconColorActive : iconColorNotActive}
-                        onClick={() => this.onClick('pdf')}
-                    />
                     <FontAwesomeIcon 
                         className='icon'
                         icon={faPaperPlane}
@@ -82,31 +75,53 @@ export default class Home extends Component {
                         color={mail === 'active'? iconColorActive : iconColorNotActive}
                         onClick={() => this.onClick('mail')}
                     />
+                    <FontAwesomeIcon 
+                        className='icon'
+                        icon={faCalendarDay}
+                        size='4x'
+                        color={calendar === 'active'? iconColorActive : iconColorNotActive}
+                        onClick={() => this.onClick('calendar')}
+                        
+                    />  
                     </div>
                     <div className='bottomnav'>
                         <div className='left'>
                         {
-                            activeIcon === 'clipboard'? <div>
+                            activeIcon === 'clipboard'? 
+                            <div>
+                                <h3>Spend less time doing paperwork and more time selling.</h3>
+                                <h3>Make your bidding process more streamlined by making it paperless.</h3>
+                                <h3>Register today!</h3>
+                                <Link className='link' to='/register' >Register</Link>
                                 
-                                <Link to='/dashboard'>Dashboard</Link>
-
-                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquid modi cupiditate, sed dignissimos, eum tempora consequatur facilis inventore odit temporibus accusamus? Iste optio ad adipisci exercitationem voluptatibus debitis, nisi rerum.</p>
                             </div> :
                             activeIcon === 'chart' ?
                             <div>
-                                <h1>chart</h1>
+                                 <h3>Track the bids that your sells force is making, and see who your big performers are.</h3>
+                                
+                                <h3>Register today!</h3>
+                                <Link className='link' to='/register' >Register</Link>
                             </div>:
                             activeIcon === 'contact' ?
                             <div>
-                                <h1>contact</h1>
-                            </div>:
-                            activeIcon === 'pdf' ?
-                            <div>
-                                <h1>pdf</h1>
+                                <h3>Manage your employees.</h3>
+                                
+                                <h3>Register today!</h3>
+                                <Link className='link' to='/register' >Register</Link>
                             </div>:
                             activeIcon === 'mail' ?
                             <div>
-                                <h1>mail</h1>
+                                <h3>Send paperless bids for your customers to review.</h3>
+                                
+                                <h3>Register today!</h3>
+                                <Link className='link' to='/register' >Register</Link>
+                            </div>: 
+                            activeIcon === 'calendar' ?
+                            <div>
+                                <h3>Keep track of your upcoming appointments with build in scheduler.</h3>
+                                
+                                <h3>Register today!</h3>
+                                <Link className='link' to='/register' >Register</Link>
                             </div>: null   
                         }
                 
