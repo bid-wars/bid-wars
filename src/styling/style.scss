@@ -360,8 +360,7 @@ $darkBackgroundColor: rgb(36, 36, 44);
         height: 90vh;
         overflow: scroll;
         overflow-x: hidden;
-        padding-top: 2em;
-        padding-left: 2em;
+        padding: 2em;
         box-sizing: border-box;
         h1{
             font-family: $font;
@@ -424,6 +423,7 @@ $darkBackgroundColor: rgb(36, 36, 44);
         }
         table{
             border: 2px solid $darkColor;
+            margin: 1em 0;
         }
         tbody tr:nth-child(even){
             background: $lightGrey;
@@ -471,10 +471,58 @@ $darkBackgroundColor: rgb(36, 36, 44);
         .column8 {
             width: 7vw;
         }
+        .totals-container1{
+            width: 100%;
+            .highlight-text{
+                font-weight: 800;
+                font-size: 1.3em;
+                margin: .3em 0;
+            }
+            div {
+                // float: right;
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap-reverse;
+                justify-content: flex-end;
+                align-items: center;
+                align-content: center;
+                .totals-column1{
+                    display: flex;
+                    flex-direction: column;
+                    flex-wrap: wrap-reverse;
+                    justify-content: center;
+                    align-items: flex-end;
+                    align-content: stretch; 
+                    
+                }
+                .totals-column2 {
+                    display: flex;
+                    flex-direction: column;
+                    flex-wrap: wrap-reverse;
+                    justify-content: center;
+                    align-items: flex-start;
+                    align-content: stretch;
+                    width: 10vw;
+                    margin-left: 1em;
+                    .totals-underline {
+                        width: 100%;
+                        border-bottom-style: double;
+                        border-top: 1px double $darkColor;
+                        border-bottom: 1px double $darkColor;
+                    }
+                }
+            }
+        }
+        
 
     }
     .reportsTypePlaceholder{
-        
+        padding: 1.5em;
+        box-sizing: border-box;
+        height: 100%;
+        width: 100%;
+        overflow: scroll;
+        overflow-x: hidden;
         .reportsType {
             margin: 1em 0;
             display: flex;

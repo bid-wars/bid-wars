@@ -85,9 +85,22 @@ export default class BidDetails extends Component{
             </tbody>
           </table>
 
-          <h1>Subtotal: {this.props.subtotal}</h1>
-          <h1>Less Discount: {values.dollarDisc}</h1>
-          <h1>Total: {this.props.invoiceTotal}</h1>
+          <div className='totals-container1'>
+            <div className='totals-container2'>
+              <div className='totals-column1'>
+                <h3>Subtotal:</h3>
+                <h3>Less Discount:</h3>
+                <h3 className='highlight-text'>Total:</h3>
+              </div>
+              <div className='totals-column2'>
+                <h3>$ {this.props.subtotal}</h3>
+                <h3>$ {values.dollarDisc}</h3>
+                <div className='totals-underline'>
+                  <h3 className='highlight-text'>$ {this.props.invoiceTotal}</h3>
+                </div>
+              </div>
+            </div>
+          </div>
 
 
           <div className='line'></div>
