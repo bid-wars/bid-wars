@@ -20,7 +20,7 @@ export default class BidDetails extends Component{
   }
 
   render(){
-    const {values: {contactEmail, contactFirst, contactLast, expirationDate, bidTotal, sendNote}, handleChange} = this.props;
+    const {values: {contactEmail, contactFirst, contactLast, expirationDate, bidTotal, sendNote}, handleChange, handleSendBid} = this.props;
     return (
       <div className='new-bid-page'>
         <MuiThemeProvider>
@@ -72,7 +72,7 @@ export default class BidDetails extends Component{
               </button>
               <button 
                 className='butn-primary'
-                onClick={this.continue} 
+                onClick={handleSendBid} 
               >
                 <FontAwesomeIcon 
                   className='icon'

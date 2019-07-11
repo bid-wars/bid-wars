@@ -6,8 +6,7 @@ const {
 
 module.exports = {
     send: async (req, res) => {
-        const {email, html} = req.body;
-        const toEmail = email;
+        const {toEmail, emailBody} = req.body;
         // const html = `
         //     <h1>HTML GOES HERE</h1>
         // `
@@ -26,7 +25,7 @@ module.exports = {
             to: toEmail, // list of receivers
             subject: "Hello ✔", // Subject line
             text: "Hello world?", // plain text body
-            html // html body
+            emailBody // html body
           });
         res.status(200).send(info);
     }

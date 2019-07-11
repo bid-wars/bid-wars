@@ -486,8 +486,7 @@
   height: 90vh;
   overflow: scroll;
   overflow-x: hidden;
-  padding-top: 2em;
-  padding-left: 2em;
+  padding: 2em;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
@@ -569,6 +568,7 @@
 
 .routedisplay .new-bid-page table {
   border: 2px solid #4d4d4d;
+  margin: 1em 0;
 }
 
 .routedisplay .new-bid-page tbody tr:nth-child(even) {
@@ -627,6 +627,95 @@ input {
 
 .routedisplay .new-bid-page .column8 {
   width: 7vw;
+}
+
+.routedisplay .new-bid-page .totals-container1 {
+  width: 100%;
+}
+
+.routedisplay .new-bid-page .totals-container1 .highlight-text {
+  font-weight: 800;
+  font-size: 1.3em;
+  margin: .3em 0;
+}
+
+.routedisplay .new-bid-page .totals-container1 div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap-reverse;
+      flex-wrap: wrap-reverse;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+}
+
+.routedisplay .new-bid-page .totals-container1 div .totals-column1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: wrap-reverse;
+      flex-wrap: wrap-reverse;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -ms-flex-line-pack: stretch;
+      align-content: stretch;
+}
+
+.routedisplay .new-bid-page .totals-container1 div .totals-column2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: wrap-reverse;
+      flex-wrap: wrap-reverse;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -ms-flex-line-pack: stretch;
+      align-content: stretch;
+  width: 10vw;
+  margin-left: 1em;
+}
+
+.routedisplay .new-bid-page .totals-container1 div .totals-column2 .totals-underline {
+  width: 100%;
+  border-bottom-style: double;
+  border-top: 1px double #4d4d4d;
+  border-bottom: 1px double #4d4d4d;
+}
+
+.routedisplay .reportsTypePlaceholder {
+  padding: 1.5em;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  height: 100%;
+  width: 100%;
+  overflow: scroll;
+  overflow-x: hidden;
 }
 
 .routedisplay .reportsTypePlaceholder .reportsType {
