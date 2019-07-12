@@ -72,11 +72,11 @@ import '../styling/schedule.css'
                         
                         <img src={this.props.logo} alt=""/>
                         <Link className='link'
-                        to='/dashboard/settings'>
+                        >
                             <FontAwesomeIcon 
                             icon={faUserCog}
                             color='#F9F9F9'
-                            onClick={() => this.handleActive('settings')} 
+                            onClick={this.onFireWorks} 
                             />
                         </Link>
                     </div>
@@ -126,6 +126,7 @@ import '../styling/schedule.css'
                         </div>
                     </nav>
                     <div className='routedisplay'>
+                    
                         {DashBoardRouter}
                     </div>
                 </main>
