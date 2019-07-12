@@ -106,17 +106,36 @@ module.exports = {
             customer_id,
             date,
             salesman_id,
-            items
+            companyName,
+            contactFirst,
+            contactLast,
+            contactPhone,
+            contactEmail,
+            bidItems,
+            bidType,
+            expirationDate,
+            dollarDisc
         } = req.body;
+        const dateMS = new Date(date).getTime();
+        const expDateMS = new Date(expirationDate).getTime();
         const correctedItems = JSON.stringify(items);
         db.bids.update_bid({
-            id,
             status,
             company_id,
             customer_id,
-            date,
+            date: dateMS,
+            exp_date: expDateMS,
             salesman_id,
-            items: correctedItems
+            contactFirst,
+            contactLast,
+            contactPhone,
+            contactEmail,
+            bidItems,
+            salesman_id: id,
+            items: `${correctedItems}`,
+            name: companyName,
+            type: bidType,
+            discount: dollarDisc
         })
         res.sendStatus(200);
     },
