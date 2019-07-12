@@ -631,16 +631,22 @@ $darkBackgroundColor: rgb(36, 36, 44);
             .unacceptedBox{
                 display: flex;
                 flex-direction: column;
-                justify-content: flex-start;
-                align-items: center;
+                justify-content: center;
+                align-items: flex-start;
                 height: 90%;
                 width: 100%;
+                background: rgb(255, 255, 255);
+                box-shadow: $shadow;
                 
                 .bidsBox{
                     height: 100%;
                     width: 100%;
-                    background: rgb(255, 255, 255);
-                    box-shadow: $shadow;
+                    display: flex;
+                    justify-content: flex-start;
+                    align-items: center;
+                    .bids{
+                        transform: scale(.5)
+                    }
                 }
             }
         }
@@ -897,7 +903,168 @@ $darkBackgroundColor: rgb(36, 36, 44);
         height: 70vh;
     }
     
+.bidsDisplay{
+    background: $snow;
+    width: 100%;
+    height: 100%;
+    overflow: scroll;
+    overflow-x: hidden;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    table{
+      
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-direction: column;
+        thead{
+            width: 90vw;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            flex-direction: column;
+            background: $green;
+            
+            tr{
+                display: flex;
+                justify-content: space-evenly;
+                align-items: center;
+                flex-direction: row;
+                th{
+                    margin: 2vh 0;
+                    width: 10vw;
+                    color: $fontColorDark;
+                    font-family: $font;
+                    font-size: 1.2em;
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+    
+    tbody{
+        margin-left: 5vw;
+        width: 80%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-direction: column;
+        tr{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-direction: row;
+            td{
+                margin: 2vh 0;
+                width: 9vw;
+                font-family: $font;
+                font-size: 1em;
+                font-weight: 500;
+                button{
+                    background: $blue;
+                    color: $platinum;
+                    font-family: $font;
+                    border: none;
+                    padding: .6vh 1.5vw;
+                    border-radius: 10px;
+                    margin-right: 4vw;
+                    cursor: pointer;
+                    font-size: .9em;
+                    transition: all .5s ease-in-out;
+                }
+               button:hover{
+                    background: $green;
+                }
+            }
+        }
+        
+    }
 
+    
+}
+.small{
+    
+    background: $snow;
+    width: 100%;
+    height: 100%;
+    overflow: scroll;
+    overflow-x: hidden;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    table{
+        width: 100%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-direction: column;
+        thead{
+            width: 100%;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            flex-direction: column;
+            background: $green;
+            
+            tr{
+                display: flex;
+                justify-content: space-evenly;
+                align-items: center;
+                flex-direction: row;
+                th{
+                    margin: .5vh 0;
+                    width: 5vw;
+                    color: $fontColorDark;
+                    font-family: $font;
+                    font-size: 1em;
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+    
+    tbody{
+     
+        width: 100%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-direction: column;
+        tr{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-direction: row;
+            td{
+                margin: 2vh 0;
+                width: 4.7vw;
+                font-family: $font;
+                font-size: .8em;
+                font-weight: 500;
+                button{
+                    background: $blue;
+                    color: $platinum;
+                    font-family: $font;
+                    border: none;
+                    padding: .2vh .5vw;
+                    border-radius: 10px;
+                    cursor: pointer;
+                    font-size: .7em;
+                    transition: all .5s ease-in-out;
+                }
+               button:hover{
+                    background: $green;
+                }
+            }
+        }
+        
+    }
+
+    
+}
 
 
 
