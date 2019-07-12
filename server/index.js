@@ -6,10 +6,10 @@ const {provider} = require('./middleware/top-level');
 const {addRoutes} = require('./routers/routers');
 const {socketConnection} = require('./sockets/setup.socket');
 const {CONNECTION_STRING, SERVER_PORT} = process.env;
-app.use( express.static( `${__dirname}/../build` ) );
 
 // EXPRESS SETUP
 const app = express();
+app.use( express.static( `${__dirname}/../build` ) );
 
 // TOP-LEVEL MIDDLEWARE
 provider(app);
