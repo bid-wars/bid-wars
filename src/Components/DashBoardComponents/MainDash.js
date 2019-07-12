@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import {connect} from 'react-redux'
 import Schedule from './Schedule'
 import BidsMadeVSClosed from './Reports/BidsMadeVSClosed'
+import Bids from './Bids'
 import {updateReportData} from '../../redux/ownerReducer'
 import axios from 'axios'
 
@@ -47,7 +48,9 @@ import axios from 'axios'
                     </div>
                     <div className='rightdiv'>
                         <div className='unacceptedBox'>
-                            <div className='bidsBox'></div>
+                            <div className='bidsBox'>
+                                <Bids classprops={'small'}/>
+                            </div>
                         </div>
                     </div>
                 </div>
